@@ -10,3 +10,7 @@
   font-family: "ppEiko";
   src: url("/fonts/PPEiko-Thin.otf");
 }
+@font-face {
+  font-family: "editorialOld";
+  src: url("/fonts/ppeditorialold-ultralight.otf");
+}

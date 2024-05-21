@@ -16,6 +16,7 @@ module.exports = {
         neueMachina: ["neueMachina", "sans-serif"],
         neueMontreal: ["neueMontreal", "sans-serif"],
         ppEiko: ["ppEiko", "sans-serif"],
+        editorialOld: ["editorialOld", "sans-serif"],
       },
     },
   },
