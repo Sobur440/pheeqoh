@@ -27,7 +27,9 @@ const Home = () => {
                 <p className="self-center lg:self-start">
                   ta<span className="italic">o</span>
                 </p>
-                <p>(feeqah)</p>
+                <p>
+                  (feeq<span className="italic">a</span>h)
+                </p>
               </div>
             </div>
 
