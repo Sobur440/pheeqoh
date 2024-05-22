@@ -174,7 +174,7 @@ const Home = () => {
 
         <Link
           href="/work"
-          className="block uppercase text-black font-extrabold text-[3rem] leading-[1em] self-center mt-10"
+          className="block uppercase text-black font-extrabold text-[2rem] lg:text-[3rem] leading-[1em] self-center mt-10"
         >
           view all <span className="block ml-2">works</span>
         </Link>
@@ -192,7 +192,7 @@ const Home = () => {
           </p>
           <p>AVAILABLE</p>
         </div>
-        <p className="lg:hidden text-[1.2rem] font-neueMontreal max-w-[30rem] font-extrabold ">
+        <p className="lg:hidden text-[1.2rem] font-neueMontreal max-w-[30rem] font-extrabold mb-[.5rem] ">
           👋 I&apos;m actively looking for opportunities in product Design (UI
           UX). I am open to working in roles that are remote, full time or
           contract-based. Kindly reach out to me if you are building something
@@ -204,6 +204,15 @@ const Home = () => {
           <p>REACH OUT TO ME</p>
         </div>
       </section>
+
+      <Link
+        href="/contact"
+        className="w-full flex justify-center items-center mt-10"
+      >
+        <p className="text-[2rem] lg:text-[3rem] font-neueMontreal uppercase leading-[1em] font-extrabold">
+          send me a <br /> message
+        </p>
+      </Link>
     </>
   );
 };
