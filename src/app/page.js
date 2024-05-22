@@ -182,7 +182,28 @@ const Home = () => {
 
       {/* REACHOUT */}
 
-      <section></section>
+      <section className="mt-[5rem] font-ppEiko w-full md:text-[7vw] lg:w-[80%] pl-[2rem] pr-[1.5rem] md:pr-0 flex flex-col text-[8vw]">
+        <div className="w-full lg:flex justify-end lg:justify-between hidden">
+          <p className="font-neueMontreal max-w-[19rem] text-[1rem] self-start text-justify font-extrabold">
+            👋 I&apos;m actively looking for opportunities in product Design (UI
+            UX). I am open to working in roles that are remote, full time or
+            contract-based. Kindly reach out to me if you are building something
+            exciting.
+          </p>
+          <p>AVAILABLE</p>
+        </div>
+        <p className="lg:hidden text-[1.2rem] font-neueMontreal max-w-[30rem] font-extrabold ">
+          👋 I&apos;m actively looking for opportunities in product Design (UI
+          UX). I am open to working in roles that are remote, full time or
+          contract-based. Kindly reach out to me if you are building something
+          exciting.
+        </p>
+        <div className="self-center lg:self-end flex flex-col items-end">
+          <p className="lg:hidden">AVAILABLE</p>
+          <p>TO WORK, KINDLY</p>
+          <p>REACH OUT TO ME</p>
+        </div>
+      </section>
     </>
   );
 };
