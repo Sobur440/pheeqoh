@@ -1,0 +1,81 @@
+.hero {
+  background: url("/images/hero-bg.png");
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.pos {
+  background: url("/images/pos.png");
+  background-position: center;
+  background-size: cover;
+  z-index: 2;
+}
+.eohs {
+  background: url("/images/full-shot-woman-online-fashion-shopping.png");
+  background-position: center;
+  background-size: cover;
+  z-index: 2;
+}
+.insta {
+  background: url("/images/insta.png");
+  background-position: center;
+  background-size: cover;
+  z-index: 2;
+}
+
+.pos::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.eohs::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.insta::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+/* .eohs::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url(/images/full-shot-woman-online-fashion-shopping.png);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.insta::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url(/images/insta.png);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+} */
