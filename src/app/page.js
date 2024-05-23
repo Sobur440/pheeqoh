@@ -175,14 +175,14 @@ const Home = () => {
           href="/works"
           className="block uppercase text-black text-[2rem] lg:text-[3rem] leading-[1em] self-center mt-10"
         >
-          view all <span className="block ml-2">works</span>
+          view all <span className="block ml-5">works</span>
         </Link>
       </section>
 
       {/* REACHOUT */}
 
-      <section className="mt-[5rem] font-ppEiko w-full text-[8.85vw] md:text-[7vw] lg:w-[80%] pl-[2rem] pr-[1.5rem] md:pr-0 flex flex-col">
-        <div className="w-full lg:flex justify-end lg:justify-between hidden">
+      <section className="mt-[5rem] font-ppEiko w-full text-[8vw] md:text-[7vw] lg:w-[85%] pl-[2rem] pr-[1.5rem] md:pr-0 flex flex-col">
+        <div className="w-[93%] lg:flex justify-end lg:justify-between hidden">
           <p className="font-neueMontreal max-w-[19rem] text-[1rem] self-start text-justify">
             👋 I&apos;m actively looking for opportunities in product Design (UI
             UX). I am open to working in roles that are remote, full time or
@@ -191,13 +191,13 @@ const Home = () => {
           </p>
           <p>AVAILABLE</p>
         </div>
-        <p className="lg:hidden text-[.85rem] font-neueMontreal max-w-[65%] md:max-w-[20rem] mb-[.5rem]">
+        <p className="lg:hidden text-[2.5vw] font-neueMontreal max-w-[70%] md:max-w-[33rem] mb-[2rem]">
           👋 I&apos;m actively looking for opportunities in product Design (UI
           UX). I am open to working in roles that are remote, full time or
           contract-based. Kindly reach out to me if you are building something
           exciting.
         </p>
-        <div className="self-center lg:self-end flex flex-col items-end">
+        <div className="self-center text-[8.3vw] flex flex-col">
           <p className="lg:hidden">AVAILABLE</p>
           <p>TO WORK, KINDLY</p>
           <p>REACH OUT TO ME</p>
@@ -208,7 +208,7 @@ const Home = () => {
         href="/contact"
         className="w-full flex justify-center items-center mt-10"
       >
-        <p className="text-[2rem] lg:text-[3rem] font-neueMontreal uppercase leading-[1em]">
+        <p className="text-[2rem] lg:text-[2.5rem] font-neueMontreal uppercase leading-[1em]">
           send me a <br /> message
         </p>
       </Link>
