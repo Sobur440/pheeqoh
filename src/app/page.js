@@ -221,7 +221,7 @@ const Home = () => {
         <div
           className={`${styles.reachOut} relative w-[93%] lg:flex justify-end lg:justify-between hidden`}
         >
-          <p className="font-neueMontreal max-w-[19rem] text-[1rem] self-start text-justify">
+          <p className="font-neueMontreal max-w-[20rem] text-[.9rem] self-start xl:text-justify">
             👋 I&apos;m actively looking for opportunities in product Design (UI
             UX). I am open to working in roles that are remote, full time or
             contract-based. Kindly reach out to me if you are building something
