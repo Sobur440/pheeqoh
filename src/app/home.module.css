@@ -56,26 +56,40 @@
   z-index: -1;
 }
 
-/* .eohs::after {
+.about::after {
   content: "";
   width: 100%;
-  height: 100%;
-  background-image: url(/images/full-shot-woman-online-fashion-shopping.png);
-  background-size: cover;
-  background-position: center;
+  height: 3px;
   position: absolute;
+  background: #b1aea5;
   left: 0;
-  top: 0;
+  bottom: 2.8vh;
 }
 
-.insta::after {
+.aboutMobile::after {
   content: "";
   width: 100%;
-  height: 100%;
-  background-image: url(/images/insta.png);
-  background-size: cover;
-  background-position: center;
+  height: 1px;
   position: absolute;
+  background: black;
   left: 0;
-  top: 0;
-} */
+  bottom: 1.4vh;
+}
+.aboutBlack::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background: black;
+  left: 0;
+  bottom: 25px;
+}
+.aboutBlackSecond::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  background: black;
+  left: 0;
+  bottom: 25px;
+}
