@@ -191,7 +191,7 @@ const Home = () => {
           </p>
           <p>AVAILABLE</p>
         </div>
-        <p className="lg:hidden text-[.95rem] font-neueMontreal max-w-[20rem] mb-[.5rem]">
+        <p className="lg:hidden text-[.85rem] font-neueMontreal max-w-[65%] md:max-w-[20rem] mb-[.5rem]">
           👋 I&apos;m actively looking for opportunities in product Design (UI
           UX). I am open to working in roles that are remote, full time or
           contract-based. Kindly reach out to me if you are building something
