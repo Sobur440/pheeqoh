@@ -175,7 +175,7 @@ const Home = () => {
         </div>
 
         <Link
-          href="/work"
+          href="/works"
           className="block uppercase text-black font-extrabold text-[2rem] lg:text-[3rem] leading-[1em] self-center mt-10"
         >
           view all <span className="block ml-2">works</span>
