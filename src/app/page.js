@@ -98,12 +98,12 @@ const Home = () => {
         </div>
 
         <div>
-          <div className="hidden font-editorialOld max-w-[98%] p-2 text-[3.9vw] text-justify mx-auto capitalize lg:flex flex-col flex-wrap gap-4">
+          <div className="hidden font-editorialOld max-w-[98%] p-2 text-[3.8vw] xl:text-[3.9vw] text-justify mx-auto capitalize lg:flex flex-col flex-wrap gap-4">
             <div
               className={`${styles.aboutBlack} relative flex justify-between mb-[-1rem] w-full`}
             >
               <div
-                className={`max-w-[16rem] ml-3 mb-[2rem] text-justify text-[.8rem] font-neueMontreal`}
+                className={`max-w-[16rem] ml-3 xl:mb-[2rem] lg:mb-[3rem] text-justify text-[.8rem] font-neueMontreal`}
               >
                 <p className="text-right">
                   I&apos;m Bello Taofeeqah, but you can call
@@ -112,26 +112,26 @@ const Home = () => {
                 crafting strategic solutions that drive product success.
               </div>
 
-              <p className="inline-block text-right mt-[1rem]">
+              <p className="inline-block text-right xl:mt-[1rem] lg:mt-[3.5rem]">
                 My skills encompass extensive research,
               </p>
             </div>
 
             <div style={{ textAlignLast: "justify" }}>
-              <span className={`${styles.about} block w-full relative`}>
+              <p className={`${styles.about} block w-full relative`}>
                 interface design, and wireframing. I&apos;m dedicated to
                 continuous
-              </span>
+              </p>
               <span className={`${styles.about} block w-full relative`}>
                 process improvement, sharing UX knowledge, and transforming
               </span>
               <span className={`${styles.about} block w-full relative`}>
                 intricate business concepts into visually captivating, user-
               </span>
+              <p className={`${styles.about} block relative w-fit`}>
+                centric designs.
+              </p>
             </div>
-            <p className={`${styles.aboutBlackSecond} block relative w-fit`}>
-              centric designs.
-            </p>
           </div>
         </div>
 
@@ -218,7 +218,9 @@ const Home = () => {
       {/* REACHOUT */}
 
       <section className="mt-[4rem]  font-ppEiko w-full text-[8vw] md:text-[7vw] lg:w-[85%] pl-[2rem] pr-[1.5rem] md:pr-0 flex flex-col">
-        <div className="w-[93%] lg:flex justify-end lg:justify-between hidden">
+        <div
+          className={`${styles.reachOut} relative w-[93%] lg:flex justify-end lg:justify-between hidden`}
+        >
           <p className="font-neueMontreal max-w-[19rem] text-[1rem] self-start text-justify">
             👋 I&apos;m actively looking for opportunities in product Design (UI
             UX). I am open to working in roles that are remote, full time or
@@ -233,11 +235,15 @@ const Home = () => {
           contract-based. Kindly reach out to me if you are building something
           exciting.
         </p>
-        <div className="self-center text-[8.3vw] flex flex-col">
-          <p className="lg:hidden">AVAILABLE</p>
-          <p>TO WORK, KINDLY</p>
-          <p>REACH OUT TO ME</p>
-        </div>
+        <dixv className="self-center text-[8.3vw] flex flex-col">
+          <p
+            className={`${styles.reachOut} relative w-[90%] lg:hidden text-right`}
+          >
+            AVAILABLE
+          </p>
+          <p className={`${styles.reachOut} relative w-fit`}>TO WORK, KINDLY</p>
+          <p className={`${styles.reachOut} relative w-fit`}>REACH OUT TO ME</p>
+        </dixv>
       </section>
 
       <Link
