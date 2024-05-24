@@ -93,6 +93,56 @@ const About = () => {
             </p>
           </div>
         </div>
+
+        <div className="flex flex-col lg:flex-row lg:justify-end gap-2 lg:gap-7 mt-[4rem] w-full mx-auto px-3">
+          <div className="flex lg:w-[50%] lg:h-[40rem] xl:w-[35%]">
+            <img
+              src="/images/resumepheeqoh.png"
+              alt="taofeeqoh image"
+              className="w-full lg:w-full object-cover"
+            />
+          </div>
+          <div className="w-full lg:w-[40%] xl:w-[30%]">
+            <div className="w-full lg:w-full flex flex-col gap-[1.5rem] text-[.9rem]">
+              <p className="max-w-full">
+                Problem solver and a quick learner, and I bring value to any
+                project or team. Skilled in building and nurturing
+                relationships, I possess a natural ability to connect with
+                others and am dedicated to bringing people together which has
+                made me contribute to the companies’ growth I’ve worked with.
+              </p>
+              <p className="max-w-full">
+                Excellent communicator, I actively listen to feedback and
+                respond in a way that fosters a sense of community and trust. My
+                commitment to building efforts has resulted in over 50% growth
+                in the companies I’ve worked with.
+              </p>
+              <p className="max-w-full">
+                Delivering impactful UI solutions is my forte, utilizing tools
+                like Adobe XD, Figma, and similar software. To enhance my design
+                capabilities, I have explored the realm of design and
+                development using No Code Tools. My experience spans across
+                diverse domains, including fintech, blockchain, health services,
+                e-commerce, and digital marketing. This enables me to handle
+                multiple projects in fast-paced environments while prioritizing
+                user-centric approaches and diligently assessing user
+                requirements.
+              </p>
+              <p className="max-w-full">
+                Committed to continuous growth, I am always seeking knowledge
+                and embracing new challenges. If you have a project in mind that
+                requires a seamless and exciting experience, let&apos;s
+                collaborate!
+              </p>
+            </div>
+
+            <div className="mt-[2rem]">
+              <a href="#" className="uppercase text-[1.9rem]">
+                download resume
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
