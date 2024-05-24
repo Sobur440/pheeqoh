@@ -144,6 +144,54 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* EXPERICES SECTION */}
+
+      <section className="mt-[10rem] w-[95%] mx-auto text-[.8rem]">
+        <div className="w-full h-[1px] bg-black mb-[2rem]"></div>
+
+        <div className="w-full flex flex-col lg:flex-row">
+          <p className="lg:w-[50%] uppercase">experiences</p>
+
+          <div className="w-full lg:w-[50%] uppercase">
+            <div className="w-full flex justify-between border-b border-black py-[1rem]">
+              <p className="w-[33.3%] max-w-[33.3%]">company</p>
+              <p className="w-[33.3%] max-w-[33.3%]">role</p>
+              <p className="w-[33.3%] max-w-[33.3%]">period</p>
+            </div>
+
+            <div className="w-full flex justify-between border-b border-black py-[1rem]">
+              <p className="w-[33.3%] max-w-[33.3%]">Sysbeams</p>
+              <p className="w-[33.3%] max-w-[33.3%]">product designer</p>
+              <p className="w-[33.3%] max-w-[33.3%]">Oct 3, 2022</p>
+            </div>
+
+            <div className="w-full flex justify-between border-b border-black py-[1rem]">
+              <p className="w-[33.3%] max-w-[33.3%]">Invateo Global</p>
+              <p className="w-[33.3%] max-w-[33.3%]">product designer</p>
+              <p className="w-[33.3%] max-w-[33.3%]">
+                Sept 12, 2022 → April 23, 2023
+              </p>
+            </div>
+
+            <div className="w-full flex justify-between border-b border-black py-[1rem]">
+              <p className="w-[33.3%] max-w-[33.3%]">np digital</p>
+              <p className="w-[33.3%] max-w-[33.3%]">ux designer</p>
+              <p className="w-[33.3%] max-w-[33.3%]">
+                Aug 29, 2022 → Sept 29, 2022
+              </p>
+            </div>
+
+            <div className="w-full flex justify-between border-b border-black py-[1rem]">
+              <p className="w-[33.3%] max-w-[33.3%]">kapital grow</p>
+              <p className="w-[33.3%] max-w-[33.3%]">product designer</p>
+              <p className="w-[33.3%] max-w-[33.3%]">
+                May 10, 2022 → Aug 10, 2022
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
