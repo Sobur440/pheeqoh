@@ -1,15 +1,15 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
 
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./home.module.css";
 import Link from "next/link";
-
-export const metadata = {
-  title: "Pheeqah | Home",
-  description: "Pheeqah",
-};
+import { NavColourContext } from "@/contexts/NavColourContext";
 
 const Home = () => {
+  const { setNavColour } = useContext(NavColourContext);
+  setNavColour(true);
+
   return (
     <>
       {/* HERO SECTION */}

@@ -1,9 +1,18 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
+import { NavColourContext } from "@/contexts/NavColourContext";
 
 const Navbar = () => {
+  const { navColour } = useContext(NavColourContext);
+
   return (
-    <nav className="bg-transparent w-full h-[3.5rem] absolute top-0 left-0 text-white">
+    <nav
+      className={`${
+        navColour ? "absolute top-0 left-0 text-white" : ""
+      } bg-transparent w-full h-[3.5rem]`}
+    >
       <div className="flex justify-between items-center w-[95%] h-full bg-inherit mx-auto">
         <Link
           href="/"
