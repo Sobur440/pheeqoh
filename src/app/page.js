@@ -1,8 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
+
 import React from "react";
 import styles from "./home.module.css";
-import Image from "next/image";
 import Link from "next/link";
+
+export const metadata = {
+  title: "Pheeqah | Home",
+  description: "Pheeqah",
+};
 
 const Home = () => {
   return (
@@ -235,7 +240,7 @@ const Home = () => {
           contract-based. Kindly reach out to me if you are building something
           exciting.
         </p>
-        <dixv className="self-center text-[8.3vw] flex flex-col">
+        <div className="self-center text-[8.3vw] flex flex-col">
           <p
             className={`${styles.reachOut} relative w-[90%] lg:hidden text-right`}
           >
@@ -243,7 +248,7 @@ const Home = () => {
           </p>
           <p className={`${styles.reachOut} relative w-fit`}>TO WORK, KINDLY</p>
           <p className={`${styles.reachOut} relative w-fit`}>REACH OUT TO ME</p>
-        </dixv>
+        </div>
       </section>
 
       <Link
