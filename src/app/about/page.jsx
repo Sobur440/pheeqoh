@@ -41,7 +41,7 @@ const About = () => {
           <div
             className={`${styles.aboutMobile} relative w-full flex justify-between mt-[3rem]`}
           >
-            <p className="uppercase text-[.6rem] font-neueMontreal font-extralight">
+            <p className="uppercase text-[.8rem] font-neueMontreal font-extralight">
               who i am
             </p>
             <p>I call myself a</p>
@@ -79,7 +79,7 @@ const About = () => {
           <div
             className={`${styles.about} relative w-full flex justify-between mt-[3rem]`}
           >
-            <p className="uppercase text-[.6rem] font-neueMontreal font-extralight">
+            <p className="uppercase text-[.8rem] font-neueMontreal font-extralight">
               who i am
             </p>
             <p>I call myself a CHANGE MAKER because I bring</p>
@@ -99,15 +99,15 @@ const About = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row lg:justify-end gap-2 lg:gap-7 mt-[4rem] w-full mx-auto px-3">
-          <div className="flex lg:w-[50%] lg:h-[40rem] xl:w-[35%]">
+        <div className="flex flex-col lg:flex-row lg:justify-end gap-2 lg:gap-7 mt-[4rem] w-full lg:h-[90vh] mx-auto px-3">
+          <div className="flex lg:w-[35%] lg:h-full">
             <img
               src="/images/resumepheeqoh.png"
               alt="taofeeqoh image"
               className="w-full lg:w-full object-cover"
             />
           </div>
-          <div className="w-full lg:w-[40%] xl:w-[30%]">
+          <div className="w-full lg:w-[30%] xl:w-[25%]">
             <div className="w-full lg:w-full flex flex-col gap-[1.5rem] text-[.9rem]">
               <p className="max-w-full">
                 Problem solver and a quick learner, and I bring value to any
@@ -141,7 +141,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="mt-[2rem]">
+            <div className="mt-[1.5rem]">
               <a href="#" className="uppercase text-[1.9rem]">
                 download resume
               </a>
