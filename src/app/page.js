@@ -111,7 +111,7 @@ const Home = () => {
               className={`${styles.aboutBlack} relative flex justify-between mb-[-1rem] w-full`}
             >
               <div
-                className={`max-w-[16rem] ml-3 xl:mb-[2rem] lg:mb-[3rem] text-justify text-[.8rem] font-neueMontreal`}
+                className={`max-w-[16rem] ml-3 xl:mb-[2rem] lg:mb-[3rem] text-justify text-[1rem] font-neueMontreal`}
               >
                 <p className="text-right">
                   I&apos;m Bello Taofeeqah, but you can call
