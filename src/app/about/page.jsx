@@ -237,6 +237,61 @@ const About = () => {
             </div>
           </div>
         </section>
+
+        {/* BLOGS SECTION */}
+
+        <section className="mt-[4rem] w-[95%] mx-auto text-[.9rem] lg:text-[.8rem]">
+          <div className="w-full h-[1px] bg-black mb-[2rem]"></div>
+
+          <div className="w-full flex flex-col gap-[1rem] lg:gap-0 lg:flex-row">
+            <p className="lg:w-[50%] uppercase mb-[1rem] lg:mb-0">blogs</p>
+
+            <div className="w-full lg:w-[50%] uppercase">
+              <div className="w-full flex justify-between border-b border-black py-[1rem] border-t lg:border-t-0">
+                <p className="w-[75%] lg:w-[33.3%]">
+                  Unlocking Your UI/UX Design Career with Free collated
+                  resources
+                </p>
+                <p className="w-[50%] max-w-[50%] lg:w-[33.3%] lg:max-w-[33.3%] hidden lg:block text-center">
+                  Oct 6, 2023
+                </p>
+                <p className="w-[20%] lg:w-[33.3%] text-right">read</p>
+              </div>
+
+              <div className="w-full flex justify-between border-b border-black py-[1rem]">
+                <p className="w-[75%] lg:w-[33.3%]">
+                  Code-Wizardry for Designers
+                </p>
+                <p className="w-[75%] lg:w-[33.3%] hidden lg:block text-center">
+                  Jul 22, 2023
+                </p>
+                <p className="w-[20%] lg:w-[33.3%] text-right">read</p>
+              </div>
+
+              <div className="w-full flex justify-between border-b border-black py-[1rem]">
+                <p className="w-[75%] lg:w-[33.3%]">
+                  Beyond style guides: Harnessing the true potential of design
+                  systems
+                </p>
+                <p className="w-[75%] lg:w-[33.3%] hidden lg:block text-center">
+                  Jul 16, 2023
+                </p>
+                <p className="w-[20%] lg:w-[33.3%] text-right">read</p>
+              </div>
+
+              <div className="w-full flex justify-between border-b border-black py-[1rem]">
+                <p className="w-[75%] lg:w-[33.3%]">
+                  Embracing Flexibility: The Evolving Role of UI Grids in Design
+                  and Development
+                </p>
+                <p className="w-[75%] lg:w-[33.3%] hidden lg:block text-center">
+                  Jul 16, 2023
+                </p>
+                <p className="w-[20%] lg:w-[33.3%] text-right">read</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );
