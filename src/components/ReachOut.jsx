@@ -5,7 +5,7 @@ import Link from "next/link";
 const ReachOut = () => {
   return (
     <>
-      <section className="mt-[4rem] font-ppEiko w-full text-[8vw] md:text-[7vw] lg:w-[85%] pl-[2rem] pr-[1.5rem] md:pr-0 flex flex-col">
+      <section className="mt-[6rem] lg:mt-[9rem] font-ppEiko w-full text-[8vw] md:text-[7vw] lg:w-[85%] pl-[2rem] pr-[1.5rem] md:pr-0 flex flex-col">
         <div
           className={`${styles.reachOut} relative w-[93%] lg:flex justify-end lg:justify-between hidden `}
         >
@@ -37,7 +37,7 @@ const ReachOut = () => {
         href="/contact"
         className="w-full flex justify-center items-center mt-10"
       >
-        <p className="text-[2rem] lg:text-[2.5rem] text-center font-neueMontreal uppercase leading-[1em]">
+        <p className="text-[2rem] lg:text-[2.5rem] text-center font-neueMontreal uppercase leading-[1em] mt-[3rem]">
           send me a <br /> message
         </p>
       </Link>

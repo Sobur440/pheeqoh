@@ -60,9 +60,9 @@ const Home = () => {
 
       {/* ABOUT SECTION */}
 
-      <section className="my-[3.5rem]">
+      <section className="my-[4rem]">
         <div
-          className={`max-w-[80%] md:max-w-[36rem] ml-3 mb-[2rem] text-justify text-[1.2rem] md:text-[3vw] lg:hidden font-neueMontreal`}
+          className={`max-w-[80%] md:max-w-[36rem] ml-3 mb-[1rem] text-justify text-[1.2rem] md:text-[3vw] lg:hidden font-neueMontreal`}
         >
           <p className="text-right">
             I&apos;m Bello Taofeeqah, but you can call
@@ -143,7 +143,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-end lg:justify-end gap-2 lg:gap-7 mt-[2rem] w-full mx-auto px-3 h-[30rem]">
+        <div className="flex flex-col lg:flex-row items-end lg:justify-end gap-2 lg:gap-7 mt-[2rem] w-full mx-auto px-3">
           <div className="lg:order-2 flex justify-end h-fit items-end pb-[.65rem]">
             <img
               src="/images/pheeqohfan.png"

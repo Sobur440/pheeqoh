@@ -67,7 +67,7 @@ const FeaturedWorks = ({ show }) => {
         href="/works"
         className={`${
           show ? "block" : "hidden"
-        } uppercase text-black text-center text-[2rem] lg:text-[3rem] leading-[.9em] self-center mt-10`}
+        } uppercase text-black text-center text-[2rem] lg:text-[3rem] leading-[.9em] self-center mt-[4rem] lg:mt-[5rem]`}
       >
         view all <span className="block">works</span>
       </Link>
