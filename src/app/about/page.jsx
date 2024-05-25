@@ -326,7 +326,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="uppercase font-ppEiko w-full lg:w-[97%] flex flex-col lg:flex-row lg:justify-end lg:gap-5 text-[12vw] lg:text-[6.5vw] order-1 lg:order-2 mt-[2rem] mb-[4rem] leading-[1em]">
+            <div className="uppercase font-ppEiko w-full lg:w-[97%] flex flex-col lg:flex-row lg:justify-end lg:gap-5 text-[12vw] lg:text-[6.5vw] order-1 lg:order-2 mt-[2rem] mb-[4rem] lg:mb-0 leading-[1em]">
               <p>
                 i enj
                 <div className="inline-block relative">
