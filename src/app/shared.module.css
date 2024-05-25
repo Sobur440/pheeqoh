@@ -119,6 +119,12 @@
   }
 }
 
+.aboutImg {
+  background: url("/images/resumepheeqoh.png");
+  background-size: cover;
+  background-position: center;
+}
+
 .idle {
   background: url("/images/speaking.png");
   background-position: center;

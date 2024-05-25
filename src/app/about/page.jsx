@@ -99,15 +99,11 @@ const About = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row lg:justify-end gap-2 lg:gap-7 mt-[4rem] w-full lg:h-[90vh] mx-auto px-3">
-          <div className="flex lg:w-[35%] lg:h-full">
-            <img
-              src="/images/resumepheeqoh.png"
-              alt="taofeeqoh image"
-              className="w-full lg:w-full object-cover"
-            />
-          </div>
-          <div className="w-full lg:w-[30%] xl:w-[25%]">
+        <div className="flex flex-col lg:flex-row lg:justify-end gap-2 lg:gap-7 mt-[4rem] w-full h-[65rem] md:h-[85rem] lg:h-[40rem] mx-auto px-3">
+          <div
+            className={`${styles.aboutImg} w-full lg:w-[30rem] h-full`}
+          ></div>
+          <div className="w-full lg:w-[40%] xl:w-[30%] 2xl:w-[25%] 3xl:w-[20%]">
             <div className="w-full lg:w-full flex flex-col gap-[1.5rem] text-[.9rem]">
               <p className="max-w-full">
                 Problem solver and a quick learner, and I bring value to any
