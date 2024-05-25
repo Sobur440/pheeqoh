@@ -46,7 +46,9 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-            <p className="uppercase text-[.8rem]">back to top</p>
+            <a href="#top" className="block uppercase text-[.8rem]">
+              back to top
+            </a>
           </div>
         </div>
 

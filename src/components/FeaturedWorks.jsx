@@ -2,10 +2,14 @@ import Link from "next/link";
 import React from "react";
 import styles from "../app/shared.module.css";
 
-const FeaturedWorks = () => {
+const FeaturedWorks = ({ show }) => {
   return (
     <section className="mt-10 text-white w-full flex flex-col">
-      <p className="text-black uppercase font-extrabold ml-3 mb-2 text-[.8rem]">
+      <p
+        className={`${
+          show ? "black" : "hidden"
+        } text-black uppercase font-extrabold ml-3 mb-2 text-[.8rem]`}
+      >
         featured works
       </p>
       <div
@@ -61,7 +65,9 @@ const FeaturedWorks = () => {
 
       <Link
         href="/works"
-        className="block uppercase text-black text-center text-[2rem] lg:text-[3rem] leading-[.9em] self-center mt-10"
+        className={`${
+          show ? "block" : "hidden"
+        } uppercase text-black text-center text-[2rem] lg:text-[3rem] leading-[.9em] self-center mt-10`}
       >
         view all <span className="block">works</span>
       </Link>

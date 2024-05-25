@@ -13,6 +13,7 @@ const Navbar = () => {
         navColour ? "absolute top-0 left-0 text-white" : ""
       } bg-transparent w-full h-[3.5rem]`}
     >
+      <div id="top" className="w-0 h-0"></div>
       <div className="flex justify-between items-center w-[95%] h-full bg-inherit mx-auto">
         <Link
           href="/"

@@ -6,10 +6,12 @@ import styles from "./shared.module.css";
 import Link from "next/link";
 import { NavColourContext } from "@/contexts/NavColourContext";
 import FeaturedWorks from "@/components/FeaturedWorks";
+import ReachOut from "@/components/ReachOut";
 
 const Home = () => {
   const { setNavColour } = useContext(NavColourContext);
   setNavColour(true);
+  const show = true;
 
   return (
     <>
@@ -58,7 +60,7 @@ const Home = () => {
 
       {/* ABOUT SECTION */}
 
-      <section className="mt-[3.5rem]">
+      <section className="my-[3.5rem]">
         <div
           className={`max-w-[80%] md:max-w-[36rem] ml-3 mb-[2rem] text-justify text-[1.2rem] md:text-[3vw] lg:hidden font-neueMontreal`}
         >
@@ -157,47 +159,11 @@ const Home = () => {
 
       {/* FEATURED WORKS SECTION */}
 
-      <FeaturedWorks />
+      <FeaturedWorks show={show} />
 
       {/* REACHOUT */}
 
-      <section className="mt-[4rem]  font-ppEiko w-full text-[8vw] md:text-[7vw] lg:w-[85%] pl-[2rem] pr-[1.5rem] md:pr-0 flex flex-col">
-        <div
-          className={`${styles.reachOut} relative w-[93%] lg:flex justify-end lg:justify-between hidden`}
-        >
-          <p className="font-neueMontreal max-w-[20rem] text-[.9rem] self-start xl:text-justify">
-            👋 I&apos;m actively looking for opportunities in product Design (UI
-            UX). I am open to working in roles that are remote, full time or
-            contract-based. Kindly reach out to me if you are building something
-            exciting.
-          </p>
-          <p>AVAILABLE</p>
-        </div>
-        <p className="lg:hidden text-[2.5vw] font-neueMontreal max-w-[70%] md:max-w-[33rem] mb-[2rem]">
-          👋 I&apos;m actively looking for opportunities in product Design (UI
-          UX). I am open to working in roles that are remote, full time or
-          contract-based. Kindly reach out to me if you are building something
-          exciting.
-        </p>
-        <div className="self-center text-[8.3vw] flex flex-col">
-          <p
-            className={`${styles.reachOut} relative w-[90%] lg:hidden text-right`}
-          >
-            AVAILABLE
-          </p>
-          <p className={`${styles.reachOut} relative w-fit`}>TO WORK, KINDLY</p>
-          <p className={`${styles.reachOut} relative w-fit`}>REACH OUT TO ME</p>
-        </div>
-      </section>
-
-      <Link
-        href="/contact"
-        className="w-full flex justify-center items-center mt-10"
-      >
-        <p className="text-[2rem] lg:text-[2.5rem] text-center font-neueMontreal uppercase leading-[1em]">
-          send me a <br /> message
-        </p>
-      </Link>
+      <ReachOut />
     </>
   );
 };
