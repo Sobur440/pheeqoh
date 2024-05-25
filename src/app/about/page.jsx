@@ -292,6 +292,66 @@ const About = () => {
             </div>
           </div>
         </section>
+
+        {/* PAINTING ENJOYMENT SECTION */}
+
+        <section className="mt-[8rem]">
+          <div className="w-[95%] mx-auto lg:h-[90vh] flex flex-col lg:flex-row justify-between">
+            <div className="w-full lg:w-[35%] h-full">
+              <img
+                src="/images/painting1.png"
+                alt="Painting"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            <div className="w-full lg:w-[65%] lg:h-full flex flex-col justify-between">
+              <div className="flex justify-between w-full lg:w-[90%] lg:self-end order-2 lg:order-1">
+                <p className="max-w-full lg:max-w-[65%]">
+                  {" "}
+                  I recently discovered a newfound love for painting! It&apos;s
+                  something I never thought I&apos;d be into, but the vibrant
+                  colors and expressive strokes have completely captured my
+                  heart. Art has this incredible way of revealing hidden
+                  passions, and I&apos;m thrilled to see where this creative
+                  adventure takes me!
+                </p>
+
+                <div className="w-[30%] hidden lg:block">
+                  <img
+                    src="/images/painting2.png"
+                    alt="another painting"
+                    className="w-full"
+                  />
+                  <p className="max-w-full mt-5">
+                    My recent painting shows a dreamy scene with a magical
+                    sakura tree under the moon, dropping its cherry blossoms.
+                    I&apos;m really happy with how it turned out because I
+                    didn&apos;t expect it to be this good.{" "}
+                  </p>
+                </div>
+              </div>
+
+              <div className="uppercase font-ppEiko w-full lg:w-[97%] flex flex-col lg:flex-row lg:justify-end lg:gap-5 text-[12vw] lg:text-[6.5vw] order-1 lg:order-2 mt-[2rem] mb-[4rem]">
+                <p>
+                  i enj
+                  <div className="inline-block relative">
+                    o
+                    <div className="absolute left-[10%] top-[35%]">
+                      <img
+                        src="/images/rose.png"
+                        alt="rose image"
+                        className="scale-[1.3]"
+                      />
+                    </div>
+                  </div>
+                  y
+                </p>
+                <p className="self-end lg:self-start">painting</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );
