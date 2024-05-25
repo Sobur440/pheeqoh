@@ -2,7 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element */
 import React, { useContext, useEffect } from "react";
-import styles from "../home.module.css";
+import styles from "../shared.module.css";
 import { NavColourContext } from "@/contexts/NavColourContext";
 import Head from "next/head";
 
@@ -18,7 +18,7 @@ const About = () => {
       <Head>
         <title>My page title</title>
       </Head>
-      <div className="mt-[15rem] w-full">
+      <div className="mt-[13rem] w-full">
         <p className="text-[14vw] lg:text-[12vw] uppercase font-ppEiko max-w-[95%] mx-auto">
           <span className="tracking-tighter">
             wh<span className="italic">o</span>
@@ -198,6 +198,42 @@ const About = () => {
                   May 10, 2022 → Aug 10, 2022
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* WHEN I'M NOT DESIGNING SECTION */}
+
+        <section className="mt-[7.5rem] text-white">
+          <div
+            className={`${styles.idle} w-full h-screen relative flex flex-col justify-end gap-[8rem] pb-[1.2rem]`}
+          >
+            <p className="uppercase lg:w-[50%] mx-auto text-[6vw] lg:text-[3.5vw] text-center font-ppEiko">
+              wh<span className="italic">e</span>n i&apos;m n
+              <span className="italic">o</span>t d
+              <span className="italic">e</span>signi
+              <span className="italic">n</span>g
+            </p>
+
+            <div className="w-full flex justify-center font-extralight text-[.9rem] lg:justify-between px-2">
+              <p className="hidden lg:block uppercase self-end">
+                &copy;host&copy;kbtc2023
+              </p>
+              <div className="w-[60%] lg:w-[25%] flex flex-col gap-[1rem]">
+                <p className="max-w-full">
+                  I create design-related articles to document my learning
+                  journey and share my knowledge, aiming to assist others in
+                  gaining valuable insights.
+                </p>
+                <p className="max-w-full">
+                  I serve as a public speaker, having delivered talks at
+                  numerous tech events and conferences on a diverse range of
+                  exciting topics. Additionally, I take on event hosting roles,
+                  not only to foster valuable networking opportunities but also
+                  to stay well-informed and updated.
+                </p>
+              </div>
+              <p className="hidden lg:block uppercase self-end">scroll down</p>
             </div>
           </div>
         </section>
