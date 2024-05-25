@@ -143,15 +143,18 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-end lg:justify-end gap-2 lg:gap-7 mt-[2rem] w-full mx-auto px-2">
-          <div className="lg:order-2 flex justify-end">
+        <div className="flex flex-col lg:flex-row items-end lg:justify-end gap-2 lg:gap-7 mt-[2rem] w-full mx-auto px-3 h-[30rem]">
+          <div className="lg:order-2 flex justify-end h-fit items-end pb-[.65rem]">
             <img
               src="/images/pheeqohfan.png"
               alt="taofeeqoh image holding a fan"
               className="w-[60%] md:w-[30rem] cover"
             />
           </div>
-          <Link href="/about" className="uppercase text-[1.9rem] lg:order-1">
+          <Link
+            href="/about"
+            className="flex uppercase text-[1.9rem] lg:order-1"
+          >
             know more
           </Link>
         </div>
