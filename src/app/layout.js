@@ -8,7 +8,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Pheeqah",
-  description: "Pheeqah",
+  description:
+    " I'm Bello Taofeeqah, but you can call me Pheeqoh. As an experienced Product/UX Designer, I excel in crafting strategic solutions that drive product success.",
 };
 
 export default function RootLayout({ children }) {
