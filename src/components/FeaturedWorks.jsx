@@ -8,7 +8,7 @@ const FeaturedWorks = ({ show }) => {
       <p
         className={`${
           show ? "black" : "hidden"
-        } text-black uppercase font-extrabold ml-3 mb-2 text-[.8rem]`}
+        } text-black uppercase font-extrabold ml-3 mb-[1rem] text-[.8rem]`}
       >
         featured works
       </p>
