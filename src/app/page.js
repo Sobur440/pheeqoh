@@ -62,7 +62,7 @@ const Home = () => {
 
       <section className="my-[4rem]">
         <div
-          className={`max-w-[80%] md:max-w-[36rem] ml-3 mb-[1rem] text-justify text-[.9rem] md:text-[3vw] lg:hidden font-neueMontreal`}
+          className={`max-w-[60%] md:max-w-[36rem] ml-3 mb-[3rem] text-justify text-[1rem] md:text-[3vw] lg:hidden font-neueMontreal`}
         >
           <p className="text-right">
             I&apos;m Bello Taofeeqah, but you can call

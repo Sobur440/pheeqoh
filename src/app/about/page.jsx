@@ -44,15 +44,15 @@ const About = () => {
             <p className="uppercase text-[.8rem] font-neueMontreal font-extralight">
               who i am
             </p>
-            <p>I call myself a</p>
+            <p className="text-[7.4vw]">I call myself a</p>
           </div>
 
           <div
-            className="w-full text-[7vw]"
+            className="w-full text-[7.4vw]"
             style={{ textAlignLast: "justify" }}
           >
             <p className={`${styles.aboutMobile} block w-full relative`}>
-              <span className="text-[7.5vw]">CHANGE MAKER because</span> I
+              <span className="text-[7.7vw]">CHANGE MAKER </span> because I
             </p>
             <p className={`${styles.aboutMobile} block w-full relative`}>
               bring your ideas to life. With a
@@ -84,9 +84,7 @@ const About = () => {
             </p>
             <p>
               I call myself a{" "}
-              <span className="text-[4vw] xl:text-[4.3vw]">
-                CHANGE MAKER because
-              </span>{" "}
+              <span className="text-[4vw] xl:text-[4.3vw]">CHANGE MAKER</span>{" "}
               because I bring
             </p>
           </div>

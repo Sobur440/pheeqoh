@@ -17,7 +17,7 @@ const ReachOut = () => {
           </p>
           <p className="text-[8.5vw]">AVAILABLE</p>
         </div>
-        <p className="lg:hidden text-[2.5vw] font-neueMontreal max-w-[70%] md:max-w-[33rem] mb-[2rem]">
+        <p className="lg:hidden text-[1rem] font-neueMontreal max-w-[70%] md:max-w-[33rem] mb-[2rem]">
           👋 I&apos;m actively looking for opportunities in product Design (UI
           UX). I am open to working in roles that are remote, full time or
           contract-based. Kindly reach out to me if you are building something
