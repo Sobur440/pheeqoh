@@ -52,7 +52,7 @@ const About = () => {
             style={{ textAlignLast: "justify" }}
           >
             <p className={`${styles.aboutMobile} block w-full relative`}>
-              CHANGE MAKER because I
+              <span className="text-[7.5vw]">CHANGE MAKER because</span> I
             </p>
             <p className={`${styles.aboutMobile} block w-full relative`}>
               bring your ideas to life. With a
@@ -75,14 +75,20 @@ const About = () => {
           </div>
         </div>
 
-        <div className="hidden font-editorialOld max-w-[98%] p-2 text-[3.8vw] xl:text-[3.9vw] text-justify mx-auto capitalize lg:flex flex-col flex-wrap gap-4 mt-5">
+        <div className="hidden font-editorialOld max-w-[98%] p-2 text-[3.7vw] xl:text-[3.9vw] text-justify mx-auto capitalize lg:flex flex-col flex-wrap gap-4 mt-5">
           <div
             className={`${styles.about} relative w-full flex justify-between mt-[3rem]`}
           >
             <p className="uppercase text-[.8rem] font-neueMontreal font-extralight">
               who i am
             </p>
-            <p>I call myself a CHANGE MAKER because I bring</p>
+            <p>
+              I call myself a{" "}
+              <span className="text-[4vw] xl:text-[4.3vw]">
+                CHANGE MAKER because
+              </span>{" "}
+              because I bring
+            </p>
           </div>
 
           <div className="leading-[1.8em]" style={{ textAlignLast: "justify" }}>

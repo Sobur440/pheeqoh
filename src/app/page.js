@@ -60,7 +60,7 @@ const Home = () => {
 
       {/* ABOUT SECTION */}
 
-      <section className="my-[4rem] mb-[5rem] md:mb-[10rem]">
+      <section className="my-[4rem]">
         <div
           className={`max-w-[80%] md:max-w-[36rem] ml-3 mb-[1rem] text-justify text-[.9rem] md:text-[3vw] lg:hidden font-neueMontreal`}
         >
@@ -143,7 +143,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-end lg:justify-end gap-2 lg:gap-7 mt-[2rem] w-full mx-auto px-3">
+        <div className="flex flex-col lg:flex-row items-end lg:justify-end gap-2 lg:gap-7 mt-[4rem] lg:mt-[2rem] w-full mx-auto px-3">
           <div className="lg:order-2 flex justify-end h-fit items-end pb-[.65rem]">
             <img
               src="/images/pheeqohfan.png"

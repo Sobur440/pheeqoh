@@ -23,7 +23,7 @@ const ReachOut = () => {
           contract-based. Kindly reach out to me if you are building something
           exciting.
         </p>
-        <div className="self-center text-[8.3vw] flex flex-col">
+        <div className="self-center text-[8.7vw] 2xs:text-[8.8vw] md:text-[8.3vw] flex flex-col">
           <p
             className={`${styles.reachOut} relative w-[90%] lg:hidden text-right`}
           >
