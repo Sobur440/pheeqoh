@@ -32,16 +32,32 @@ const Footer = () => {
                 </Link>
               </div>
               <div>
-                <a href="" className="block">
+                <a
+                  href="mailto:taofeeqahbello12@gmail.com"
+                  target="_blank"
+                  className="block"
+                >
                   email
                 </a>
-                <a href="" className="block">
+                <a
+                  href="https://twitter.com/PheeqohB"
+                  target="_blank"
+                  className="block"
+                >
                   twitter
                 </a>
-                <a href="" className="block">
+                <a
+                  href="https://www.linkedin.com/in/taofeeqahbello?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BHbCivzbDTECEtobOLIku0A%3D%3D "
+                  target="_blank"
+                  className="block"
+                >
                   linkedIn
                 </a>
-                <a href="" className="block">
+                <a
+                  href="https://www.instagram.com/taofeeqah_b?igsh=MXh1bXBjN2N1cWJ6OQ== "
+                  target="_blank"
+                  className="block"
+                >
                   instagram
                 </a>
               </div>
