@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useContext } from "react";
-import { NavColourContext } from "@/contexts/NavColourContext";
+import { NavColourContext } from "@/NavColourContext";
 
 const Navbar = () => {
   const { navColour } = useContext(NavColourContext);

@@ -4,7 +4,7 @@
 import React, { useContext } from "react";
 import styles from "./shared.module.css";
 import Link from "next/link";
-import { NavColourContext } from "@/contexts/NavColourContext";
+import { NavColourContext } from "@/NavColourContext";
 import FeaturedWorks from "@/components/FeaturedWorks";
 import ReachOut from "@/components/ReachOut";
 
