@@ -73,7 +73,7 @@
   position: absolute;
   background: black;
   left: 0;
-  bottom: 1.4vh;
+  bottom: 30%;
 }
 .aboutBlack::after {
   content: "";
@@ -103,7 +103,7 @@
     position: absolute;
     background: black;
     left: 0;
-    bottom: 2vh;
+    bottom: 20%;
   }
 }
 
@@ -115,7 +115,7 @@
     position: absolute;
     background: black;
     left: 0;
-    bottom: 2.5vh;
+    bottom: 20%;
   }
 }
 

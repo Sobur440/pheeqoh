@@ -26,7 +26,7 @@ const About = () => {
           a<span className="italic">m</span>
         </span>
       </p>
-      <div className="w-full h-screen -mt-[4%]">
+      <div className="w-full h-[20rem] md:h-screen -mt-[4%]">
         <img
           src="/images/aboutImg.png"
           alt="about pheeqoh"
@@ -85,7 +85,7 @@ const About = () => {
             <p>I call myself a CHANGE MAKER because I bring</p>
           </div>
 
-          <div style={{ textAlignLast: "justify" }}>
+          <div className="leading-[1.8em]" style={{ textAlignLast: "justify" }}>
             <p className={`${styles.about} block w-full relative`}>
               your ideas to life. With a deep passion for creating meaningful
             </p>
@@ -99,7 +99,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row lg:justify-end gap-2 lg:gap-7 mt-[4rem] w-full h-[65rem] md:h-[85rem] lg:h-[40rem] mx-auto px-3">
+        <div className="flex flex-col lg:flex-row lg:justify-end gap-2 lg:gap-7 mt-[4rem] w-full h-[70rem] md:h-[90rem] lg:h-[40rem] mx-auto px-3">
           <div
             className={`${styles.aboutImg} w-full lg:w-[30rem] h-full`}
           ></div>
@@ -286,7 +286,7 @@ const About = () => {
 
       {/* PAINTING ENJOYMENT SECTION */}
 
-      <section className="mt-[8rem]">
+      <section className="mt-[11rem] mb-[8rem]">
         <div className="w-[95%] mx-auto lg:h-[90vh] flex flex-col lg:flex-row justify-between">
           <div className="w-full lg:w-[35%] h-full">
             <img

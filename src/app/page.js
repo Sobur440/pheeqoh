@@ -20,7 +20,7 @@ const Home = () => {
       <section className={`${styles.hero} text-white w-full mx-auto pb-3`}>
         <div className="w-[95%] mx-auto h-full flex flex-col justify-end">
           <div className="w-full h-[55%] md:h-[70%] flex flex-col justify-between items-center mx-auto">
-            <div className="w-full font-ppEiko text-[18.3vw] md:text-[17vw] lg:text-[10vw] leading-[.8] lg:leading-none flex flex-col justify-end md:justify-start items-center ml-[1.3rem] md:ml-[3.6rem] lg:ml-0 h-[75%] gap-[2.5rem] md:gap-[3rem]">
+            <div className="w-full font-ppEiko text-[20vw] md:text-[17vw] lg:text-[10vw] leading-[.8] lg:leading-none flex flex-col justify-end md:justify-start items-center h-[75%] gap-[2.5rem] md:gap-[3rem]">
               <div className="w-full flex flex-col">
                 <div className="flex w-full mx-auto lg:justify-between">
                   <p className="uppercase">
@@ -37,12 +37,12 @@ const Home = () => {
                   <p className="self-center lg:self-start">
                     ta<span className="italic">o</span>
                   </p>
-                  <p>
+                  <p className="self-end lg:self-start">
                     (feeq<span className="italic">a</span>h)
                   </p>
                 </div>
               </div>
-              <p className="max-w-full md:max-w-[40rem] font-extralight font-neueMontreal lg:hidden text-[.8rem] md:text-[1rem] leading-[1.2em] tracking-[.13em]">
+              <p className="max-w-full md:max-w-[40rem] font-extralight font-neueMontreal lg:hidden text-[2.8vw] md:text-[1rem] leading-[1.2em] tracking-[.13em]">
                 Change-making Product/UX designer with 2 years experience in
                 fintech, SaaS, management, e-commerce, and blockchain.
               </p>
@@ -60,9 +60,9 @@ const Home = () => {
 
       {/* ABOUT SECTION */}
 
-      <section className="my-[4rem] mb-[11rem]">
+      <section className="my-[4rem] mb-[5rem] md:mb-[10rem]">
         <div
-          className={`max-w-[80%] md:max-w-[36rem] ml-3 mb-[1rem] text-justify text-[1.2rem] md:text-[3vw] lg:hidden font-neueMontreal`}
+          className={`max-w-[80%] md:max-w-[36rem] ml-3 mb-[1rem] text-justify text-[.9rem] md:text-[3vw] lg:hidden font-neueMontreal`}
         >
           <p className="text-right">
             I&apos;m Bello Taofeeqah, but you can call
@@ -70,12 +70,12 @@ const Home = () => {
           me Pheeqoh. As an experienced Product/UX Designer, I excel in crafting
           strategic solutions that drive product success.
         </div>
-        <div className="lg:hidden flex flex-col w-full mx-auto text-justify px-3 text-[5.8vw] font-editorialOld capitalize">
+        <div className="lg:hidden flex flex-col w-full mx-auto text-justify px-3 text-[8vw] font-editorialOld capitalize">
           <p className={`${styles.aboutMobile} relative w-full text-right`}>
             My skills encompass
           </p>
           <div
-            className="w-full text-[7vw]"
+            className="w-full text-[7.4vw] leading-[1.5em]"
             style={{ textAlignLast: "justify" }}
           >
             <p className={`${styles.aboutMobile} block w-full relative`}>
@@ -120,7 +120,7 @@ const Home = () => {
                 crafting strategic solutions that drive product success.
               </div>
 
-              <p className="inline-block text-right xl:mt-[1rem] lg:mt-[3.5rem]">
+              <p className="inline-block text-right xl:mt-[2rem] lg:mt-[4.5rem]">
                 My skills encompass extensive research,
               </p>
             </div>
@@ -130,12 +130,12 @@ const Home = () => {
                 interface design, and wireframing. I&apos;m dedicated to
                 continuous
               </p>
-              <span className={`${styles.about} block w-full relative`}>
+              <p className={`${styles.about} block w-full relative`}>
                 process improvement, sharing UX knowledge, and transforming
-              </span>
-              <span className={`${styles.about} block w-full relative`}>
+              </p>
+              <p className={`${styles.about} block w-full relative`}>
                 intricate business concepts into visually captivating, user-
-              </span>
+              </p>
               <p className={`${styles.about} block relative w-fit`}>
                 centric designs.
               </p>
