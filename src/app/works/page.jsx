@@ -15,7 +15,7 @@ const Works = () => {
 
   return (
     <div className="mt-[10rem] w-full">
-      <p className="uppercase text-[14vw] lg:text-[12vw] font-ppEiko ml-5 -mb-[13%] md:-mb-[7%] lg:-mb-[6%]">
+      <p className="uppercase text-[14vw] lg:text-[12vw] font-ppEiko ml-5 -mb-[3.5rem] md:-mb-[7%] lg:-mb-[6%]">
         w<span className="italic">o</span>rks
       </p>
       <FeaturedWorks show={show} />

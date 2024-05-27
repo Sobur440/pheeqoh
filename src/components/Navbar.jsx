@@ -18,7 +18,7 @@ const Navbar = () => {
       <ul
         className={`${
           hamburger ? "top-0 left-0" : "top-[-100vh] left-0"
-        } bg-black w-full h-screen absolute z-[99] text-[1.3rem] flex flex-col gap-[5rem] items-center pt-[1rem] transition-all duration-200`}
+        } bg-black text-white w-full h-screen absolute z-[99] text-[1.3rem] flex flex-col gap-[5rem] items-center pt-[1rem] transition-all duration-200`}
       >
         <li
           className="self-end mr-5 cursor-pointer"
@@ -26,23 +26,23 @@ const Navbar = () => {
         >
           close
         </li>
-        <li>
+        <li onClick={() => setHamburger(false)}>
           <Link className="uppercase font-extralight" href="/">
             home
           </Link>
         </li>
-        <li>
+        <li onClick={() => setHamburger(false)}>
           <Link className="uppercase font-extralight" href="/about">
             about
           </Link>
         </li>
 
-        <li>
+        <li onClick={() => setHamburger(false)}>
           <Link className="uppercase font-extralight" href="/works">
             works
           </Link>
         </li>
-        <li>
+        <li onClick={() => setHamburger(false)}>
           <Link className="uppercase font-extralight" href="/contact">
             contact
           </Link>
