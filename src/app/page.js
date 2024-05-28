@@ -4,12 +4,12 @@
 import React, { useContext } from "react";
 import styles from "./shared.module.css";
 import Link from "next/link";
-import { NavColourContext } from "@/NavColourContext";
+import { NavColourContext } from "@/contexts/NavColourContext";
 import FeaturedWorks from "@/components/FeaturedWorks";
 import ReachOut from "@/components/ReachOut";
 
 const Home = () => {
-  const { setNavColour } = useContext(NavColourContext);
+  const { setNavColour, heroRef } = useContext(NavColourContext);
   setNavColour(true);
   const show = true;
 
@@ -17,7 +17,10 @@ const Home = () => {
     <>
       {/* HERO SECTION */}
 
-      <section className={`${styles.hero} text-white w-full mx-auto pb-3`}>
+      <section
+        className={`${styles.hero} text-white w-full mx-auto pb-3`}
+        ref={heroRef}
+      >
         <div className="w-[95%] mx-auto h-full flex flex-col justify-end">
           <div className="w-full h-[55%] md:h-[70%] flex flex-col justify-between items-center mx-auto">
             <div className="w-full font-ppEiko text-[20vw] md:text-[17vw] lg:text-[10vw] leading-[.8] lg:leading-none flex flex-col justify-end md:justify-start items-center h-[75%] gap-[2.5rem] md:gap-[3rem]">

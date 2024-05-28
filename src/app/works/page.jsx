@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useContext, useEffect } from "react";
-import { NavColourContext } from "@/NavColourContext";
+import { NavColourContext } from "@/contexts/NavColourContext";
 import FeaturedWorks from "@/components/FeaturedWorks";
 import ReachOut from "@/components/ReachOut";
 

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useContext, useState } from "react";
-import { NavColourContext } from "@/NavColourContext";
+import { NavColourContext } from "@/contexts/NavColourContext";
 
 const Navbar = () => {
   const [hamburger, setHamburger] = useState(false);

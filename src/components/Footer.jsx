@@ -76,7 +76,7 @@ const Footer = () => {
             designed by
             <a
               target="_blank"
-              href="https://qoreeb.vercel.app"
+              href="https://www.linkedin.com/in/qoreebullah/"
               className="ml-1"
             >
               qoreeb

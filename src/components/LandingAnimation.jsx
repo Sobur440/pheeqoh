@@ -1,7 +1,9 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useRef } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { NavColourContext } from "@/contexts/NavColourContext";
 
 const LandingAnimation = () => {
   const progressBarRef = useRef();
@@ -9,11 +11,10 @@ const LandingAnimation = () => {
   const titleRef = useRef([]);
   const barsRef = useRef([]);
   const progressBarBorder = useRef();
+  const { heroRef } = useContext(NavColourContext);
   const title = ["p", "h", "e", "e", "q", "o", "h"];
 
-  console.log(titleRef.current);
-
-  useEffect(() => {
+  useGSAP(() => {
     const tl = gsap.timeline();
 
     tl.to(titleRef.current, {
@@ -24,8 +25,8 @@ const LandingAnimation = () => {
     })
       .to(progressBarRef.current, {
         width: "100%",
-        duration: 2,
-        ease: "power3.out",
+        duration: 5,
+        ease: "power2.out",
       })
       .to(titleRef.current, {
         y: -100,
@@ -44,21 +45,21 @@ const LandingAnimation = () => {
         "<0.7"
       )
       .to(barsRef.current, {
-        y: -100,
         opacity: 0,
         stagger: { amount: 1, from: "end" },
+        ease: "power2.out",
       })
       .set(overlayRef.current, {
         display: "none",
       });
-  }, []);
+  });
 
   return (
     <div className="w-full h-screen fixed z-[999]" ref={overlayRef}>
       {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((_, i) => (
         <div
           key={i}
-          className="w-full h-[10vh] bg-[#ECE8DC]"
+          className="w-full h-[10vh] bg-[#ECE8DC] flex flex-col justify-between"
           ref={(el) => (barsRef.current[i] = el)}
         ></div>
       ))}

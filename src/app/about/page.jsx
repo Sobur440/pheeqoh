@@ -3,7 +3,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useContext, useEffect } from "react";
 import styles from "../shared.module.css";
-import { NavColourContext } from "@/NavColourContext";
+import { NavColourContext } from "@/contexts/NavColourContext";
 import Head from "next/head";
 
 const About = () => {
