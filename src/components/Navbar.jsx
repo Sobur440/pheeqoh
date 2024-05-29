@@ -7,7 +7,7 @@ import { NavColourContext } from "@/contexts/NavColourContext";
 const Navbar = () => {
   const [hamburger, setHamburger] = useState(false);
 
-  const { navColour } = useContext(NavColourContext);
+  const { navColour, navRef } = useContext(NavColourContext);
 
   return (
     <nav
@@ -59,35 +59,46 @@ const Navbar = () => {
         </Link>
 
         <ul className="hidden w-full lg:flex justify-between">
-          <li>
-            <Link className="uppercase text-[.85rem] font-extralight" href="/">
+          <li className="overflow-y-hidden">
+            <Link
+              className="uppercase text-[.85rem] translate-y-[-100vh] block font-extralight"
+              ref={(el) => navRef.current.push(el)}
+              href="/"
+            >
               home
             </Link>
           </li>
-          <li>
+          <li className="overflow-y-hidden">
             <Link
-              className="uppercase text-[.85rem] font-extralight"
+              className="uppercase text-[.85rem] translate-y-[-100vh] block font-extralight"
+              ref={(el) => navRef.current.push(el)}
               href="/about"
             >
               about
             </Link>
           </li>
-          <li>
-            <Link className="uppercase text-[1.3rem] font-neueMachina" href="/">
+          <li className="overflow-y-hidden">
+            <Link
+              className="uppercase text-[1.3rem] translate-y-[-100vh] block font-neueMachina"
+              href="/"
+              ref={(el) => navRef.current.push(el)}
+            >
               pheeqoh
             </Link>
           </li>
-          <li>
+          <li className="overflow-y-hidden">
             <Link
-              className="uppercase text-[.85rem] font-extralight"
+              className="uppercase text-[.85rem] translate-y-[-100vh] block font-extralight"
+              ref={(el) => navRef.current.push(el)}
               href="/works"
             >
               works
             </Link>
           </li>
-          <li>
+          <li className="overflow-y-hidden">
             <Link
-              className="uppercase text-[.85rem] font-extralight"
+              className="uppercase text-[.85rem] translate-y-[-100vh] block font-extralight"
+              ref={(el) => navRef.current.push(el)}
               href="/contact"
             >
               contact

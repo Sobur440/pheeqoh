@@ -9,7 +9,7 @@ import FeaturedWorks from "@/components/FeaturedWorks";
 import ReachOut from "@/components/ReachOut";
 
 const Home = () => {
-  const { setNavColour, heroRef, nameContainerRef } =
+  const { setNavColour, heroRef, nameContainerRef, heroParagraphRef, navRef } =
     useContext(NavColourContext);
   setNavColour(true);
   const show = true;
@@ -32,7 +32,14 @@ const Home = () => {
                       be<span className="italic">l</span>lo
                     </p>
                   </div>
-                  <p className="hidden lg:block font-neueMontreal text-[1rem] leading-[1.4em] text-justify max-w-[25rem]">
+                  <p
+                    className="hidden lg:block font-neueMontreal text-[1rem] leading-[1.4em] text-justify max-w-[25rem]"
+                    ref={heroParagraphRef}
+                    style={{
+                      clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+                      transition: "1s ease-out",
+                    }}
+                  >
                     I&apos;m a change-making Product/UX designer with 2 years
                     experience in fintech, SaaS, management, e-commerce, and
                     blockchain. I&apos;m passionate about creating meaningful

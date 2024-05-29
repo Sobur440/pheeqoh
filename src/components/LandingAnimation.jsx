@@ -11,7 +11,8 @@ const LandingAnimation = () => {
   const titleRef = useRef([]);
   const barsRef = useRef([]);
   const progressBarBorder = useRef();
-  const { heroRef, nameContainerRef } = useContext(NavColourContext);
+  const { heroRef, nameContainerRef, heroParagraphRef, navRef } =
+    useContext(NavColourContext);
   const title = ["p", "h", "e", "e", "q", "o", "h"];
 
   useGSAP(() => {
@@ -54,11 +55,28 @@ const LandingAnimation = () => {
       })
       .to(heroRef.current, {
         y: 0,
-        stagger: { amount: 0.5 },
+        stagger: { amount: 0.3 },
       })
       .set(nameContainerRef.current, {
         overflow: "visible",
-      });
+      })
+      .to(
+        heroParagraphRef.current,
+        {
+          clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+        },
+        "-=0.7"
+      )
+      .to(
+        navRef.current,
+        {
+          y: 0,
+          stagger: { amount: 0.5, from: "center" },
+          ease: "power1.out",
+          duration: 3,
+        },
+        "-=2"
+      );
   });
 
   return (
