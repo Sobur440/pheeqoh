@@ -34,7 +34,7 @@ const Home = () => {
                   </div>
                   <p
                     className="hidden lg:block font-neueMontreal text-[1rem] leading-[1.4em] text-justify max-w-[25rem] translate-y-[100%]"
-                    ref={heroParagraphRef}
+                    ref={(el) => heroParagraphRef.current.push(el)}
                     style={{
                       clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
                       transition: "1s ease-out",
@@ -68,7 +68,7 @@ const Home = () => {
               </div>
               <p
                 className="max-w-full md:max-w-[40rem] font-extralight font-neueMontreal lg:hidden text-[2.8vw] md:text-[1rem] leading-[1.2em] tracking-[.13em] translate-y-[100%]"
-                ref={heroParagraphRef}
+                ref={(el) => heroParagraphRef.current.push(el)}
                 style={{
                   clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
                   transition: "1s ease-out",

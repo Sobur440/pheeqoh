@@ -77,7 +77,7 @@ const LandingAnimation = () => {
           ease: "power3.out",
           duration: 3,
         },
-        "-=2"
+        "-=1.8"
       );
   }, []);
 

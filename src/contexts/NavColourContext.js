@@ -8,7 +8,7 @@ const NavColourProvider = ({ children }) => {
   const [navColour, setNavColour] = useState(true);
   const heroRef = useRef([]);
   const nameContainerRef = useRef();
-  const heroParagraphRef = useRef();
+  const heroParagraphRef = useRef([]);
   const navRef = useRef([]);
 
   return (
