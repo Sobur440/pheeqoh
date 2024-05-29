@@ -55,7 +55,10 @@ const Home = () => {
                     ref={(el) => heroRef.current.push(el)}
                   >
                     <p className="self-center lg:self-start">
-                      ta<span className="italic">o</span>
+                      ta
+                      <span className="italic lg:mr-[1rem] -m-[.7rem] md:-ml-[1.2rem]">
+                        o
+                      </span>
                     </p>
                     <p className="self-end lg:self-start">
                       (feeq<span className="italic">a</span>h)
