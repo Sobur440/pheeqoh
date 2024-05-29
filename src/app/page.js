@@ -9,7 +9,8 @@ import FeaturedWorks from "@/components/FeaturedWorks";
 import ReachOut from "@/components/ReachOut";
 
 const Home = () => {
-  const { setNavColour, heroRef } = useContext(NavColourContext);
+  const { setNavColour, heroRef, nameContainerRef } =
+    useContext(NavColourContext);
   setNavColour(true);
   const show = true;
 
@@ -17,18 +18,20 @@ const Home = () => {
     <>
       {/* HERO SECTION */}
 
-      <section
-        className={`${styles.hero} text-white w-full mx-auto pb-3`}
-        ref={heroRef}
-      >
+      <section className={`${styles.hero} text-white w-full mx-auto pb-3`}>
         <div className="w-[95%] mx-auto h-full flex flex-col justify-end">
           <div className="w-full h-[55%] md:h-[70%] flex flex-col justify-between items-center mx-auto">
             <div className="w-full font-ppEiko text-[20vw] md:text-[17vw] lg:text-[10vw] leading-[.8] lg:leading-none flex flex-col justify-end md:justify-start items-center h-[75%] gap-[2.5rem] md:gap-[3rem]">
               <div className="w-full flex flex-col">
                 <div className="flex w-full mx-auto lg:justify-between">
-                  <p className="uppercase">
-                    be<span className="italic">l</span>lo
-                  </p>
+                  <div className="uppercase block overflow-y-hidden">
+                    <p
+                      className="translate-y-[100%]"
+                      ref={(el) => heroRef.current.push(el)}
+                    >
+                      be<span className="italic">l</span>lo
+                    </p>
+                  </div>
                   <p className="hidden lg:block font-neueMontreal text-[1rem] leading-[1.4em] text-justify max-w-[25rem]">
                     I&apos;m a change-making Product/UX designer with 2 years
                     experience in fintech, SaaS, management, e-commerce, and
@@ -36,13 +39,21 @@ const Home = () => {
                     experiences that address real-world problems.
                   </p>
                 </div>
-                <div className="flex flex-col lg:flex-row uppercase lg:self-end">
-                  <p className="self-center lg:self-start">
-                    ta<span className="italic">o</span>
-                  </p>
-                  <p className="self-end lg:self-start">
-                    (feeq<span className="italic">a</span>h)
-                  </p>
+                <div
+                  className="lg:self-end overflow-y-hidden"
+                  ref={nameContainerRef}
+                >
+                  <div
+                    className="flex flex-col lg:flex-row uppercase translate-y-[100%]"
+                    ref={(el) => heroRef.current.push(el)}
+                  >
+                    <p className="self-center lg:self-start">
+                      ta<span className="italic">o</span>
+                    </p>
+                    <p className="self-end lg:self-start">
+                      (feeq<span className="italic">a</span>h)
+                    </p>
+                  </div>
                 </div>
               </div>
               <p className="max-w-full md:max-w-[40rem] font-extralight font-neueMontreal lg:hidden text-[2.8vw] md:text-[1rem] leading-[1.2em] tracking-[.13em]">

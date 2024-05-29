@@ -11,6 +11,9 @@ export const metadata = {
   title: "Pheeqah",
   description:
     "I'm Bello Taofeeqah, but you can call me Pheeqoh. As an experienced Product/UX Designer, I excel in crafting strategic solutions that drive product success.",
+  icons: {
+    icon: "/images/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -11,7 +11,7 @@ const LandingAnimation = () => {
   const titleRef = useRef([]);
   const barsRef = useRef([]);
   const progressBarBorder = useRef();
-  const { heroRef } = useContext(NavColourContext);
+  const { heroRef, nameContainerRef } = useContext(NavColourContext);
   const title = ["p", "h", "e", "e", "q", "o", "h"];
 
   useGSAP(() => {
@@ -45,21 +45,28 @@ const LandingAnimation = () => {
         "<0.7"
       )
       .to(barsRef.current, {
-        opacity: 0,
+        scaleY: 0,
         stagger: { amount: 1, from: "end" },
-        ease: "power2.out",
+        duration: 1.5,
       })
       .set(overlayRef.current, {
         display: "none",
+      })
+      .to(heroRef.current, {
+        y: 0,
+        stagger: { amount: 0.5 },
+      })
+      .set(nameContainerRef.current, {
+        overflow: "visible",
       });
   });
 
   return (
     <div className="w-full h-screen fixed z-[999]" ref={overlayRef}>
-      {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((_, i) => (
+      {[0, 1, 2, 3, 4, 5].map((_, i) => (
         <div
           key={i}
-          className="w-full h-[10vh] bg-[#ECE8DC] flex flex-col justify-between"
+          className="w-full h-[20vh] bg-[#ECE8DC] flex flex-col justify-between origin-top"
           ref={(el) => (barsRef.current[i] = el)}
         ></div>
       ))}
