@@ -69,7 +69,7 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="w-full flex justify-center lg:justify-between text-[.8rem] bg-[green] overflow-y-hidden">
+            <div className="w-full flex justify-center lg:justify-between text-[.8rem] overflow-y-hidden">
               <p
                 className="uppercase hidden lg:block translate-y-[100%]"
                 ref={(el) => heroRef.current.push(el)}
