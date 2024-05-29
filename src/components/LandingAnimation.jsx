@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { NavColourContext } from "@/contexts/NavColourContext";
@@ -15,7 +15,7 @@ const LandingAnimation = () => {
     useContext(NavColourContext);
   const title = ["p", "h", "e", "e", "q", "o", "h"];
 
-  useGSAP(() => {
+  useEffect(() => {
     const tl = gsap.timeline();
 
     tl.to(titleRef.current, {
@@ -77,7 +77,7 @@ const LandingAnimation = () => {
         },
         "-=2"
       );
-  });
+  }, []);
 
   return (
     <div className="w-full h-screen fixed z-[999]" ref={overlayRef}>
