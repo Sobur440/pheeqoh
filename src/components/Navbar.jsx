@@ -53,7 +53,8 @@ const Navbar = () => {
       <div className="flex justify-between items-center w-[95%] h-full bg-inherit mx-auto">
         <Link
           href="/"
-          className="uppercase lg:hidden font-neueMachina text-[1.2rem]"
+          className="uppercase lg:hidden font-neueMachina translate-y-[-100vh] block text-[1.2rem]"
+          ref={(el) => navRef.current.push(el)}
         >
           pheeqoh
         </Link>
@@ -106,8 +107,9 @@ const Navbar = () => {
           </li>
         </ul>
         <div
-          className="uppercase lg:hidden cursor-pointer font-extralight text-[1.2rem]"
+          className="uppercase lg:hidden cursor-pointer font-extralight text-[1.2rem] translate-y-[-100vh] block"
           onClick={() => setHamburger(true)}
+          ref={(el) => navRef.current.push(el)}
         >
           menu
         </div>

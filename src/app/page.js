@@ -33,7 +33,7 @@ const Home = () => {
                     </p>
                   </div>
                   <p
-                    className="hidden lg:block font-neueMontreal text-[1rem] leading-[1.4em] text-justify max-w-[25rem]"
+                    className="hidden lg:block font-neueMontreal text-[1rem] leading-[1.4em] text-justify max-w-[25rem] translate-y-[100%]"
                     ref={heroParagraphRef}
                     style={{
                       clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
@@ -66,7 +66,14 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <p className="max-w-full md:max-w-[40rem] font-extralight font-neueMontreal lg:hidden text-[2.8vw] md:text-[1rem] leading-[1.2em] tracking-[.13em]">
+              <p
+                className="max-w-full md:max-w-[40rem] font-extralight font-neueMontreal lg:hidden text-[2.8vw] md:text-[1rem] leading-[1.2em] tracking-[.13em] translate-y-[100%]"
+                ref={heroParagraphRef}
+                style={{
+                  clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+                  transition: "1s ease-out",
+                }}
+              >
                 Change-making Product/UX designer with 2 years experience in
                 fintech, SaaS, management, e-commerce, and blockchain.
               </p>
@@ -79,7 +86,12 @@ const Home = () => {
               >
                 &copy;{new Date().getFullYear()} bello taofeeqah
               </p>
-              <p className="uppercase">scroll down</p>
+              <p
+                className="uppercase translate-y-[100%]"
+                ref={(el) => heroRef.current.push(el)}
+              >
+                scroll down
+              </p>
             </div>
           </div>
         </div>

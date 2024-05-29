@@ -64,6 +64,8 @@ const LandingAnimation = () => {
         heroParagraphRef.current,
         {
           clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+          y: 0,
+          ease: "power3.out",
         },
         "-=0.9"
       )
@@ -72,7 +74,7 @@ const LandingAnimation = () => {
         {
           y: 0,
           stagger: { amount: 0.5, from: "center" },
-          ease: "power1.out",
+          ease: "power3.out",
           duration: 3,
         },
         "-=2"
