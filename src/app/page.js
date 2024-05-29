@@ -1,18 +1,47 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import styles from "./shared.module.css";
 import Link from "next/link";
 import { NavColourContext } from "@/contexts/NavColourContext";
 import FeaturedWorks from "@/components/FeaturedWorks";
 import ReachOut from "@/components/ReachOut";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Home = () => {
-  const { setNavColour, heroRef, nameContainerRef, heroParagraphRef, navRef } =
+  const aboutRef = useRef([]);
+  const aboutContainerRef = useRef();
+  const aboutLineRef = useRef();
+  const { setNavColour, heroRef, nameContainerRef, heroParagraphRef } =
     useContext(NavColourContext);
   setNavColour(true);
   const show = true;
+
+  useEffect(() => {
+    const aboutObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap
+              .timeline()
+              .to(aboutRef.current, {
+                y: 0,
+                ease: "power3.out",
+              })
+              .to(`.${styles.about}`, {
+                width: "100%",
+                stagger: { amount: 1 },
+                ease: "power3.out",
+              });
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    aboutObserver.observe(aboutContainerRef.current);
+  }, []);
 
   return (
     <>
@@ -99,7 +128,7 @@ const Home = () => {
 
       {/* ABOUT SECTION */}
 
-      <section className="my-[4rem]">
+      <section className="my-[4rem]" ref={aboutContainerRef}>
         <div
           className={`max-w-[60%] md:max-w-[36rem] ml-3 mb-[3rem] text-justify text-[1rem] md:text-[3vw] lg:hidden font-neueMontreal`}
         >
@@ -165,19 +194,43 @@ const Home = () => {
             </div>
 
             <div style={{ textAlignLast: "justify" }}>
-              <p className={`${styles.about} block w-full relative`}>
-                interface design, and wireframing. I&apos;m dedicated to
-                continuous
-              </p>
-              <p className={`${styles.about} block w-full relative`}>
-                process improvement, sharing UX knowledge, and transforming
-              </p>
-              <p className={`${styles.about} block w-full relative`}>
-                intricate business concepts into visually captivating, user-
-              </p>
-              <p className={`${styles.about} block relative w-fit`}>
-                centric designs.
-              </p>
+              <div className={`block w-full relative overflow-y-hidden`}>
+                <p
+                  className="translate-y-[100%]"
+                  ref={(el) => aboutRef.current.push(el)}
+                >
+                  interface design, and wireframing. I&apos;m dedicated to
+                  continuous
+                </p>
+                <div className={`${styles.about}`}></div>
+              </div>
+              <div className={`block w-full relative overflow-y-hidden`}>
+                <p
+                  className="translate-y-[100%]"
+                  ref={(el) => aboutRef.current.push(el)}
+                >
+                  process improvement, sharing UX knowledge, and transforming
+                </p>
+                <div className={`${styles.about}`}></div>
+              </div>
+              <div className={`block w-full relative overflow-y-hidden`}>
+                <p
+                  className="translate-y-[100%]"
+                  ref={(el) => aboutRef.current.push(el)}
+                >
+                  intricate business concepts into visually captivating, user-
+                </p>
+                <div className={`${styles.about}`}></div>
+              </div>
+              <div className={`block relative w-fit overflow-y-hidden`}>
+                <p
+                  className="translate-y-[100%]"
+                  ref={(el) => aboutRef.current.push(el)}
+                >
+                  centric designs.
+                </p>
+                <div className={`${styles.about}`}></div>
+              </div>
             </div>
           </div>
         </div>

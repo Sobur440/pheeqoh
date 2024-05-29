@@ -15,7 +15,9 @@ const LandingAnimation = () => {
     useContext(NavColourContext);
   const title = ["p", "h", "e", "e", "q", "o", "h"];
 
-  useEffect(() => {
+  console.log(heroRef);
+
+  useGSAP(() => {
     const tl = gsap.timeline();
 
     tl.to(titleRef.current, {
@@ -79,7 +81,7 @@ const LandingAnimation = () => {
         },
         "-=1.8"
       );
-  }, []);
+  });
 
   return (
     <div className="w-full h-screen fixed z-[999]" ref={overlayRef}>
