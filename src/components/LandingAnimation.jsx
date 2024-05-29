@@ -65,7 +65,7 @@ const LandingAnimation = () => {
         {
           clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
         },
-        "-=0.7"
+        "-=0.9"
       )
       .to(
         navRef.current,

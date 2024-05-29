@@ -69,8 +69,11 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="w-full flex justify-center lg:justify-between text-[.8rem]">
-              <p className="uppercase hidden lg:block">
+            <div className="w-full flex justify-center lg:justify-between text-[.8rem] bg-[green] overflow-y-hidden">
+              <p
+                className="uppercase hidden lg:block translate-y-[100%]"
+                ref={(el) => heroRef.current.push(el)}
+              >
                 &copy;{new Date().getFullYear()} bello taofeeqah
               </p>
               <p className="uppercase">scroll down</p>
