@@ -28,12 +28,14 @@ const Home = () => {
               .timeline()
               .to(aboutRef.current, {
                 y: 0,
+                stagger: { amount: 0.3 },
                 ease: "power3.out",
               })
-              .to(`.${styles.about}`, {
+              .to(`.${styles.about}, .${styles.aboutBlack}`, {
                 width: "100%",
-                stagger: { amount: 1 },
+                stagger: { amount: 0.5 },
                 ease: "power3.out",
+                duration: 2,
               });
           }
         });
@@ -175,9 +177,7 @@ const Home = () => {
 
         <div>
           <div className="hidden font-editorialOld max-w-[98%] p-2 text-[3.8vw] xl:text-[3.9vw] text-justify mx-auto capitalize lg:flex flex-col flex-wrap gap-4">
-            <div
-              className={`${styles.aboutBlack} relative flex justify-between mb-[-1rem] w-full`}
-            >
+            <div className={`relative flex justify-between mb-[-1rem] w-full`}>
               <div
                 className={`max-w-[20rem] ml-3 xl:mb-[2rem] lg:mb-[3rem] text-justify text-[1rem] font-neueMontreal`}
               >
@@ -188,9 +188,16 @@ const Home = () => {
                 crafting strategic solutions that drive product success.
               </div>
 
-              <p className="inline-block text-right xl:mt-[2rem] lg:mt-[4.5rem]">
-                My skills encompass extensive research,
-              </p>
+              <div className="inline-block overflow-y-hidden text-right xl:mt-[2rem] lg:mt-[4.5rem]">
+                <p
+                  className="translate-y-[100%]"
+                  ref={(el) => aboutRef.current.push(el)}
+                >
+                  My skills encompass extensive research,
+                </p>
+              </div>
+
+              <div className={`${styles.aboutBlack}`}></div>
             </div>
 
             <div style={{ textAlignLast: "justify" }}>

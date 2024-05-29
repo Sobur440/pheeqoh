@@ -74,9 +74,8 @@
   left: 0;
   bottom: 30%;
 }
-.aboutBlack::after {
-  content: "";
-  width: 100%;
+.aboutBlack {
+  width: 0;
   height: 2px;
   position: absolute;
   background: black;
