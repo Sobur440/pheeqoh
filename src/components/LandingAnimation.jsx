@@ -17,7 +17,7 @@ const LandingAnimation = () => {
 
   console.log(heroRef);
 
-  useGSAP(() => {
+  useEffect(() => {
     const tl = gsap.timeline();
 
     tl.to(titleRef.current, {
@@ -81,7 +81,7 @@ const LandingAnimation = () => {
         },
         "-=1.8"
       );
-  });
+  }, []);
 
   return (
     <div className="w-full h-screen fixed z-[999]" ref={overlayRef}>
