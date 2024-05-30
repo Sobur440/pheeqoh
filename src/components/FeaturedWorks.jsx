@@ -4,28 +4,54 @@ import styles from "../app/shared.module.css";
 import gsap from "gsap";
 
 const FeaturedWorks = ({ show }) => {
-  const worksRef = useRef([]);
-  const worksConRef = useRef([]);
+  const firstWorkRef = useRef();
+  const secWorkRef = useRef();
+  const thirdWorkRef = useRef();
+  const workCon1Ref = useRef();
+  const workCon2Ref = useRef();
+  const workCon3Ref = useRef();
 
-  const worksObserver = new IntersectionObserver(
+  const worksObserver1 = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        worksRef.current.forEach((work) => {
-          if (entry.isIntersecting) {
-            gsap.to(work, {
-              clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
-            });
-          }
-        });
+        if (entry.isIntersecting) {
+          gsap.to(firstWorkRef.current, {
+            clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+          });
+        }
       });
     },
-    { threshold: 0.8 }
+    { threshold: 0.5 }
+  );
+  const worksObserver2 = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          gsap.to(secWorkRef.current, {
+            clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+          });
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+  const worksObserver3 = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          gsap.to(thirdWorkRef.current, {
+            clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+          });
+        }
+      });
+    },
+    { threshold: 0.5 }
   );
 
   useEffect(() => {
-    worksConRef.current.forEach((workCon) => {
-      worksObserver.observe(workCon);
-    });
+    worksObserver1.observe(workCon1Ref.current);
+    worksObserver2.observe(workCon2Ref.current);
+    worksObserver3.observe(workCon3Ref.current);
   }, []);
 
   return (
@@ -40,15 +66,15 @@ const FeaturedWorks = ({ show }) => {
 
       <div
         className="w-full h-[20rem] md:h-[30rem] lg:h-screen"
-        ref={(el) => worksConRef.current.push(el)}
+        ref={workCon1Ref}
       >
         <div
           className={`h-full relative flex items-end lg:items-center ${styles.pos}`}
           style={{
-            clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+            clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
             transition: "1s ease-out",
           }}
-          ref={(el) => worksRef.current.push(el)}
+          ref={firstWorkRef}
         >
           <div className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0">
             <p className="text-[1rem] md:text-[1.2rem]">SeamlessPOS</p>
@@ -66,7 +92,7 @@ const FeaturedWorks = ({ show }) => {
 
       <div
         className="w-full h-[20rem] md:h-[30rem] lg:h-screen my-4 lg:my-0"
-        ref={(el) => worksConRef.current.push(el)}
+        ref={workCon2Ref}
       >
         <div
           className={`h-full relative flex items-end lg:items-center ${styles.eohs}`}
@@ -74,7 +100,7 @@ const FeaturedWorks = ({ show }) => {
             clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
             transition: "1s ease-out",
           }}
-          ref={(el) => worksRef.current.push(el)}
+          ref={secWorkRef}
         >
           <div className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0">
             <p className="text-[1rem] md:text-[1.2rem]">EOHS</p>
@@ -94,7 +120,7 @@ const FeaturedWorks = ({ show }) => {
 
       <div
         className="w-full h-[20rem] md:h-[30rem] lg:h-screen"
-        ref={(el) => worksConRef.current.push(el)}
+        ref={workCon3Ref}
       >
         <div
           className={`h-full relative flex items-end lg:items-center ${styles.insta}`}
@@ -102,7 +128,7 @@ const FeaturedWorks = ({ show }) => {
             clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
             transition: "1s ease-out",
           }}
-          ref={(el) => worksRef.current.push(el)}
+          ref={thirdWorkRef}
         >
           <div className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0">
             <p className="text-[1rem] lg:max-w-[7rem]">
