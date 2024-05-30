@@ -4,6 +4,7 @@ import styles from "../app/shared.module.css";
 import gsap from "gsap";
 
 const FeaturedWorks = ({ show }) => {
+  const worksTitleRef = useRef();
   const firstWorkRef = useRef();
   const secWorkRef = useRef();
   const thirdWorkRef = useRef();
@@ -15,13 +16,19 @@ const FeaturedWorks = ({ show }) => {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          gsap.to(firstWorkRef.current, {
-            clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
-          });
+          gsap
+            .timeline()
+            .to(worksTitleRef.current, {
+              opacity: 1,
+              y: 0,
+            })
+            .to(firstWorkRef.current, {
+              clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+            });
         }
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0.3 }
   );
   const worksObserver2 = new IntersectionObserver(
     (entries) => {
@@ -59,7 +66,8 @@ const FeaturedWorks = ({ show }) => {
       <p
         className={`${
           show ? "black" : "hidden"
-        } text-black uppercase font-extrabold ml-3 mb-[1rem] text-[.8rem]`}
+        } text-black uppercase font-extrabold ml-3 mb-[1rem] text-[.8rem] opacity-0 translate-y-[100px]`}
+        ref={worksTitleRef}
       >
         featured works
       </p>
@@ -72,7 +80,7 @@ const FeaturedWorks = ({ show }) => {
           className={`h-full relative flex items-end lg:items-center ${styles.pos}`}
           style={{
             clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
-            transition: "1s ease-out",
+            transition: ".5s ease-out",
           }}
           ref={firstWorkRef}
         >
@@ -98,7 +106,7 @@ const FeaturedWorks = ({ show }) => {
           className={`h-full relative flex items-end lg:items-center ${styles.eohs}`}
           style={{
             clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
-            transition: "1s ease-out",
+            transition: ".5s ease-out",
           }}
           ref={secWorkRef}
         >
@@ -126,7 +134,7 @@ const FeaturedWorks = ({ show }) => {
           className={`h-full relative flex items-end lg:items-center ${styles.insta}`}
           style={{
             clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
-            transition: "1s ease-out",
+            transition: ".5s ease-out",
           }}
           ref={thirdWorkRef}
         >
