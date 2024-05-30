@@ -31,6 +31,7 @@ const Home = () => {
                 y: 0,
                 stagger: { amount: 0.3 },
                 ease: "power3.out",
+                opacity: 1,
               })
               .to(
                 `.${styles.about}, .${styles.aboutBlack}, .${styles.aboutMobile}`,
@@ -252,7 +253,8 @@ const Home = () => {
           <div className="hidden font-editorialOld max-w-[98%] p-2 text-[3.8vw] xl:text-[3.9vw] text-justify mx-auto capitalize lg:flex flex-col flex-wrap gap-4">
             <div className={`relative flex justify-between mb-[-1rem] w-full`}>
               <div
-                className={`max-w-[20rem] ml-3 xl:mb-[2rem] lg:mb-[3rem] text-justify text-[1rem] font-neueMontreal`}
+                className={`max-w-[20rem] ml-3 xl:mb-[2rem] lg:mb-[3rem] text-justify text-[1rem] font-neueMontreal translate-y-[200px] opacity-0`}
+                ref={(el) => aboutRef.current.push(el)}
               >
                 <p className="text-right">
                   I&apos;m Bello Taofeeqah, but you can call

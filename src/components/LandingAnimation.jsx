@@ -58,7 +58,7 @@ const LandingAnimation = () => {
       })
       .to(heroRef.current, {
         y: 0,
-        stagger: { amount: 0.3 },
+        stagger: { amount: 1 },
         duration: 1,
         ease: "power3.out",
       })
@@ -72,7 +72,7 @@ const LandingAnimation = () => {
           y: 0,
           ease: "power3.out",
         },
-        "-=0.9"
+        "-=2.5"
       )
       .to(
         navRef.current,
@@ -80,9 +80,9 @@ const LandingAnimation = () => {
           y: 0,
           stagger: { amount: 0.5, from: "center" },
           ease: "power3.out",
-          duration: 3,
+          duration: 2,
         },
-        "-=1.8"
+        "-=2.2"
       );
   }, []);
 
