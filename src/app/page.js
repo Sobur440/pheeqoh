@@ -8,12 +8,13 @@ import { NavColourContext } from "@/contexts/NavColourContext";
 import FeaturedWorks from "@/components/FeaturedWorks";
 import ReachOut from "@/components/ReachOut";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 
 const Home = () => {
   const aboutRef = useRef([]);
   const aboutContainerRef = useRef();
   const aboutLineRef = useRef();
+  const aboutImgRef = useRef();
+  const knowMoreRef = useRef();
   const { setNavColour, heroRef, nameContainerRef, heroParagraphRef } =
     useContext(NavColourContext);
   setNavColour(true);
@@ -31,16 +32,34 @@ const Home = () => {
                 stagger: { amount: 0.3 },
                 ease: "power3.out",
               })
-              .to(`.${styles.about}, .${styles.aboutBlack}`, {
-                width: "100%",
-                stagger: { amount: 0.5 },
-                ease: "power3.out",
-                duration: 2,
-              });
+              .to(
+                `.${styles.about}, .${styles.aboutBlack}, .${styles.aboutMobile}`,
+                {
+                  width: "100%",
+                  stagger: { amount: 0.5 },
+                  ease: "power3.out",
+                  duration: 1,
+                },
+                "-=0.3"
+              )
+              .to(knowMoreRef.current, {
+                opacity: 1,
+              })
+              .to(
+                aboutImgRef.current,
+                {
+                  y: 0,
+                  opacity: 1,
+                  ease: "power3.out",
+                  duration: 1,
+                  stagger: { amount: 0.5 },
+                },
+                "-=0.6"
+              );
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.7 }
     );
     aboutObserver.observe(aboutContainerRef.current);
   }, []);
@@ -141,38 +160,92 @@ const Home = () => {
           strategic solutions that drive product success.
         </div>
         <div className="lg:hidden flex flex-col w-full mx-auto text-justify px-3 text-[8vw] font-editorialOld capitalize">
-          <p className={`${styles.aboutMobile} relative w-full text-right`}>
-            My skills encompass
-          </p>
+          <div className={`relative w-full text-right overflow-y-hidden`}>
+            <p
+              className="translate-y-[100%]"
+              ref={(el) => aboutRef.current.push(el)}
+            >
+              My skills encompass
+            </p>
+            <div className={`${styles.aboutMobile}`}></div>
+          </div>
           <div
             className="w-full text-[7.4vw] leading-[1.5em]"
             style={{ textAlignLast: "justify" }}
           >
-            <p className={`${styles.aboutMobile} block w-full relative`}>
-              extensive research, interface
-            </p>
-            <p className={`${styles.aboutMobile} block w-full relative`}>
-              design, and wireframing. I&apos;m
-            </p>
-            <p className={`${styles.aboutMobile} block w-full relative`}>
-              dedicated to continuous process
-            </p>
-            <p className={`${styles.aboutMobile} block w-full relative`}>
-              improvement, sharing UX
-            </p>{" "}
-            <p className={`${styles.aboutMobile} block w-full relative`}>
-              knowledge, and transforming
-            </p>
-            <p className={`${styles.aboutMobile} block w-full relative`}>
-              intricate business concepts into
-            </p>
-            <p className={`${styles.aboutMobile} block w-full relative`}>
-              visually captivating, user-
-            </p>
+            <div className={`block w-full relative overflow-y-hidden`}>
+              <p
+                className="translate-y-[100%]"
+                ref={(el) => aboutRef.current.push(el)}
+              >
+                extensive research, interface
+              </p>
+              <div className={`${styles.aboutMobile}`}></div>
+            </div>
+            <div className={`block w-full relative overflow-y-hidden`}>
+              <p
+                className="translate-y-[100%]"
+                ref={(el) => aboutRef.current.push(el)}
+              >
+                design, and wireframing. I&apos;m
+              </p>
+              <div className={`${styles.aboutMobile}`}></div>
+            </div>
+            <div className={`block w-full relative overflow-y-hidden`}>
+              <p
+                className="translate-y-[100%]"
+                ref={(el) => aboutRef.current.push(el)}
+              >
+                dedicated to continuous process
+              </p>
+              <div className={`${styles.aboutMobile}`}></div>
+            </div>
+            <div className={`block w-full relative overflow-y-hidden`}>
+              <p
+                className="translate-y-[100%]"
+                ref={(el) => aboutRef.current.push(el)}
+              >
+                improvement, sharing UX
+              </p>
+              <div className={`${styles.aboutMobile}`}></div>
+            </div>{" "}
+            <div className={`block w-full relative overflow-y-hidden`}>
+              <p
+                className="translate-y-[100%]"
+                ref={(el) => aboutRef.current.push(el)}
+              >
+                knowledge, and transforming
+              </p>
+              <div className={`${styles.aboutMobile}`}></div>
+            </div>
+            <div className={`block w-full relative overflow-y-hidden`}>
+              <p
+                className="translate-y-[100%]"
+                ref={(el) => aboutRef.current.push(el)}
+              >
+                intricate business concepts into
+              </p>
+              <div className={`${styles.aboutMobile}`}></div>
+            </div>
+            <div className={`block w-full relative overflow-y-hidden`}>
+              <p
+                className="translate-y-[100%]"
+                ref={(el) => aboutRef.current.push(el)}
+              >
+                visually captivating, user-
+              </p>
+              <div className={`${styles.aboutMobile}`}></div>
+            </div>
           </div>
-          <p className={`${styles.aboutMobile} w-fit relative`}>
-            centric designs.
-          </p>
+          <div className={`w-fit relative`}>
+            <p
+              className="translate-y-[100%]"
+              ref={(el) => aboutRef.current.push(el)}
+            >
+              centric designs.
+            </p>
+            <div className={`${styles.aboutMobile}`}></div>
+          </div>
         </div>
 
         <div>
@@ -242,8 +315,11 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-end lg:justify-end gap-2 lg:gap-7 mt-[4rem] lg:mt-[2rem] w-full mx-auto px-3">
-          <div className="lg:order-2 flex justify-end h-fit items-end pb-[.65rem]">
+        <div className="flex flex-col lg:flex-row items-end lg:justify-end gap-2 lg:gap-7 mt-[4rem] lg:mt-[2rem] w-full mx-auto px-3 overflow-y-hidden">
+          <div
+            className="lg:order-2 flex justify-end h-fit items-end pb-[.65rem] translate-y-[100%] opacity-0"
+            ref={aboutImgRef}
+          >
             <img
               src="/images/pheeqohfan.png"
               alt="taofeeqoh image holding a fan"
@@ -252,7 +328,8 @@ const Home = () => {
           </div>
           <Link
             href="/about"
-            className="flex uppercase text-[1.9rem] lg:order-1"
+            className="flex uppercase text-[1.9rem] lg:order-1 opacity-0"
+            ref={knowMoreRef}
           >
             know more
           </Link>
