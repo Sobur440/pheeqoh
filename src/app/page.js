@@ -15,6 +15,7 @@ const Home = () => {
   const aboutLineRef = useRef();
   const aboutImgRef = useRef();
   const knowMoreRef = useRef();
+  const imgConRef = useRef();
   const { setNavColour, heroRef, nameContainerRef, heroParagraphRef } =
     useContext(NavColourContext);
   setNavColour(true);
@@ -42,7 +43,20 @@ const Home = () => {
                   duration: 1,
                 },
                 "-=0.3"
-              )
+              );
+          }
+        });
+      },
+      { threshold: 0.7 }
+    );
+    aboutObserver.observe(aboutContainerRef.current);
+
+    const aboutImgObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap
+              .timeline()
               .to(knowMoreRef.current, {
                 opacity: 1,
               })
@@ -60,9 +74,10 @@ const Home = () => {
           }
         });
       },
-      { threshold: 0.7 }
+      { threshold: 1 }
     );
-    aboutObserver.observe(aboutContainerRef.current);
+
+    aboutImgObserver.observe(imgConRef.current);
   }, []);
 
   return (
@@ -318,7 +333,10 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-end lg:justify-end gap-2 lg:gap-7 mt-[4rem] lg:mt-[2rem] w-full mx-auto px-3 overflow-y-hidden">
+        <div
+          className="flex flex-col lg:flex-row items-end lg:justify-end gap-2 lg:gap-7 mt-[4rem] lg:mt-[2rem] w-full mx-auto px-3 overflow-y-hidden"
+          ref={imgConRef}
+        >
           <div
             className="lg:order-2 flex justify-end h-fit items-end pb-[.65rem] translate-y-[100%] opacity-0"
             ref={aboutImgRef}
