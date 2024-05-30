@@ -51,6 +51,7 @@ const LandingAnimation = () => {
         scaleY: 0,
         stagger: { amount: 1, from: "end" },
         duration: 1.5,
+        ease: "power3.out",
       })
       .set(overlayRef.current, {
         display: "none",
@@ -58,6 +59,8 @@ const LandingAnimation = () => {
       .to(heroRef.current, {
         y: 0,
         stagger: { amount: 0.3 },
+        duration: 1,
+        ease: "power3.out",
       })
       .set(nameContainerRef.current, {
         overflow: "visible",
