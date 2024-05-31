@@ -16,12 +16,43 @@ const Home = () => {
   const aboutImgRef = useRef();
   const knowMoreRef = useRef();
   const imgConRef = useRef();
-  const { setNavColour, heroRef, nameContainerRef, heroParagraphRef } =
+  const { setNavColour, heroRef, nameContainerRef, heroParagraphRef, navRef } =
     useContext(NavColourContext);
   setNavColour(true);
   const show = true;
 
   useEffect(() => {
+    // gsap
+    //   .timeline()
+    //   .to(heroRef.current, {
+    //     y: 0,
+    //     stagger: { amount: 1 },
+    //     duration: 1,
+    //     ease: "power3.out",
+    //   })
+    //   .set(nameContainerRef.current, {
+    //     overflow: "visible",
+    //   })
+    //   .to(
+    //     heroParagraphRef.current,
+    //     {
+    //       clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+    //       y: 0,
+    //       ease: "power3.out",
+    //     },
+    //     "-=2.5"
+    //   )
+    //   .to(
+    //     navRef.current,
+    //     {
+    //       y: 0,
+    //       stagger: { amount: 0.5, from: "center" },
+    //       ease: "power3.out",
+    //       duration: 2,
+    //     },
+    //     "-=2.2"
+    //   );
+
     const aboutObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -47,7 +78,7 @@ const Home = () => {
           }
         });
       },
-      { threshold: 0.7 }
+      { threshold: 0.3 }
     );
     aboutObserver.observe(aboutContainerRef.current);
 

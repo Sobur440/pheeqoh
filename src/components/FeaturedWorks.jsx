@@ -41,7 +41,7 @@ const FeaturedWorks = ({ show }) => {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
     const worksObserver3 = new IntersectionObserver(
       (entries) => {
@@ -53,7 +53,7 @@ const FeaturedWorks = ({ show }) => {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
     worksObserver1.observe(workCon1Ref.current);
