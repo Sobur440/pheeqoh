@@ -11,6 +11,7 @@ const FeaturedWorks = ({ show }) => {
   const workCon1Ref = useRef();
   const workCon2Ref = useRef();
   const workCon3Ref = useRef();
+  const viewAllWorksRef = useRef();
 
   useEffect(() => {
     const worksObserver1 = new IntersectionObserver(
@@ -23,9 +24,14 @@ const FeaturedWorks = ({ show }) => {
                 opacity: 1,
                 y: 0,
               })
-              .to(firstWorkRef.current, {
-                clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
-              });
+              .to(
+                firstWorkRef.current,
+                {
+                  clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+                  ease: "power3.out",
+                },
+                "<0.2"
+              );
           }
         });
       },
@@ -37,6 +43,7 @@ const FeaturedWorks = ({ show }) => {
           if (entry.isIntersecting) {
             gsap.to(secWorkRef.current, {
               clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+              ease: "power3.out",
             });
           }
         });
@@ -49,6 +56,7 @@ const FeaturedWorks = ({ show }) => {
           if (entry.isIntersecting) {
             gsap.to(thirdWorkRef.current, {
               clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+              ease: "power3.out",
             });
           }
         });
@@ -59,6 +67,23 @@ const FeaturedWorks = ({ show }) => {
     worksObserver1.observe(workCon1Ref.current);
     worksObserver2.observe(workCon2Ref.current);
     worksObserver3.observe(workCon3Ref.current);
+
+    const viewAlWorksObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap.to(entry.target, {
+              opacity: 1,
+              y: 0,
+              ease: "power3.out",
+            });
+          }
+        });
+      },
+      { threshold: 1 }
+    );
+
+    viewAlWorksObserver.observe(viewAllWorksRef.current);
   }, []);
 
   return (
@@ -158,7 +183,8 @@ const FeaturedWorks = ({ show }) => {
         href="/works"
         className={`${
           show ? "block" : "hidden"
-        } uppercase text-black text-center text-[2rem] lg:text-[3rem] leading-[.9em] self-center mt-[4rem] lg:mt-[5rem]`}
+        } uppercase text-black text-center text-[2rem] lg:text-[3rem] leading-[.9em] self-center mt-[4rem] lg:mt-[5rem] opacity-0 translate-y-[100px]`}
+        ref={viewAllWorksRef}
       >
         view all <span className="block">works</span>
       </Link>

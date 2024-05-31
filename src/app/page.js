@@ -12,6 +12,7 @@ import gsap from "gsap";
 const Home = () => {
   const aboutRef = useRef([]);
   const aboutContainerRef = useRef();
+  const aboutParaRef = useRef([]);
   const aboutLineRef = useRef();
   const aboutImgRef = useRef();
   const knowMoreRef = useRef();
@@ -74,7 +75,12 @@ const Home = () => {
                   duration: 1,
                 },
                 "-=0.3"
-              );
+              )
+              .to(aboutParaRef.current, {
+                y: 0,
+                opacity: 1,
+                ease: "power3.out",
+              });
           }
         });
       },
@@ -99,7 +105,7 @@ const Home = () => {
           }
         });
       },
-      { threshold: 1 }
+      { threshold: 0.3 }
     );
 
     aboutImgObserver.observe(imgConRef.current);
@@ -192,8 +198,8 @@ const Home = () => {
 
       <section className="my-[4rem]" ref={aboutContainerRef}>
         <div
-          className={`max-w-[63%] md:max-w-[36rem] ml-3 mb-[3rem] text-justify text-[1rem] md:text-[3vw] lg:hidden font-neueMontreal translate-y-[200px] opacity-0`}
-          ref={(el) => aboutRef.current.push(el)}
+          className={`max-w-[63%] md:max-w-[36rem] ml-3 mb-[3rem] text-justify text-[1rem] md:text-[3vw] lg:hidden font-neueMontreal translate-y-[100px] opacity-0`}
+          ref={(el) => aboutParaRef.current.push(el)}
         >
           <p className="text-right">
             I&apos;m Bello Taofeeqah, but you can call
@@ -294,8 +300,8 @@ const Home = () => {
           <div className="hidden font-editorialOld max-w-[98%] p-2 text-[3.8vw] xl:text-[3.9vw] text-justify mx-auto capitalize lg:flex flex-col flex-wrap gap-4">
             <div className={`relative flex justify-between mb-[-1rem] w-full`}>
               <div
-                className={`max-w-[20rem] ml-3 xl:mb-[2rem] lg:mb-[3rem] text-justify text-[1rem] font-neueMontreal translate-y-[200px] opacity-0`}
-                ref={(el) => aboutRef.current.push(el)}
+                className={`max-w-[20rem] ml-3 xl:mb-[2rem] lg:mb-[3rem] text-justify text-[1rem] font-neueMontreal translate-y-[100px] opacity-0`}
+                ref={(el) => aboutParaRef.current.push(el)}
               >
                 <p className="text-right">
                   I&apos;m Bello Taofeeqah, but you can call
