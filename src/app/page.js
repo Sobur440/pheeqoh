@@ -76,11 +76,15 @@ const Home = () => {
                 },
                 "-=0.3"
               )
-              .to(aboutParaRef.current, {
-                y: 0,
-                opacity: 1,
-                ease: "power3.out",
-              });
+              .to(
+                aboutParaRef.current,
+                {
+                  y: 0,
+                  opacity: 1,
+                  ease: "power3.out",
+                },
+                "<0.5"
+              );
           }
         });
       },

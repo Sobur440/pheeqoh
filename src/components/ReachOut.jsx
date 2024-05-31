@@ -6,6 +6,8 @@ import gsap from "gsap";
 const ReachOut = () => {
   const reachoutRef = useRef([]);
   const reachOutConRef = useRef();
+  const reachOutParaRef = useRef([]);
+  const sendMsgRef = useRef();
 
   useEffect(() => {
     const reachOutObserver = new IntersectionObserver(
@@ -20,12 +22,21 @@ const ReachOut = () => {
                 stagger: { amount: 0.5 },
                 duration: 1,
               })
-              .to(styles.reachOut, {
+              .to(`.${styles.reachOut}`, {
                 width: "100%",
                 ease: "power3.out",
-                stagger: { amount: 0.5 },
+                stagger: { amount: 0.3 },
                 duration: 1,
-              });
+              })
+              .to(
+                reachOutParaRef.current,
+                {
+                  y: 0,
+                  opacity: 1,
+                  ease: "power3.out",
+                },
+                "<0.5"
+              );
           }
         });
       },
@@ -33,6 +44,23 @@ const ReachOut = () => {
     );
 
     reachOutObserver.observe(reachOutConRef.current);
+
+    const sendMsgObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap.to(entry.target, {
+              opacity: 1,
+              y: 0,
+              ease: "power3.out",
+            });
+          }
+        });
+      },
+      { threshold: 1 }
+    );
+
+    sendMsgObserver.observe(sendMsgRef.current);
   }, []);
 
   return (
@@ -44,7 +72,10 @@ const ReachOut = () => {
         <div
           className={`relative w-[93%] lg:flex justify-end lg:justify-between hidden overflow-y-hidden`}
         >
-          <p className="font-neueMontreal max-w-[23rem] text-[1rem] lg:text-[.8rem] xl:text-[1rem] xl:text-justify">
+          <p
+            className="font-neueMontreal max-w-[23rem] text-[1rem] lg:text-[.8rem] xl:text-[1rem] xl:text-justify opacity-0 translate-y-[100px]"
+            ref={(el) => reachOutParaRef.current.push(el)}
+          >
             👋 I&apos;m actively looking for opportunities in product Design (UI
             UX). I am open to working in roles that are remote, full time or
             contract-based. Kindly reach out to me if you are building something
@@ -58,7 +89,10 @@ const ReachOut = () => {
           </p>
           <div className={`${styles.reachOut}`}></div>
         </div>
-        <p className="lg:hidden text-[1rem] font-neueMontreal max-w-[70%] md:max-w-[33rem] mb-[2rem]">
+        <p
+          className="lg:hidden text-[1rem] font-neueMontreal max-w-[70%] md:max-w-[33rem] mb-[2rem] opacity-0 translate-y-[100px]"
+          ref={(el) => reachOutParaRef.current.push(el)}
+        >
           👋 I&apos;m actively looking for opportunities in product Design (UI
           UX). I am open to working in roles that are remote, full time or
           contract-based. Kindly reach out to me if you are building something
@@ -96,14 +130,15 @@ const ReachOut = () => {
           </div>
         </div>
       </section>
-      <Link
-        href="/contact"
-        className="w-full flex justify-center items-center mt-10"
+      <a
+        href="mailto:taofeeqahbello12@gmail.com"
+        className="w-full flex justify-center items-center mt-10 translate-y-[100px] opacity-0"
+        ref={sendMsgRef}
       >
         <p className="text-[2rem] lg:text-[2.5rem] text-center font-neueMontreal uppercase leading-[1em] mt-[3rem]">
           send me a <br /> message
         </p>
-      </Link>
+      </a>
     </>
   );
 };
