@@ -88,20 +88,14 @@ const Home = () => {
           if (entry.isIntersecting) {
             gsap
               .timeline()
+              .to(aboutImgRef.current, {
+                ease: "power3.out",
+                duration: 1,
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+              })
               .to(knowMoreRef.current, {
                 opacity: 1,
-              })
-              .to(
-                aboutImgRef.current,
-                {
-                  y: 0,
-                  opacity: 1,
-                  ease: "power3.out",
-                  duration: 1,
-                  stagger: { amount: 0.5 },
-                },
-                "-=0.6"
-              );
+              });
           }
         });
       },
@@ -369,8 +363,12 @@ const Home = () => {
           ref={imgConRef}
         >
           <div
-            className="lg:order-2 flex justify-end h-fit items-end pb-[.65rem] translate-y-[100%] opacity-0"
+            className="lg:order-2 flex justify-end h-fit items-end pb-[.65rem]"
             ref={aboutImgRef}
+            style={{
+              clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+              transition: ".5s ease-out",
+            }}
           >
             <img
               src="/images/pheeqohfan.png"
