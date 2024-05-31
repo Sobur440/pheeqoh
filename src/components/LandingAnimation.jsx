@@ -84,14 +84,14 @@ const LandingAnimation = () => {
       );
   }, []);
 
-  useEffect(() => {
-    const heroObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        console.log(entry);
-      });
-    });
-    heroObserver.observe(heroContext.current);
-  }, []);
+  // useEffect(() => {
+  //   const heroObserver = new IntersectionObserver((entries) => {
+  //     entries.forEach((entry) => {
+  //       console.log(entry);
+  //     });
+  //   });
+  //   heroObserver.observe(heroContext.current);
+  // }, []);
 
   return (
     <div className="w-full h-screen fixed z-[999]" ref={overlayRef}>

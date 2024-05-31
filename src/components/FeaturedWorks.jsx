@@ -12,50 +12,50 @@ const FeaturedWorks = ({ show }) => {
   const workCon2Ref = useRef();
   const workCon3Ref = useRef();
 
-  const worksObserver1 = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          gsap
-            .timeline()
-            .to(worksTitleRef.current, {
-              opacity: 1,
-              y: 0,
-            })
-            .to(firstWorkRef.current, {
+  useEffect(() => {
+    const worksObserver1 = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap
+              .timeline()
+              .to(worksTitleRef.current, {
+                opacity: 1,
+                y: 0,
+              })
+              .to(firstWorkRef.current, {
+                clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+              });
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    const worksObserver2 = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap.to(secWorkRef.current, {
               clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
             });
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
-  const worksObserver2 = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          gsap.to(secWorkRef.current, {
-            clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
-          });
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-  const worksObserver3 = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          gsap.to(thirdWorkRef.current, {
-            clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
-          });
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    const worksObserver3 = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap.to(thirdWorkRef.current, {
+              clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+            });
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
 
-  useEffect(() => {
     worksObserver1.observe(workCon1Ref.current);
     worksObserver2.observe(workCon2Ref.current);
     worksObserver3.observe(workCon3Ref.current);
