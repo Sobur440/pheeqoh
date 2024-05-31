@@ -10,6 +10,7 @@ const NavColourProvider = ({ children }) => {
   const nameContainerRef = useRef();
   const heroParagraphRef = useRef([]);
   const navRef = useRef([]);
+  const heroContext = useRef();
 
   return (
     <NavColourContext.Provider
@@ -20,6 +21,7 @@ const NavColourProvider = ({ children }) => {
         nameContainerRef,
         heroParagraphRef,
         navRef,
+        heroContext,
       }}
     >
       {children}

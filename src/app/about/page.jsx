@@ -1,17 +1,52 @@
 "use client";
 
 /* eslint-disable @next/next/no-img-element */
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import styles from "../shared.module.css";
 import { NavColourContext } from "@/contexts/NavColourContext";
 import Head from "next/head";
+import gsap from "gsap";
 
 const About = () => {
+  const whoIamRef = useRef();
+  const aboutMeRef = useRef([]);
   const { setNavColour } = useContext(NavColourContext);
 
   useEffect(() => {
     setNavColour(false);
   }, [setNavColour]);
+
+  useEffect(() => {
+    const aboutMeObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap
+              .timeline()
+              .to(aboutMeRef.current, {
+                y: 0,
+                stagger: { amount: 0.3 },
+                ease: "power3.out",
+                opacity: 1,
+              })
+              .to(
+                `.${styles.about}, .${styles.aboutMobile}`,
+                {
+                  width: "100%",
+                  stagger: { amount: 0.5 },
+                  ease: "power3.out",
+                  duration: 1,
+                },
+                "-=0.3"
+              );
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    aboutMeObserver.observe(whoIamRef.current);
+  });
 
   return (
     <div className="mt-[13rem] w-full">
@@ -36,70 +71,142 @@ const About = () => {
 
       {/* WHO I AM */}
 
-      <section>
+      <section ref={whoIamRef}>
         <div className="lg:hidden flex flex-col w-full mx-auto text-justify px-3 text-[5.8vw] font-editorialOld capitalize">
           <div
-            className={`${styles.aboutMobile} relative w-full flex justify-between mt-[3rem]`}
+            className={`relative w-full flex justify-between mt-[3rem] overflow-y-hidden`}
           >
             <p className="uppercase text-[.8rem] font-neueMontreal font-extralight">
               who i am
             </p>
-            <p className="text-[7.4vw]">I call myself a</p>
+            <p
+              className="text-[7.4vw] translate-y-[100%]"
+              ref={(el) => aboutMeRef.current.push(el)}
+            >
+              I call myself a
+            </p>
+            <div className={`${styles.aboutMobile} `}></div>
           </div>
 
           <div
             className="w-full text-[7.4vw]"
             style={{ textAlignLast: "justify" }}
           >
-            <p className={`${styles.aboutMobile} block w-full relative`}>
-              <span className="text-[7.7vw]">CHANGE MAKER </span> because I
-            </p>
-            <p className={`${styles.aboutMobile} block w-full relative`}>
-              bring your ideas to life. With a
-            </p>
-            <p className={`${styles.aboutMobile} block w-full relative`}>
-              deep passion for creating
-            </p>
-            <p className={`${styles.aboutMobile} block w-full relative`}>
-              meaningful experiences, I strive
-            </p>{" "}
-            <p className={`${styles.aboutMobile} block w-full relative`}>
-              to design products that not
-            </p>
-            <p className={`${styles.aboutMobile} block w-full relative`}>
-              only look good but also
-            </p>
-            <p className={`${styles.aboutMobile} w-fit relative`}>
-              address real-world problems.
-            </p>
+            <div className={`block w-full relative overflow-y-hidden`}>
+              <p
+                className="translate-y-[100%]"
+                ref={(el) => aboutMeRef.current.push(el)}
+              >
+                <span className="text-[7.7vw]">CHANGE MAKER </span> because I
+              </p>
+              <div className={`${styles.aboutMobile}`}></div>
+            </div>
+            <div className={`block w-full relative overflow-y-hidden`}>
+              <p
+                className="translate-y-[100%]"
+                ref={(el) => aboutMeRef.current.push(el)}
+              >
+                bring your ideas to life. With a
+              </p>
+              <div className={`${styles.aboutMobile}`}></div>
+            </div>
+            <div className={`block w-full relative overflow-y-hidden`}>
+              <p
+                className="translate-y-[100%]"
+                ref={(el) => aboutMeRef.current.push(el)}
+              >
+                deep passion for creating
+              </p>
+              <div className={`${styles.aboutMobile}`}></div>
+            </div>
+            <div className={`block w-full relative overflow-y-hidden`}>
+              <p
+                className="translate-y-[100%]"
+                ref={(el) => aboutMeRef.current.push(el)}
+              >
+                {" "}
+                meaningful experiences, I strive
+              </p>
+              <div className={`${styles.aboutMobile}`}></div>
+            </div>{" "}
+            <div className={`block w-full relative overflow-y-hidden`}>
+              <p
+                className="translate-y-[100%]"
+                ref={(el) => aboutMeRef.current.push(el)}
+              >
+                to design products that not
+              </p>
+              <div className={`${styles.aboutMobile}`}></div>
+            </div>
+            <div className={`block w-full relative overflow-y-hidden`}>
+              <p
+                className="translate-y-[100%]"
+                ref={(el) => aboutMeRef.current.push(el)}
+              >
+                only look good but also
+              </p>
+              <div className={`${styles.aboutMobile}`}></div>
+            </div>
+            <div className={`w-fit relative overflow-y-hidden`}>
+              <p
+                className="translate-y-[100%]"
+                ref={(el) => aboutMeRef.current.push(el)}
+              >
+                address real-world problems.
+              </p>
+              <div className={`${styles.aboutMobile}`}></div>
+            </div>
           </div>
         </div>
 
         <div className="hidden font-editorialOld max-w-[98%] p-2 text-[3.7vw] xl:text-[3.9vw] text-justify mx-auto capitalize lg:flex flex-col flex-wrap gap-4 mt-5">
           <div
-            className={`${styles.about} relative w-full flex justify-between mt-[3rem]`}
+            className={`relative w-full flex justify-between mt-[3rem] overflow-y-hidden`}
           >
             <p className="uppercase text-[.8rem] font-neueMontreal font-extralight">
               who i am
             </p>
-            <p>
+            <p
+              className="translate-y-[100%]"
+              ref={(el) => aboutMeRef.current.push(el)}
+            >
               I call myself a{" "}
               <span className="text-[4vw] xl:text-[4.3vw]">CHANGE MAKER</span>{" "}
               because I bring
             </p>
+
+            <div className={`${styles.about}`}></div>
           </div>
 
           <div className="leading-[1.8em]" style={{ textAlignLast: "justify" }}>
-            <p className={`${styles.about} block w-full relative`}>
-              your ideas to life. With a deep passion for creating meaningful
-            </p>
-            <span className={`${styles.about} block w-full relative`}>
-              experiences, I strive to design products that not only look
-            </span>
+            <div className={`block overflow-y-hidden w-full relative`}>
+              <p
+                className="translate-y-[100%]"
+                ref={(el) => aboutMeRef.current.push(el)}
+              >
+                your ideas to life. With a deep passion for creating meaningful
+              </p>
+              <div className={`${styles.about}`}></div>
+            </div>
+            <div className={`block overflow-y-hidden w-full relative`}>
+              <p
+                className="translate-y-[100%]"
+                ref={(el) => aboutMeRef.current.push(el)}
+              >
+                experiences, I strive to design products that not only look
+              </p>
+              <div className={`${styles.about}`}></div>
+            </div>
 
-            <p className={`${styles.about} block relative w-fit`}>
-              good but also address real-world problems.
-            </p>
+            <div className={`block overflow-y-hidden relative w-fit`}>
+              <p
+                className="translate-y-[100%]"
+                ref={(el) => aboutMeRef.current.push(el)}
+              >
+                good but also address real-world problems.
+              </p>
+              <div className={`${styles.about}`}></div>
+            </div>
           </div>
         </div>
 

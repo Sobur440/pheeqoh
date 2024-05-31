@@ -11,11 +11,9 @@ const LandingAnimation = () => {
   const titleRef = useRef([]);
   const barsRef = useRef([]);
   const progressBarBorder = useRef();
-  const { heroRef, nameContainerRef, heroParagraphRef, navRef } =
+  const { heroRef, nameContainerRef, heroParagraphRef, navRef, heroContext } =
     useContext(NavColourContext);
   const title = ["p", "h", "e", "e", "q", "o", "h"];
-
-  console.log(heroRef);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -84,6 +82,15 @@ const LandingAnimation = () => {
         },
         "-=2.2"
       );
+  }, []);
+
+  useEffect(() => {
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(entry);
+      });
+    });
+    heroObserver.observe(heroContext.current);
   }, []);
 
   return (
