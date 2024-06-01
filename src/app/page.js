@@ -43,16 +43,6 @@ const Home = () => {
     //     },
     //     "-=2.5"
     //   )
-    //   .to(
-    //     navRef.current,
-    //     {
-    //       y: 0,
-    //       stagger: { amount: 0.5, from: "center" },
-    //       ease: "power3.out",
-    //       duration: 2,
-    //     },
-    //     "-=2.2"
-    //   );
 
     const aboutObserver = new IntersectionObserver(
       (entries) => {
