@@ -39,10 +39,6 @@ const Home = () => {
     //     {
     //       clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
     //       y: 0,
-    //       ease: "power3.out",
-    //     },
-    //     "-=2.5"
-    //   )
 
     const aboutObserver = new IntersectionObserver(
       (entries) => {
