@@ -38,7 +38,6 @@ const Home = () => {
     //     heroParagraphRef.current,
     //     {
     //       clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
-    //       y: 0,
 
     const aboutObserver = new IntersectionObserver(
       (entries) => {
