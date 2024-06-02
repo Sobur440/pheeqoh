@@ -90,6 +90,7 @@ const LandingAnimation = () => {
   //     });
   //   });
   //   heroObserver.observe(heroContext.current);
+  // nothing
 
   return (
     <div className="w-full h-screen fixed z-[999]" ref={overlayRef}>
