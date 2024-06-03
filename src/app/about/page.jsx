@@ -18,6 +18,9 @@ const About = () => {
   const expSecRef = useRef();
   const expLineRef = useRef();
   const expRef = useRef();
+  const blogSecRef = useRef();
+  const blogLineRef = useRef();
+  const blogRef = useRef();
   const { setNavColour } = useContext(NavColourContext);
 
   useEffect(() => {
@@ -94,9 +97,36 @@ const About = () => {
               .timeline()
               .to(expLineRef.current, {
                 width: "100%",
+                duration: 1.5,
                 ease: "power3.out",
               })
-              .to(expRef.current, {
+              .to(
+                expRef.current,
+                {
+                  opacity: 1,
+                  y: 0,
+                  ease: "power3.out",
+                },
+                "<0.5"
+              );
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const blogObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap
+              .timeline()
+              .to(blogLineRef.current, {
+                width: "100%",
+                duration: 1.5,
+                ease: "power3.out",
+              })
+              .to(blogRef.current, {
                 opacity: 1,
                 y: 0,
                 ease: "power3.out",
@@ -111,6 +141,7 @@ const About = () => {
     aboutImgObserver.observe(aboutImgConRef.current);
     taoAboutObserver.observe(taoAboutConRef.current);
     expObserver.observe(expSecRef.current);
+    blogObserver.observe(blogSecRef.current);
   });
 
   return (
@@ -433,10 +464,16 @@ const About = () => {
 
       {/* BLOGS SECTION */}
 
-      <section className="mt-[4rem] w-[95%] mx-auto text-[.9rem] lg:text-[.8rem]">
-        <div className="w-full h-[1px] bg-black mb-[2rem]"></div>
+      <section
+        className="mt-[4rem] w-[95%] mx-auto text-[.9rem] lg:text-[.8rem]"
+        ref={blogSecRef}
+      >
+        <div className="w-0 h-[1px] bg-black mb-[2rem]" ref={blogLineRef}></div>
 
-        <div className="w-full flex flex-col gap-[1rem] lg:gap-0 lg:flex-row">
+        <div
+          className="w-full flex flex-col gap-[1rem] lg:gap-0 lg:flex-row opacity-0 translate-y-[200px]"
+          ref={blogRef}
+        >
           <p className="lg:w-[50%] uppercase mb-[1rem] lg:mb-0">blogs</p>
 
           <div className="w-full lg:w-[50%] uppercase">
