@@ -22,12 +22,16 @@ const ReachOut = () => {
                 stagger: { amount: 0.5 },
                 duration: 0.7,
               })
-              .to(`.${styles.reachOut}`, {
-                width: "100%",
-                ease: "power3.out",
-                stagger: { amount: 0.3 },
-                duration: 0.7,
-              })
+              .to(
+                `.${styles.reachOut}`,
+                {
+                  width: "100%",
+                  ease: "power3.out",
+                  stagger: { amount: 0.3 },
+                  duration: 0.7,
+                },
+                "<0.5"
+              )
               .to(
                 reachOutParaRef.current,
                 {

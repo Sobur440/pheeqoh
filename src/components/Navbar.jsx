@@ -1,13 +1,25 @@
 "use client";
 
 import Link from "next/link";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavColourContext } from "@/contexts/NavColourContext";
+import gsap from "gsap";
 
 const Navbar = () => {
   const [hamburger, setHamburger] = useState(false);
 
-  const { navColour, navRef } = useContext(NavColourContext);
+  const { navColour, navRef, isLoadingComplete } = useContext(NavColourContext);
+
+  useEffect(() => {
+    if (isLoadingComplete) {
+      gsap.to(navRef.current, {
+        y: 0,
+        stagger: { amount: 0.5, from: "center" },
+        ease: "power3.out",
+        duration: 2,
+      });
+    }
+  }, [isLoadingComplete]);
 
   return (
     <nav

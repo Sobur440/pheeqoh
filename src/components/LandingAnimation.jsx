@@ -10,7 +10,7 @@ const LandingAnimation = () => {
   const titleRef = useRef([]);
   const barsRef = useRef([]);
   const progressBarBorder = useRef();
-  const { navRef, setIsLoadingComplete } = useContext(NavColourContext);
+  const { setIsLoadingComplete } = useContext(NavColourContext);
   const title = ["p", "h", "e", "e", "q", "o", "h"];
 
   useEffect(() => {
@@ -53,17 +53,7 @@ const LandingAnimation = () => {
       })
       .set(overlayRef.current, {
         display: "none",
-      })
-      .to(
-        navRef.current,
-        {
-          y: 0,
-          stagger: { amount: 0.5, from: "center" },
-          ease: "power3.out",
-          duration: 2,
-        },
-        "-=2.2"
-      );
+      });
   }, []);
 
   // useEffect(() => {
