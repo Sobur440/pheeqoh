@@ -28,8 +28,7 @@ const Home = () => {
     //   .to(heroRef.current, {
     //     y: 0,
     //     stagger: { amount: 1 },
-    //     duration: 1,
-    //     ease: "power3.out",
+    //     duration: 1,yarn
     //   })
     //   .set(nameContainerRef.current, {
     //     overflow: "visible",

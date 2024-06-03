@@ -10,6 +10,14 @@ import gsap from "gsap";
 const About = () => {
   const whoIamRef = useRef();
   const aboutMeRef = useRef([]);
+  const aboutImgRef = useRef();
+  const aboutImgConRef = useRef();
+  const taoAboutConRef = useRef();
+  const taoAboutRef = useRef();
+  const taoAboutParaRef = useRef();
+  const expSecRef = useRef();
+  const expLineRef = useRef();
+  const expRef = useRef();
   const { setNavColour } = useContext(NavColourContext);
 
   useEffect(() => {
@@ -45,7 +53,64 @@ const About = () => {
       { threshold: 0.3 }
     );
 
+    const aboutImgObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap.to(aboutImgRef.current, {
+              clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+            });
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const taoAboutObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap
+              .timeline()
+              .to(taoAboutRef.current, {
+                clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+              })
+              .to(taoAboutParaRef.current, {
+                opacity: 1,
+                y: 0,
+                ease: "power3.out",
+              });
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    const expObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap
+              .timeline()
+              .to(expLineRef.current, {
+                width: "100%",
+                ease: "power3.out",
+              })
+              .to(expRef.current, {
+                opacity: 1,
+                y: 0,
+                ease: "power3.out",
+              });
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
     aboutMeObserver.observe(whoIamRef.current);
+    aboutImgObserver.observe(aboutImgConRef.current);
+    taoAboutObserver.observe(taoAboutConRef.current);
+    expObserver.observe(expSecRef.current);
   });
 
   return (
@@ -61,11 +126,19 @@ const About = () => {
           a<span className="italic">m</span>
         </span>
       </p>
-      <div className="w-full h-[20rem] md:h-screen -mt-[4%]">
+      <div
+        className="w-full h-[20rem] md:h-screen -mt-[4%]"
+        ref={aboutImgConRef}
+      >
         <img
           src="/images/aboutImg.png"
           alt="about pheeqoh"
           className="w-full h-full object-cover"
+          style={{
+            clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+            transition: "1s ease-out",
+          }}
+          ref={aboutImgRef}
         />
       </div>
 
@@ -210,11 +283,22 @@ const About = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row lg:justify-end gap-2 lg:gap-7 mt-[4rem] w-full h-[70rem] md:h-[90rem] lg:h-[40rem] mx-auto px-3">
+        <div
+          className="flex flex-col lg:flex-row lg:justify-end gap-2 lg:gap-7 mt-[4rem] w-full h-[70rem] md:h-[90rem] lg:h-[40rem] mx-auto px-3"
+          ref={taoAboutConRef}
+        >
           <div
             className={`${styles.aboutImg} w-full lg:w-[30rem] h-full`}
+            ref={taoAboutRef}
+            style={{
+              clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+              transition: "1s ease-out",
+            }}
           ></div>
-          <div className="w-full lg:w-[40%] xl:w-[30%] 2xl:w-[25%] 3xl:w-[20%]">
+          <div
+            className="w-full lg:w-[40%] xl:w-[30%] 2xl:w-[25%] 3xl:w-[20%] translate-y-[200px] opacity-0"
+            ref={taoAboutParaRef}
+          >
             <div className="w-full lg:w-full flex flex-col gap-[1.5rem] text-[.9rem]">
               <p className="max-w-full">
                 Problem solver and a quick learner, and I bring value to any
@@ -259,10 +343,16 @@ const About = () => {
 
       {/* EXPERICES SECTION */}
 
-      <section className="mt-[5rem] lg:mt-[10rem] w-[95%] mx-auto text-[1rem] lg:text-[.8rem]">
-        <div className="w-full h-[1px] bg-black mb-[2rem]"></div>
+      <section
+        className="mt-[5rem] lg:mt-[10rem] w-[95%] mx-auto text-[1rem] lg:text-[.8rem]"
+        ref={expSecRef}
+      >
+        <div className="w-0 h-[1px] bg-black mb-[2rem]" ref={expLineRef}></div>
 
-        <div className="w-full flex flex-col gap-[1rem] lg:gap-0 lg:flex-row">
+        <div
+          className="w-full flex flex-col gap-[1rem] lg:gap-0 lg:flex-row opacity-0 translate-y-[100px]"
+          ref={expRef}
+        >
           <p className="lg:w-[50%] uppercase">experiences</p>
 
           <div className="w-full lg:w-[50%] uppercase">
