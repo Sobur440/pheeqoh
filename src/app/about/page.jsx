@@ -21,6 +21,9 @@ const About = () => {
   const blogSecRef = useRef();
   const blogLineRef = useRef();
   const blogRef = useRef();
+  const enjoymentSecRef = useRef();
+  const paintingImgRef = useRef();
+  const aboutEnjoymentRef = useRef();
   const { setNavColour } = useContext(NavColourContext);
 
   useEffect(() => {
@@ -141,11 +144,36 @@ const About = () => {
       { threshold: 0.3 }
     );
 
+    const enjoymentObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap
+              .timeline()
+              .to(paintingImgRef.current, {
+                clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+              })
+              .to(
+                aboutEnjoymentRef.current,
+                {
+                  opacity: 1,
+                  y: 0,
+                  ease: "power3.out",
+                },
+                "<0.5"
+              );
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
     aboutMeObserver.observe(whoIamRef.current);
     aboutImgObserver.observe(aboutImgConRef.current);
     taoAboutObserver.observe(taoAboutConRef.current);
     expObserver.observe(expSecRef.current);
     blogObserver.observe(blogSecRef.current);
+    enjoymentObserver.observe(enjoymentSecRef.current);
   });
 
   return (
@@ -327,7 +355,7 @@ const About = () => {
             ref={taoAboutRef}
             style={{
               clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
-              transition: "1s ease-out",
+              transition: "0.6s ease-out",
             }}
           ></div>
           <div
@@ -528,9 +556,16 @@ const About = () => {
 
       {/* PAINTING ENJOYMENT SECTION */}
 
-      <section className="mt-[11rem] mb-[8rem]">
+      <section className="mt-[11rem] mb-[8rem]" ref={enjoymentSecRef}>
         <div className="w-[95%] mx-auto lg:h-[90vh] flex flex-col lg:flex-row justify-between">
-          <div className="w-full lg:w-[35%] h-full">
+          <div
+            className="w-full lg:w-[35%] h-full"
+            ref={paintingImgRef}
+            style={{
+              clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
+              transition: "0.6s ease-out",
+            }}
+          >
             <img
               src="/images/painting1.png"
               alt="Painting"
@@ -538,7 +573,10 @@ const About = () => {
             />
           </div>
 
-          <div className="w-full lg:w-[65%] lg:h-full flex flex-col justify-between">
+          <div
+            className="w-full lg:w-[65%] lg:h-full flex flex-col justify-between opacity-0 translate-y-[100px]"
+            ref={aboutEnjoymentRef}
+          >
             <div className="flex justify-between w-full lg:w-[90%] lg:self-end order-2 lg:order-1">
               <p className="max-w-full lg:max-w-[65%]">
                 {" "}
