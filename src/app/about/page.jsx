@@ -126,11 +126,15 @@ const About = () => {
                 duration: 1.5,
                 ease: "power3.out",
               })
-              .to(blogRef.current, {
-                opacity: 1,
-                y: 0,
-                ease: "power3.out",
-              });
+              .to(
+                blogRef.current,
+                {
+                  opacity: 1,
+                  y: 0,
+                  ease: "power3.out",
+                },
+                "<0.5"
+              );
           }
         });
       },
