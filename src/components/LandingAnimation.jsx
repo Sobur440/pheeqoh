@@ -10,12 +10,13 @@ const LandingAnimation = () => {
   const titleRef = useRef([]);
   const barsRef = useRef([]);
   const progressBarBorder = useRef();
-  const { heroRef, nameContainerRef, heroParagraphRef, navRef, heroContext } =
-    useContext(NavColourContext);
+  const { navRef, setIsLoadingComplete } = useContext(NavColourContext);
   const title = ["p", "h", "e", "e", "q", "o", "h"];
 
   useEffect(() => {
-    const tl = gsap.timeline();
+    const tl = gsap.timeline({
+      onComplete: () => setIsLoadingComplete(true),
+    });
 
     tl.to(titleRef.current, {
       y: 0,
@@ -53,24 +54,6 @@ const LandingAnimation = () => {
       .set(overlayRef.current, {
         display: "none",
       })
-      .to(heroRef.current, {
-        y: 0,
-        stagger: { amount: 1 },
-        duration: 1,
-        ease: "power3.out",
-      })
-      .set(nameContainerRef.current, {
-        overflow: "visible",
-      })
-      .to(
-        heroParagraphRef.current,
-        {
-          clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
-          y: 0,
-          ease: "power3.out",
-        },
-        "-=2.5"
-      )
       .to(
         navRef.current,
         {

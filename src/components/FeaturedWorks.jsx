@@ -1,7 +1,8 @@
 import Link from "next/link";
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import styles from "../app/shared.module.css";
 import gsap from "gsap";
+import { NavColourContext } from "@/contexts/NavColourContext";
 
 const FeaturedWorks = ({ show }) => {
   const worksTitleRef = useRef();
@@ -13,78 +14,82 @@ const FeaturedWorks = ({ show }) => {
   const workCon3Ref = useRef();
   const viewAllWorksRef = useRef();
 
+  const { isLoadingComplete } = useContext(NavColourContext);
+
   useEffect(() => {
-    const worksObserver1 = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            gsap
-              .timeline()
-              .to(worksTitleRef.current, {
+    if (isLoadingComplete) {
+      const worksObserver1 = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              gsap
+                .timeline()
+                .to(worksTitleRef.current, {
+                  opacity: 1,
+                  y: 0,
+                })
+                .to(
+                  firstWorkRef.current,
+                  {
+                    clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+                    ease: "power3.out",
+                  },
+                  "<0.2"
+                );
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      const worksObserver2 = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              gsap.to(secWorkRef.current, {
+                clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+                ease: "power3.out",
+              });
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      const worksObserver3 = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              gsap.to(thirdWorkRef.current, {
+                clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+                ease: "power3.out",
+              });
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      worksObserver1.observe(workCon1Ref.current);
+      worksObserver2.observe(workCon2Ref.current);
+      worksObserver3.observe(workCon3Ref.current);
+
+      const viewAlWorksObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              gsap.to(entry.target, {
                 opacity: 1,
                 y: 0,
-              })
-              .to(
-                firstWorkRef.current,
-                {
-                  clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
-                  ease: "power3.out",
-                },
-                "<0.2"
-              );
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-    const worksObserver2 = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            gsap.to(secWorkRef.current, {
-              clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
-              ease: "power3.out",
-            });
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-    const worksObserver3 = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            gsap.to(thirdWorkRef.current, {
-              clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
-              ease: "power3.out",
-            });
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
+                ease: "power3.out",
+              });
+            }
+          });
+        },
+        { threshold: 1 }
+      );
 
-    worksObserver1.observe(workCon1Ref.current);
-    worksObserver2.observe(workCon2Ref.current);
-    worksObserver3.observe(workCon3Ref.current);
-
-    const viewAlWorksObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            gsap.to(entry.target, {
-              opacity: 1,
-              y: 0,
-              ease: "power3.out",
-            });
-          }
-        });
-      },
-      { threshold: 1 }
-    );
-
-    viewAlWorksObserver.observe(viewAllWorksRef.current);
-  }, []);
+      viewAlWorksObserver.observe(viewAllWorksRef.current);
+    }
+  }, [isLoadingComplete]);
 
   return (
     <section className="mt-10 text-white w-full flex flex-col">

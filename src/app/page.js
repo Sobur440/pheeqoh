@@ -17,10 +17,44 @@ const Home = () => {
   const aboutImgRef = useRef();
   const knowMoreRef = useRef();
   const imgConRef = useRef();
-  const { setNavColour, heroRef, nameContainerRef, heroParagraphRef, navRef } =
-    useContext(NavColourContext);
+  const heroRef = useRef([]);
+  const nameContainerRef = useRef();
+  const heroParagraphRef = useRef([]);
+  const {
+    setNavColour,
+    // heroRef,
+    // nameContainerRef,
+    // heroParagraphRef,
+    navRef,
+    isLoadingComplete,
+  } = useContext(NavColourContext);
   setNavColour(true);
   const show = true;
+
+  useEffect(() => {
+    if (isLoadingComplete) {
+      gsap
+        .timeline()
+        .to(heroRef.current, {
+          y: 0,
+          stagger: { amount: 1 },
+          duration: 1,
+          ease: "power3.out",
+        })
+        .set(nameContainerRef.current, {
+          overflow: "visible",
+        })
+        .to(
+          heroParagraphRef.current,
+          {
+            clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+            y: 0,
+            ease: "power3.out",
+          },
+          "-=2.5"
+        );
+    }
+  }, [isLoadingComplete]);
 
   useEffect(() => {
     // gsap

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import styles from "../app/shared.module.css";
 import Link from "next/link";
 import gsap from "gsap";
@@ -20,13 +20,13 @@ const ReachOut = () => {
                 y: 0,
                 ease: "power3.out",
                 stagger: { amount: 0.5 },
-                duration: 1,
+                duration: 0.7,
               })
               .to(`.${styles.reachOut}`, {
                 width: "100%",
                 ease: "power3.out",
                 stagger: { amount: 0.3 },
-                duration: 1,
+                duration: 0.7,
               })
               .to(
                 reachOutParaRef.current,
@@ -35,7 +35,7 @@ const ReachOut = () => {
                   opacity: 1,
                   ease: "power3.out",
                 },
-                "<0.5"
+                "<0.3"
               );
           }
         });
