@@ -6,7 +6,7 @@ import { NavColourContext } from "@/contexts/NavColourContext";
 import gsap from "gsap";
 
 const Navbar = () => {
-  const [hamburger, setHamburger] = useState(true);
+  const [hamburger, setHamburger] = useState(false);
 
   const { navColour, navRef, isLoadingComplete } = useContext(NavColourContext);
 
@@ -29,14 +29,16 @@ const Navbar = () => {
     >
       <div
         className={`${
-          hamburger ? "top-0 left-0" : "top-[-100vh] left-0"
+          hamburger ? "top-0 right-0" : "right-[-100vw]"
         } bg-black text-[#797979] w-full h-screen fixed flex flex-col justify-between z-[99] text-[15vw] font-ppEiko pt-[1rem] transition-all duration-[.8s] ease-out`}
       >
         <div className="flex w-full justify-between px-2 text-[1rem] text-white uppercase font-neueMachina font-extralight">
           <p>pheeqoh</p>
-          <p onClick={() => setHamburger(false)}>close</p>
+          <p className="cursor-pointer" onClick={() => setHamburger(false)}>
+            close
+          </p>
         </div>
-        <ul className="ml-2">
+        <ul className="ml-2 leading-[1.2em]">
           <li onClick={() => setHamburger(false)}>
             <Link className="uppercase font-extralight" href="/">
               home
