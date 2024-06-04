@@ -8,6 +8,7 @@ import Head from "next/head";
 import gsap from "gsap";
 
 const About = () => {
+  const titleRef = useRef();
   const whoIamRef = useRef();
   const aboutMeRef = useRef([]);
   const aboutImgRef = useRef();
@@ -31,6 +32,13 @@ const About = () => {
   }, [setNavColour]);
 
   useEffect(() => {
+    gsap.to(titleRef.current, {
+      opacity: 1,
+      y: 0,
+      ease: "power3.out",
+      delay: 0.5,
+    });
+
     const aboutMeObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -178,7 +186,10 @@ const About = () => {
 
   return (
     <div className="mt-[13rem] w-full">
-      <p className="text-[14vw] lg:text-[12vw] uppercase font-ppEiko max-w-[95%] mx-auto">
+      <p
+        className="text-[14vw] lg:text-[12vw] uppercase font-ppEiko max-w-[95%] mx-auto opacity-0 translate-y-[100px]"
+        ref={titleRef}
+      >
         <span className="tracking-tighter">
           wh<span className="italic">o</span>
         </span>
