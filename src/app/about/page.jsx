@@ -462,7 +462,10 @@ const About = () => {
 
       <section className="mt-[7.5rem] text-white">
         <div
-          className={`${styles.idle} w-full h-screen relative flex flex-col justify-end gap-[8rem] pb-[1.2rem]`}
+          className={`${styles.idle} w-full h-screen flex flex-col justify-end gap-[8rem] pb-[1.2rem] sticky top-0 z-[-1] `}
+        ></div>
+        <div
+          className={`w-full h-screen relative z-[2] flex flex-col justify-end gap-[8rem] pb-[1.2rem]`}
         >
           <p className="uppercase lg:w-[50%] mx-auto text-[6vw] lg:text-[3.5vw] text-center font-ppEiko">
             wh<span className="italic">e</span>n i&apos;m n
