@@ -41,9 +41,14 @@ const Home = () => {
           duration: 1,
           ease: "power3.out",
         })
-        .set(nameContainerRef.current, {
-          overflow: "visible",
-        })
+        .to(
+          nameContainerRef.current,
+          {
+            overflow: "visible",
+            duration: 0.5,
+          },
+          "-=1.2"
+        )
         .to(
           heroParagraphRef.current,
           {
