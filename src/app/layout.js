@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import NavColourProvider from "@/contexts/NavColourContext";
 import LandingAnimation from "@/components/LandingAnimation";
-
+import SmoothScroll from "./SmoothScroll";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -22,9 +22,11 @@ export default function RootLayout({ children }) {
       <body className="font-neueMontreal bg-[#ECE8DC] overflow-x-hidden">
         <NavColourProvider>
           <LandingAnimation />
-          <Navbar />
-          {children}
-          <Footer />
+          <SmoothScroll>
+            <Navbar />
+            {children}
+            <Footer />
+          </SmoothScroll>
         </NavColourProvider>
       </body>
     </html>

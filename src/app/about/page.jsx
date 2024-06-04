@@ -128,6 +128,7 @@ const About = () => {
                 {
                   opacity: 1,
                   y: 0,
+                  duration: 1.3,
                   ease: "power3.out",
                 },
                 "<0.5"
@@ -154,6 +155,7 @@ const About = () => {
                 {
                   opacity: 1,
                   y: 0,
+                  duration: 1.3,
                   ease: "power3.out",
                 },
                 "<0.5"
@@ -178,6 +180,7 @@ const About = () => {
                 {
                   opacity: 1,
                   y: 0,
+                  duration: 1.5,
                   ease: "power3.out",
                 },
                 "<0.5"
