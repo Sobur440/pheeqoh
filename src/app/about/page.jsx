@@ -9,6 +9,7 @@ import gsap from "gsap";
 
 const About = () => {
   const titleRef = useRef();
+  const aboutParaRef = useRef([]);
   const whoIamRef = useRef();
   const aboutMeRef = useRef([]);
   const aboutImgRef = useRef();
@@ -47,19 +48,30 @@ const About = () => {
               .timeline()
               .to(aboutMeRef.current, {
                 y: 0,
-                stagger: { amount: 0.3 },
-                ease: "power3.out",
+                stagger: { amount: 0.5 },
+                ease: "power2.out",
                 opacity: 1,
+                duration: 1.2,
               })
               .to(
                 `.${styles.about}, .${styles.aboutMobile}`,
                 {
                   width: "100%",
                   stagger: { amount: 0.5 },
-                  ease: "power3.out",
-                  duration: 1,
+                  ease: "power2.out",
+                  duration: 1.3,
                 },
-                "-=0.3"
+                "<0.5"
+              )
+              .to(
+                aboutParaRef.current,
+                {
+                  y: 0,
+                  opacity: 1,
+                  ease: "power3.out",
+                  duration: 1.5,
+                },
+                "<0.5"
               );
           }
         });
@@ -223,7 +235,10 @@ const About = () => {
           <div
             className={`relative w-full flex justify-between mt-[3rem] overflow-y-hidden`}
           >
-            <p className="uppercase text-[.8rem] font-neueMontreal font-extralight">
+            <p
+              className="uppercase text-[.8rem] font-neueMontreal font-extralight opacity-0 translate-y-[100px]"
+              ref={(el) => aboutParaRef.current.push(el)}
+            >
               who i am
             </p>
             <p
@@ -310,7 +325,10 @@ const About = () => {
           <div
             className={`relative w-full flex justify-between mt-[3rem] overflow-y-hidden`}
           >
-            <p className="uppercase text-[.8rem] font-neueMontreal font-extralight">
+            <p
+              className="uppercase text-[.8rem] font-neueMontreal font-extralight opacity-0 translate-y-[100px]"
+              ref={(el) => aboutParaRef.current.push(el)}
+            >
               who i am
             </p>
             <p

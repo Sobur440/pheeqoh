@@ -20,14 +20,8 @@ const Home = () => {
   const heroRef = useRef([]);
   const nameContainerRef = useRef();
   const heroParagraphRef = useRef([]);
-  const {
-    setNavColour,
-    // heroRef,
-    // nameContainerRef,
-    // heroParagraphRef,
-    navRef,
-    isLoadingComplete,
-  } = useContext(NavColourContext);
+  const { setNavColour, navRef, isLoadingComplete } =
+    useContext(NavColourContext);
   setNavColour(true);
   const show = true;
 
@@ -37,7 +31,7 @@ const Home = () => {
         .timeline()
         .to(heroRef.current, {
           y: 0,
-          stagger: { amount: 1 },
+          stagger: { amount: 0.5 },
           duration: 1,
           ease: "power3.out",
         })
@@ -85,19 +79,20 @@ const Home = () => {
               .timeline()
               .to(aboutRef.current, {
                 y: 0,
-                stagger: { amount: 0.3 },
-                ease: "power3.out",
+                stagger: { amount: 0.5 },
+                ease: "power2.out",
                 opacity: 1,
+                duration: 1.2,
               })
               .to(
                 `.${styles.about}, .${styles.aboutBlack}, .${styles.aboutMobile}`,
                 {
                   width: "100%",
                   stagger: { amount: 0.5 },
-                  ease: "power3.out",
-                  duration: 1,
+                  ease: "power2.out",
+                  duration: 1.3,
                 },
-                "-=0.3"
+                "<0.5"
               )
               .to(
                 aboutParaRef.current,
@@ -105,6 +100,7 @@ const Home = () => {
                   y: 0,
                   opacity: 1,
                   ease: "power3.out",
+                  duration: 1.5,
                 },
                 "<0.5"
               );

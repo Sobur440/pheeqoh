@@ -14,9 +14,7 @@ const LandingAnimation = () => {
   const title = ["p", "h", "e", "e", "q", "o", "h"];
 
   useEffect(() => {
-    const tl = gsap.timeline({
-      onComplete: () => setIsLoadingComplete(true),
-    });
+    const tl = gsap.timeline();
 
     tl.to(titleRef.current, {
       y: 0,
@@ -51,9 +49,14 @@ const LandingAnimation = () => {
         duration: 1.5,
         ease: "power3.out",
       })
-      .set(overlayRef.current, {
-        display: "none",
-      });
+      .set(
+        overlayRef.current,
+        {
+          display: "none",
+          onComplete: () => setIsLoadingComplete(true),
+        },
+        "-=0.5"
+      );
   }, []);
 
   // useEffect(() => {

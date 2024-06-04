@@ -38,6 +38,7 @@ const ReachOut = () => {
                   y: 0,
                   opacity: 1,
                   ease: "power3.out",
+                  duration: 1.5,
                 },
                 "<0.3"
               );
