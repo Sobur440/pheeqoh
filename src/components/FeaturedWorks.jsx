@@ -31,7 +31,7 @@ const FeaturedWorks = ({ show }) => {
                 .to(
                   firstWorkRef.current,
                   {
-                    clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+                    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
                     ease: "power3.out",
                   },
                   "<0.2"
@@ -46,7 +46,7 @@ const FeaturedWorks = ({ show }) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               gsap.to(secWorkRef.current, {
-                clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
                 ease: "power3.out",
               });
             }
@@ -59,7 +59,7 @@ const FeaturedWorks = ({ show }) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               gsap.to(thirdWorkRef.current, {
-                clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
                 ease: "power3.out",
               });
             }
@@ -103,15 +103,11 @@ const FeaturedWorks = ({ show }) => {
       </p>
 
       <div
-        className="w-full h-[20rem] md:h-[30rem] lg:h-screen"
+        className="w-full h-[20rem] md:h-[30rem] lg:h-screen lg:sticky lg:bottom-0 lg:z-[3]"
         ref={workCon1Ref}
       >
         <div
-          className={`h-full relative flex items-end lg:items-center ${styles.pos}`}
-          style={{
-            clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0 100%)",
-            transition: ".5s ease-out",
-          }}
+          className={`h-full relative flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.pos}`}
           ref={firstWorkRef}
         >
           <div className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0">
@@ -129,15 +125,11 @@ const FeaturedWorks = ({ show }) => {
       </div>
 
       <div
-        className="w-full h-[20rem] md:h-[30rem] lg:h-screen my-4 lg:my-0"
+        className="w-full h-[20rem] md:h-[30rem] lg:h-screen my-4 lg:my-0 lg:sticky lg:bottom-0 lg:z-[2]"
         ref={workCon2Ref}
       >
         <div
-          className={`h-full relative flex items-end lg:items-center ${styles.eohs}`}
-          style={{
-            clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
-            transition: ".5s ease-out",
-          }}
+          className={`h-full relative flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.eohs}`}
           ref={secWorkRef}
         >
           <div className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0">
@@ -157,15 +149,11 @@ const FeaturedWorks = ({ show }) => {
       </div>
 
       <div
-        className="w-full h-[20rem] md:h-[30rem] lg:h-screen"
+        className="w-full h-[20rem] md:h-[30rem] lg:h-screen lg:sticky lg:bottom-0 lg:z-[1]"
         ref={workCon3Ref}
       >
         <div
           className={`h-full relative flex items-end lg:items-center ${styles.insta}`}
-          style={{
-            clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
-            transition: ".5s ease-out",
-          }}
           ref={thirdWorkRef}
         >
           <div className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0">
