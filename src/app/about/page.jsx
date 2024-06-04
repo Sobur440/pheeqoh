@@ -523,6 +523,19 @@ const About = () => {
                 foster valuable networking opportunities but also to stay
                 well-informed and updated.
               </p>
+              <p className="max-w-full">
+                As a result of my commitment to volunteering in tech
+                communities, I have helped the growth of these communities by
+                more than 50%, and through community building, I have
+                collaborated with different people which helped me with
+                communication skills as well. Through volunteering and community
+                building as well, I have coached and mentored over 50 youths in
+                design, and skill acquisition in my locality.
+              </p>
+              <p>
+                In 2023, I was recognized as one of the top mentors during a
+                mentorship program conducted by Women Tech Makers.
+              </p>
             </div>
             <p className="hidden lg:block uppercase self-end">scroll down</p>
           </div>
