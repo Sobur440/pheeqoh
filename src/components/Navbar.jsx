@@ -6,7 +6,7 @@ import { NavColourContext } from "@/contexts/NavColourContext";
 import gsap from "gsap";
 
 const Navbar = () => {
-  const [hamburger, setHamburger] = useState(false);
+  const [hamburger, setHamburger] = useState(true);
 
   const { navColour, navRef, isLoadingComplete } = useContext(NavColourContext);
 
@@ -27,39 +27,77 @@ const Navbar = () => {
         navColour ? "absolute top-0 left-0 text-white" : ""
       } bg-transparent w-full h-[3.5rem]`}
     >
-      <ul
+      <div
         className={`${
           hamburger ? "top-0 left-0" : "top-[-100vh] left-0"
-        } bg-black text-white w-full h-screen absolute z-[99] text-[1.3rem] flex flex-col gap-[5rem] items-center pt-[1rem] transition-all duration-200`}
+        } bg-black text-[#797979] w-full h-screen fixed flex flex-col justify-between z-[99] text-[15vw] font-ppEiko pt-[1rem] transition-all duration-[.8s] ease-out`}
       >
-        <li
-          className="self-end mr-5 cursor-pointer"
-          onClick={() => setHamburger(false)}
-        >
-          close
-        </li>
-        <li onClick={() => setHamburger(false)}>
-          <Link className="uppercase font-extralight" href="/">
-            home
-          </Link>
-        </li>
-        <li onClick={() => setHamburger(false)}>
-          <Link className="uppercase font-extralight" href="/about">
-            about
-          </Link>
-        </li>
+        <div className="flex w-full justify-between px-2 text-[1rem] text-white uppercase font-neueMachina font-extralight">
+          <p>pheeqoh</p>
+          <p onClick={() => setHamburger(false)}>close</p>
+        </div>
+        <ul className="ml-2">
+          <li onClick={() => setHamburger(false)}>
+            <Link className="uppercase font-extralight" href="/">
+              home
+            </Link>
+          </li>
+          <li onClick={() => setHamburger(false)}>
+            <Link className="uppercase font-extralight" href="/about">
+              about
+            </Link>
+          </li>
 
-        <li onClick={() => setHamburger(false)}>
-          <Link className="uppercase font-extralight" href="/works">
-            works
-          </Link>
-        </li>
-        <li onClick={() => setHamburger(false)}>
-          <Link className="uppercase font-extralight" href="/contact">
-            contact
-          </Link>
-        </li>
-      </ul>
+          <li onClick={() => setHamburger(false)}>
+            <Link className="uppercase font-extralight" href="/works">
+              works
+            </Link>
+          </li>
+        </ul>
+
+        <div className="text-[1rem] text-white uppercase font-neueMontreal font-extralight ml-2">
+          <a
+            href="mailto:taofeeqahbello12@gmail.com"
+            target="_blank"
+            className="block"
+          >
+            email
+          </a>
+          <a
+            href="https://twitter.com/PheeqohB"
+            target="_blank"
+            className="block"
+          >
+            twitter
+          </a>
+          <a
+            href="https://www.linkedin.com/in/taofeeqahbello?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BHbCivzbDTECEtobOLIku0A%3D%3D "
+            target="_blank"
+            className="block"
+          >
+            linkedIn
+          </a>
+          <a
+            href="https://www.instagram.com/taofeeqah_b?igsh=MXh1bXBjN2N1cWJ6OQ== "
+            target="_blank"
+            className="block"
+          >
+            instagram
+          </a>
+        </div>
+
+        <div className="w-full flex justify-between uppercase font-neueMontreal font-extralight text-[.7rem] text-white px-2 pb-2">
+          <a href="https://www.linkedin.com/in/qoreebullah/" target="_blank">
+            designed by qoreeb
+          </a>
+          <a
+            href="https://www.linkedin.com/in/sobur-abubakar-835b6b246/"
+            target="_blank"
+          >
+            developed by sobur
+          </a>
+        </div>
+      </div>
 
       <div id="top" className="w-0 h-0"></div>
       <div className="flex justify-between items-center w-[95%] h-full bg-inherit mx-auto">
