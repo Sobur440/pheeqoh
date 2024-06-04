@@ -101,73 +101,75 @@ const FeaturedWorks = ({ show }) => {
       >
         featured works
       </p>
-
-      <div
-        className="w-full h-[20rem] md:h-[30rem] lg:h-screen lg:sticky lg:bottom-0 lg:z-[3]"
-        ref={workCon1Ref}
-      >
+      <div>
         <div
-          className={`h-full relative flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.pos}`}
-          ref={firstWorkRef}
+          className="w-full h-[20rem] md:h-[30rem] lg:h-screen lg:sticky lg:top-0 lg:z-[1]"
+          ref={workCon1Ref}
         >
-          <div className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0">
-            <p className="text-[1rem] md:text-[1.2rem]">SeamlessPOS</p>
-            <p className="text-[1rem] md:text-[1.2rem]">UI/UX DESIGN</p>
-            <p className="hidden lg:block max-w-[25rem] text-justify text-[.9rem]">
-              Meet SeamlessPOS, a game-changer for restaurant and hospitality
-              operations. This cutting-edge solution revolutionizes order and
-              inventory management, providing a seamless experience. With a
-              user-friendly design, SeamlessPOS empowers teams to handle orders,
-              manage inventory, and deliver outstanding service in real-time.
-            </p>
+          <div
+            className={`h-full relative flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.pos}`}
+            ref={firstWorkRef}
+          >
+            <div className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0">
+              <p className="text-[1rem] md:text-[1.2rem]">SeamlessPOS</p>
+              <p className="text-[1rem] md:text-[1.2rem]">UI/UX DESIGN</p>
+              <p className="hidden lg:block max-w-[25rem] text-justify text-[.9rem]">
+                Meet SeamlessPOS, a game-changer for restaurant and hospitality
+                operations. This cutting-edge solution revolutionizes order and
+                inventory management, providing a seamless experience. With a
+                user-friendly design, SeamlessPOS empowers teams to handle
+                orders, manage inventory, and deliver outstanding service in
+                real-time.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div
-        className="w-full h-[20rem] md:h-[30rem] lg:h-screen my-4 lg:my-0 lg:sticky lg:bottom-0 lg:z-[2]"
-        ref={workCon2Ref}
-      >
         <div
-          className={`h-full relative flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.eohs}`}
-          ref={secWorkRef}
+          className="w-full h-[20rem] md:h-[30rem] lg:h-screen my-4 lg:my-0 lg:sticky lg:top-0 lg:z-[2]"
+          ref={workCon2Ref}
         >
-          <div className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0">
-            <p className="text-[1rem] md:text-[1.2rem]">EOHS</p>
-            <p className="text-[1rem] md:text-[1.2rem]">UI/UX DESIGN</p>
-            <p className="hidden lg:block max-w-[25rem] text-justify text-[.9rem]">
-              I created this App to help customers of any Online Shopping
-              Platform to order and pay with their cryptocurrency with ease
-              especially E-commerce products within Web2 to learn a little about
-              Web3 because most people now trade with coins. Introducing this
-              feature into the Web2 products will make the ordering process
-              smooth and quick without the exchange of coins before any users
-              can get stuff online.
-            </p>
+          <div
+            className={`h-full relative flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.eohs}`}
+            ref={secWorkRef}
+          >
+            <div className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0">
+              <p className="text-[1rem] md:text-[1.2rem]">EOHS</p>
+              <p className="text-[1rem] md:text-[1.2rem]">UI/UX DESIGN</p>
+              <p className="hidden lg:block max-w-[25rem] text-justify text-[.9rem]">
+                I created this App to help customers of any Online Shopping
+                Platform to order and pay with their cryptocurrency with ease
+                especially E-commerce products within Web2 to learn a little
+                about Web3 because most people now trade with coins. Introducing
+                this feature into the Web2 products will make the ordering
+                process smooth and quick without the exchange of coins before
+                any users can get stuff online.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div
-        className="w-full h-[20rem] md:h-[30rem] lg:h-screen lg:sticky lg:bottom-0 lg:z-[1]"
-        ref={workCon3Ref}
-      >
         <div
-          className={`h-full relative flex items-end lg:items-center ${styles.insta}`}
-          ref={thirdWorkRef}
+          className="w-full h-[20rem] md:h-[30rem] lg:h-screen lg:z-[3]"
+          ref={workCon3Ref}
         >
-          <div className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0">
-            <p className="text-[1rem] lg:max-w-[7rem]">
-              Instagram Mobile App Redesign
-            </p>
-            <p className="text-[1rem]">UI/UX DESIGN</p>
-            <p className="hidden lg:block max-w-[25rem] text-justify text-[.9rem]">
-              Enhancing accessibility by allowing users to effortlessly drag and
-              drop their preferred highlights without disruption. Introducing a
-              seamless dropdown above the highlights, providing easy navigation
-              through lists. Crafting an intuitive and interactive interface for
-              a simplified user experience.
-            </p>
+          <div
+            className={`h-full relative flex items-end lg:items-center ${styles.insta}`}
+            ref={thirdWorkRef}
+          >
+            <div className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0">
+              <p className="text-[1rem] lg:max-w-[7rem]">
+                Instagram Mobile App Redesign
+              </p>
+              <p className="text-[1rem]">UI/UX DESIGN</p>
+              <p className="hidden lg:block max-w-[25rem] text-justify text-[.9rem]">
+                Enhancing accessibility by allowing users to effortlessly drag
+                and drop their preferred highlights without disruption.
+                Introducing a seamless dropdown above the highlights, providing
+                easy navigation through lists. Crafting an intuitive and
+                interactive interface for a simplified user experience.
+              </p>
+            </div>
           </div>
         </div>
       </div>
