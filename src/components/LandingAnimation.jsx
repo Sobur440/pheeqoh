@@ -55,7 +55,7 @@ const LandingAnimation = () => {
           display: "none",
           onComplete: () => setIsLoadingComplete(true),
         },
-        "-=0.5"
+        "-=0.7"
       );
   }, []);
 
