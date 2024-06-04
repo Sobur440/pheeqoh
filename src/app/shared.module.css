@@ -11,24 +11,18 @@
   background-position: center;
   background-size: cover;
   z-index: 2;
-  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-  transition: 0.5s ease-out;
 }
 .eohs {
   background: url("/images/full-shot-woman-online-fashion-shopping.png");
   background-position: center;
   background-size: cover;
   z-index: 2;
-  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-  transition: 0.5s ease-out;
 }
 .insta {
   background: url("/images/insta.png");
   background-position: center;
   background-size: cover;
   z-index: 2;
-  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-  transition: 0.5s ease-out;
 }
 
 .pos::after {
@@ -102,7 +96,7 @@
     bottom: 20%;
   }
 
-  .pos {
+  /* .pos {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   }
   .eohs {
@@ -110,7 +104,7 @@
   }
   .insta {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  }
+  } */
 }
 
 @media (min-width: 1280px) {

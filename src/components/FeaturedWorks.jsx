@@ -12,65 +12,131 @@ const FeaturedWorks = ({ show }) => {
   const workCon1Ref = useRef();
   const workCon2Ref = useRef();
   const workCon3Ref = useRef();
+  const posRef = useRef();
+  const posTitleRef = useRef([]);
+  const posParaRef = useRef();
+  const eohsRef = useRef();
+  const eohsTitleRef = useRef([]);
+  const eohsParaRef = useRef();
+  const instaRef = useRef();
+  const instaTitleRef = useRef([]);
+  const instaParaRef = useRef();
+
   const viewAllWorksRef = useRef();
 
   const { isLoadingComplete } = useContext(NavColourContext);
 
   useEffect(() => {
     if (isLoadingComplete) {
-      const worksObserver1 = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              gsap
-                .timeline()
-                .to(worksTitleRef.current, {
-                  opacity: 1,
-                  y: 0,
-                })
-                .to(
-                  firstWorkRef.current,
-                  {
-                    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-                    ease: "power3.out",
-                  },
-                  "<0.2"
-                );
-            }
-          });
-        },
-        { threshold: 0.2 }
-      );
-      const worksObserver2 = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              gsap.to(secWorkRef.current, {
-                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-                ease: "power3.out",
-              });
-            }
-          });
-        },
-        { threshold: 0.2 }
-      );
-      const worksObserver3 = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              gsap.to(thirdWorkRef.current, {
-                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-                ease: "power3.out",
-              });
-            }
-          });
-        },
-        { threshold: 0.2 }
-      );
+      // const worksObserver1 = new IntersectionObserver(
+      //   (entries) => {
+      //     entries.forEach((entry) => {
+      //       if (entry.isIntersecting) {
+      //         gsap
+      //           .timeline()
+      //           .to(worksTitleRef.current, {
+      //             opacity: 1,
+      //             y: 0,
+      //           })
+      //           .to(
+      //             firstWorkRef.current,
+      //             {
+      //               clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+      //               ease: "power3.out",
+      //             },
+      //             "<0.2"
+      //           );
+      //       }
+      //     });
+      //   },
+      //   { threshold: 0.2 }
+      // );
+      // const worksObserver2 = new IntersectionObserver(
+      //   (entries) => {
+      //     entries.forEach((entry) => {
+      //       if (entry.isIntersecting) {
+      //         gsap.to(secWorkRef.current, {
+      //           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+      //           ease: "power3.out",
+      //         });
+      //       }
+      //     });
+      //   },
+      //   { threshold: 0.2 }
+      // );
+      // const worksObserver3 = new IntersectionObserver(
+      //   (entries) => {
+      //     entries.forEach((entry) => {
+      //       if (entry.isIntersecting) {
+      //         gsap.to(thirdWorkRef.current, {
+      //           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+      //           ease: "power3.out",
+      //         });
+      //       }
+      //     });
+      //   },
+      //   { threshold: 0.2 }
+      // );
 
-      worksObserver1.observe(workCon1Ref.current);
-      worksObserver2.observe(workCon2Ref.current);
-      worksObserver3.observe(workCon3Ref.current);
+      // worksObserver1.observe(workCon1Ref.current);
+      // worksObserver2.observe(workCon2Ref.current);
+      // worksObserver3.observe(workCon3Ref.current);
+
+      const posObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap
+              .timeline()
+              .to(posTitleRef.current, {
+                y: 0,
+                clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+                stagger: { amount: 0.5 },
+              })
+              .to(posParaRef.current, {
+                opacity: 1,
+                y: 0,
+              });
+          }
+        });
+      });
+      const eohsObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap
+              .timeline()
+              .to(eohsTitleRef.current, {
+                y: 0,
+                clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+                stagger: { amount: 0.5 },
+              })
+              .to(eohsParaRef.current, {
+                opacity: 1,
+                y: 0,
+              });
+          }
+        });
+      });
+      const instaObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap
+              .timeline()
+              .to(instaTitleRef.current, {
+                y: 0,
+                clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+                stagger: { amount: 0.5 },
+              })
+              .to(instaParaRef.current, {
+                opacity: 1,
+                y: 0,
+              });
+          }
+        });
+      });
+
+      posObserver.observe(posRef.current);
+      eohsObserver.observe(eohsRef.current);
+      instaObserver.observe(instaRef.current);
 
       const viewAlWorksObserver = new IntersectionObserver(
         (entries) => {
@@ -102,18 +168,39 @@ const FeaturedWorks = ({ show }) => {
         featured works
       </p>
       <div>
-        <div
-          className="w-full h-[20rem] md:h-[30rem] lg:h-screen lg:sticky lg:top-0 lg:z-[1]"
-          ref={workCon1Ref}
-        >
+        <div className="h-screen sticky top-0 z-[1]" ref={workCon1Ref}>
           <div
             className={`h-full relative flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.pos}`}
             ref={firstWorkRef}
           >
-            <div className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0">
-              <p className="text-[1rem] md:text-[1.2rem]">SeamlessPOS</p>
-              <p className="text-[1rem] md:text-[1.2rem]">UI/UX DESIGN</p>
-              <p className="hidden lg:block max-w-[25rem] text-justify text-[.9rem]">
+            <div
+              className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0"
+              ref={posRef}
+            >
+              <p
+                className="text-[1rem] md:text-[1.2rem] translate-y-[200px]"
+                ref={(el) => posTitleRef.current.push(el)}
+                style={{
+                  clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+                  transition: ".5s ease-out",
+                }}
+              >
+                SeamlessPOS
+              </p>
+              <p
+                className="text-[1rem] md:text-[1.2rem] translate-y-[200px]"
+                ref={(el) => posTitleRef.current.push(el)}
+                style={{
+                  clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+                  transition: ".5s ease-out",
+                }}
+              >
+                UI/UX DESIGN
+              </p>
+              <p
+                className="hidden lg:block max-w-[25rem] text-justify text-[.9rem] opacity-0 translate-y-[100px]"
+                ref={posParaRef}
+              >
                 Meet SeamlessPOS, a game-changer for restaurant and hospitality
                 operations. This cutting-edge solution revolutionizes order and
                 inventory management, providing a seamless experience. With a
@@ -125,18 +212,39 @@ const FeaturedWorks = ({ show }) => {
           </div>
         </div>
 
-        <div
-          className="w-full h-[20rem] md:h-[30rem] lg:h-screen my-4 lg:my-0 lg:sticky lg:top-0 lg:z-[2]"
-          ref={workCon2Ref}
-        >
+        <div className="h-screen sticky top-0 z-[2]" ref={workCon2Ref}>
           <div
             className={`h-full relative flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.eohs}`}
             ref={secWorkRef}
           >
-            <div className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0">
-              <p className="text-[1rem] md:text-[1.2rem]">EOHS</p>
-              <p className="text-[1rem] md:text-[1.2rem]">UI/UX DESIGN</p>
-              <p className="hidden lg:block max-w-[25rem] text-justify text-[.9rem]">
+            <div
+              className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0"
+              ref={eohsRef}
+            >
+              <p
+                className="text-[1rem] md:text-[1.2rem] translate-y-[200px]"
+                ref={(el) => eohsTitleRef.current.push(el)}
+                style={{
+                  clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+                  transition: ".5s ease-out",
+                }}
+              >
+                EOHS
+              </p>
+              <p
+                className="text-[1rem] md:text-[1.2rem] translate-y-[200px]"
+                ref={(el) => eohsTitleRef.current.push(el)}
+                style={{
+                  clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+                  transition: ".5s ease-out",
+                }}
+              >
+                UI/UX DESIGN
+              </p>
+              <p
+                className="hidden lg:block max-w-[25rem] text-justify text-[.9rem] opacity-0 translate-y-[100px]"
+                ref={eohsParaRef}
+              >
                 I created this App to help customers of any Online Shopping
                 Platform to order and pay with their cryptocurrency with ease
                 especially E-commerce products within Web2 to learn a little
@@ -149,20 +257,39 @@ const FeaturedWorks = ({ show }) => {
           </div>
         </div>
 
-        <div
-          className="w-full h-[20rem] md:h-[30rem] lg:h-screen lg:z-[3]"
-          ref={workCon3Ref}
-        >
+        <div className="h-screen sticky z-[3]" ref={workCon3Ref}>
           <div
             className={`h-full relative flex items-end lg:items-center ${styles.insta}`}
             ref={thirdWorkRef}
           >
-            <div className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0">
-              <p className="text-[1rem] lg:max-w-[7rem]">
+            <div
+              className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0"
+              ref={instaRef}
+            >
+              <p
+                className="text-[1rem] lg:max-w-[7rem] translate-y-[200px]"
+                ref={(el) => instaTitleRef.current.push(el)}
+                style={{
+                  clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+                  transition: ".5s ease-out",
+                }}
+              >
                 Instagram Mobile App Redesign
               </p>
-              <p className="text-[1rem]">UI/UX DESIGN</p>
-              <p className="hidden lg:block max-w-[25rem] text-justify text-[.9rem]">
+              <p
+                className="text-[1rem] translate-y-[200px]"
+                ref={(el) => instaTitleRef.current.push(el)}
+                style={{
+                  clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+                  transition: ".5s ease-out",
+                }}
+              >
+                UI/UX DESIGN
+              </p>
+              <p
+                className="hidden lg:block max-w-[25rem] text-justify text-[.9rem] opacity-0 translate-y-[100px]"
+                ref={instaParaRef}
+              >
                 Enhancing accessibility by allowing users to effortlessly drag
                 and drop their preferred highlights without disruption.
                 Introducing a seamless dropdown above the highlights, providing
