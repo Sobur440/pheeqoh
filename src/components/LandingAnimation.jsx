@@ -78,7 +78,7 @@ const LandingAnimation = () => {
         ></div>
       ))}
       <div className="absolute w-full h-[60vh] top-[20vh] left-0 flex flex-col justify-between items-center">
-        <div className="text-[3rem] uppercase font-neueMachina h-[50px] font-bold flex">
+        <div className=" text-[2rem] md:text-[3rem] uppercase font-neueMachina h-[50px] font-bold flex">
           {title.map((letter, i) => (
             <span
               key={i}
