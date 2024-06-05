@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { NavColourContext } from "@/contexts/NavColourContext";
 import gsap from "gsap";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [hamburger, setHamburger] = useState(false);
@@ -12,7 +13,12 @@ const Navbar = () => {
   const menuExtraRef = useRef([]);
   const navSocialsRef = useRef();
 
-  const { navColour, navRef, isLoadingComplete } = useContext(NavColourContext);
+  const { navColour, navRef, isLoadingComplete, route } =
+    useContext(NavColourContext);
+
+  // useEffect(() => {
+  //   console.log(route);
+  // }, [route]);
 
   useEffect(() => {
     if (isLoadingComplete) {
@@ -108,7 +114,9 @@ const Navbar = () => {
         <ul className="ml-2 leading-[1.2em]">
           <li className="overflow-y-hidden" onClick={() => setHamburger(false)}>
             <Link
-              className="uppercase block translate-y-[100%] font-extralight"
+              className={`${
+                route === "/" ? "text-white" : ""
+              } uppercase block translate-y-[100%] font-extralight`}
               href="/"
               ref={(el) => menuItemRef.current.push(el)}
             >
@@ -117,7 +125,9 @@ const Navbar = () => {
           </li>
           <li className="overflow-y-hidden" onClick={() => setHamburger(false)}>
             <Link
-              className="uppercase block translate-y-[100%] font-extralight"
+              className={`${
+                route === "/about" ? "text-white" : ""
+              } uppercase block translate-y-[100%] font-extralight`}
               href="/about"
               ref={(el) => menuItemRef.current.push(el)}
             >
@@ -127,7 +137,9 @@ const Navbar = () => {
 
           <li className="overflow-y-hidden" onClick={() => setHamburger(false)}>
             <Link
-              className="uppercase block translate-y-[100%] font-extralight"
+              className={`${
+                route === "/works" ? "text-white" : ""
+              } uppercase block translate-y-[100%] font-extralight`}
               href="/works"
               ref={(el) => menuItemRef.current.push(el)}
             >

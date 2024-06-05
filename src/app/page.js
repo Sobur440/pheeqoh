@@ -7,6 +7,7 @@ import Link from "next/link";
 import { NavColourContext } from "@/contexts/NavColourContext";
 import FeaturedWorks from "@/components/FeaturedWorks";
 import ReachOut from "@/components/ReachOut";
+import { usePathname } from "next/navigation";
 import gsap from "gsap";
 
 const Home = () => {
@@ -20,10 +21,15 @@ const Home = () => {
   const heroRef = useRef([]);
   const nameContainerRef = useRef();
   const heroParagraphRef = useRef([]);
-  const { setNavColour, navRef, isLoadingComplete } =
+  const { setNavColour, navRef, isLoadingComplete, setRoute } =
     useContext(NavColourContext);
+  const pathname = usePathname();
   setNavColour(true);
   const show = true;
+
+  useEffect(() => {
+    setRoute(pathname);
+  }, [pathname]);
 
   useEffect(() => {
     if (isLoadingComplete) {

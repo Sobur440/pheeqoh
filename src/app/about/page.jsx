@@ -6,6 +6,7 @@ import styles from "../shared.module.css";
 import { NavColourContext } from "@/contexts/NavColourContext";
 import Head from "next/head";
 import gsap from "gsap";
+import { usePathname } from "next/navigation";
 
 const About = () => {
   const titleRef = useRef();
@@ -26,11 +27,15 @@ const About = () => {
   const enjoymentSecRef = useRef();
   const paintingImgRef = useRef();
   const aboutEnjoymentRef = useRef();
-  const { setNavColour } = useContext(NavColourContext);
+  const { setNavColour, setRoute } = useContext(NavColourContext);
+  const pathname = usePathname();
 
   useEffect(() => {
     setNavColour(false);
   }, [setNavColour]);
+  useEffect(() => {
+    setRoute(pathname);
+  }, [pathname]);
 
   useEffect(() => {
     gsap.to(titleRef.current, {

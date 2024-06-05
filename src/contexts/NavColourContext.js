@@ -7,6 +7,7 @@ export const NavColourContext = createContext();
 const NavColourProvider = ({ children }) => {
   const [navColour, setNavColour] = useState(true);
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
+  const [route, setRoute] = useState("/");
 
   const navRef = useRef([]);
   const heroContext = useRef();
@@ -20,6 +21,8 @@ const NavColourProvider = ({ children }) => {
         heroContext,
         setIsLoadingComplete,
         isLoadingComplete,
+        route,
+        setRoute,
       }}
     >
       {children}

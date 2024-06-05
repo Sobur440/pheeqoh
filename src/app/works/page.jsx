@@ -5,11 +5,17 @@ import { NavColourContext } from "@/contexts/NavColourContext";
 import FeaturedWorks from "@/components/FeaturedWorks";
 import ReachOut from "@/components/ReachOut";
 import gsap from "gsap";
+import { usePathname } from "next/navigation";
 
 const Works = () => {
   const show = false;
   const titleRef = useRef();
-  const { setNavColour } = useContext(NavColourContext);
+  const { setNavColour, setRoute } = useContext(NavColourContext);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setRoute(pathname);
+  }, [pathname]);
 
   useEffect(() => {
     setNavColour(false);
