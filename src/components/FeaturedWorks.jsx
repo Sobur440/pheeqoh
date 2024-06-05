@@ -27,6 +27,7 @@ const FeaturedWorks = ({ show }) => {
   const { isLoadingComplete } = useContext(NavColourContext);
   const [movementX, setMovementX] = useState(0);
   const [movementY, setMovementY] = useState(0);
+  const [exploreBtn, setExploreBtn] = useState(false);
 
   useEffect(() => {
     if (isLoadingComplete) {
@@ -167,8 +168,7 @@ const FeaturedWorks = ({ show }) => {
   const explore = (e) => {
     setMovementX(e.clientX);
     setMovementY(e.clientY);
-    console.log(movementX);
-    console.log(movementY);
+    setExploreBtn(true);
   };
 
   return (
@@ -183,19 +183,23 @@ const FeaturedWorks = ({ show }) => {
       </p>
       <div>
         <div className="h-screen sticky top-0 z-[1]" ref={workCon1Ref}>
-          <div
+          <a
+            href="https://www.behance.net/gallery/181810595/SeamlessPOS-case-study"
+            target="_blank"
             className={`h-full relative flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.pos}`}
             ref={firstWorkRef}
             onMouseMove={explore}
           >
             <div
-              className={`absolute w-[10rem] text-[0.8rem] h-[2.5rem] uppercase flex justify-center items-center transition-all duration-[.5s] ease-out bg-[gray]`}
+              className={`${
+                exploreBtn ? "opacity-[1]" : "opacity-0"
+              } absolute w-[7.5rem] font-extralight text-[1rem] h-[1.5rem] flex justify-center items-center transition-all duration-[.5s] ease-out bg-[gray]`}
               style={{
                 left: `${movementX}px`,
                 top: `${movementY}px`,
               }}
             >
-              click to view project
+              Click to explore
             </div>
             <div
               className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0"
@@ -233,14 +237,28 @@ const FeaturedWorks = ({ show }) => {
                 real-time.
               </p>
             </div>
-          </div>
+          </a>
         </div>
 
         <div className="h-screen sticky top-0 z-[2]" ref={workCon2Ref}>
-          <div
+          <a
+            href="https://www.behance.net/gallery/160295759/EHOS"
+            target="_blank"
             className={`h-full relative flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.eohs}`}
             ref={secWorkRef}
+            onMouseMove={explore}
           >
+            <div
+              className={`${
+                exploreBtn ? "opacity-[1]" : "opacity-0"
+              } absolute w-[7.5rem] font-extralight text-[1rem] h-[1.5rem] flex justify-center items-center transition-all duration-[.5s] ease-out bg-[gray]`}
+              style={{
+                left: `${movementX}px`,
+                top: `${movementY}px`,
+              }}
+            >
+              Click to explore
+            </div>
             <div
               className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0"
               ref={eohsRef}
@@ -278,14 +296,28 @@ const FeaturedWorks = ({ show }) => {
                 any users can get stuff online.
               </p>
             </div>
-          </div>
+          </a>
         </div>
 
         <div className="h-screen sticky z-[3]" ref={workCon3Ref}>
-          <div
+          <a
+            href="https://www.behance.net/gallery/146653785/Instagrams-Mobile-App-Redesign"
+            target="_blank"
             className={`h-full relative flex items-end lg:items-center ${styles.insta}`}
             ref={thirdWorkRef}
+            onMouseMove={explore}
           >
+            <div
+              className={`${
+                exploreBtn ? "opacity-[1]" : "opacity-0"
+              } absolute w-[7.5rem] font-extralight text-[1rem] h-[1.5rem] flex justify-center items-center transition-all duration-[.5s] ease-out bg-[gray]`}
+              style={{
+                left: `${movementX}px`,
+                top: `${movementY}px`,
+              }}
+            >
+              Click to explore
+            </div>
             <div
               className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0"
               ref={instaRef}
@@ -321,7 +353,7 @@ const FeaturedWorks = ({ show }) => {
                 interactive interface for a simplified user experience.
               </p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
 
