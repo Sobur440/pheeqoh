@@ -136,3 +136,24 @@
   top: 0;
   z-index: -1;
 }
+
+@media (max-width: 1023px) {
+  .pos {
+    background: url("/images/posmobile.png");
+    background-position: center;
+    background-size: cover;
+    z-index: 2;
+  }
+  .eohs {
+    background: url("/images/womanmobile.png");
+    background-position: center;
+    background-size: cover;
+    z-index: 2;
+  }
+  .insta {
+    background: url("/images/instamobile.png");
+    background-position: center;
+    background-size: cover;
+    z-index: 2;
+  }
+}

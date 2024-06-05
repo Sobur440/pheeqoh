@@ -203,10 +203,30 @@ const FeaturedWorks = ({ show }) => {
       </p>
       <div>
         <div className="h-screen sticky top-0 z-[1]" ref={workCon1Ref}>
+          <div
+            className={`${styles.pos} h-full flex items-center lg:hidden relative`}
+          >
+            <div className="w-[95%] h-[10rem] mx-auto flex flex-col justify-between">
+              <div className="w-full flex justify-between">
+                <p>SeamlessPos</p>
+                <p>UI/UX DESIGN</p>
+              </div>
+              <div>
+                <a
+                  href="https://www.behance.net/gallery/181810595/SeamlessPOS-case-study"
+                  target="_blank"
+                  className="underline capitalize"
+                >
+                  view project
+                </a>
+              </div>
+            </div>
+          </div>
+
           <a
             href="https://www.behance.net/gallery/181810595/SeamlessPOS-case-study"
             target="_blank"
-            className={`h-full relative flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.pos}`}
+            className={`h-full relative hidden lg:flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.pos}`}
             ref={firstWorkRef}
             onMouseMove={explore}
           >
@@ -258,10 +278,30 @@ const FeaturedWorks = ({ show }) => {
         </div>
 
         <div className="h-screen sticky top-0 z-[2]" ref={workCon2Ref}>
+          <div
+            className={`${styles.eohs} h-full flex items-center lg:hidden relative`}
+          >
+            <div className="w-[95%] h-[10rem] mx-auto flex flex-col justify-between">
+              <div className="w-full flex justify-between">
+                <p>EOHS</p>
+                <p>UI/UX DESIGN</p>
+              </div>
+              <div>
+                <a
+                  href="https://www.behance.net/gallery/160295759/EHOS"
+                  target="_blank"
+                  className="underline capitalize"
+                >
+                  view project
+                </a>
+              </div>
+            </div>
+          </div>
+
           <a
             href="https://www.behance.net/gallery/160295759/EHOS"
             target="_blank"
-            className={`h-full relative flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.eohs}`}
+            className={`h-full relative hidden lg:flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.eohs}`}
             ref={secWorkRef}
             onMouseMove={secExplore}
           >
@@ -314,10 +354,30 @@ const FeaturedWorks = ({ show }) => {
         </div>
 
         <div className="h-screen sticky z-[3]" ref={workCon3Ref}>
+          <div
+            className={`${styles.insta} h-full flex items-center lg:hidden relative`}
+          >
+            <div className="w-[95%] h-[10rem] mx-auto flex flex-col justify-between">
+              <div className="w-full flex justify-between">
+                <p className="max-w-[60rem]">Instagram Mobile App Redesign</p>
+                <p>UI/UX DESIGN</p>
+              </div>
+              <div>
+                <a
+                  href="https://www.behance.net/gallery/146653785/Instagrams-Mobile-App-Redesign"
+                  target="_blank"
+                  className="underline capitalize"
+                >
+                  view project
+                </a>
+              </div>
+            </div>
+          </div>
+
           <a
             href="https://www.behance.net/gallery/146653785/Instagrams-Mobile-App-Redesign"
             target="_blank"
-            className={`h-full relative flex items-end lg:items-center ${styles.insta}`}
+            className={`h-full relative hidden lg:flex items-end lg:items-center ${styles.insta}`}
             ref={thirdWorkRef}
             onMouseMove={thirdExplore}
           >
