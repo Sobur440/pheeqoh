@@ -1,12 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { NavColourContext } from "@/contexts/NavColourContext";
 import gsap from "gsap";
 
 const Navbar = () => {
   const [hamburger, setHamburger] = useState(false);
+  const hamburgerRef = useRef();
+  const menuItemRef = useRef([]);
+  const menuExtraRef = useRef([]);
+  const navSocialsRef = useRef();
 
   const { navColour, navRef, isLoadingComplete } = useContext(NavColourContext);
 
@@ -21,6 +25,64 @@ const Navbar = () => {
     }
   }, [isLoadingComplete]);
 
+  useEffect(() => {
+    if (hamburger) {
+      gsap
+        .timeline()
+
+        .to(hamburgerRef.current, {
+          // clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          left: "0",
+          ease: "power3.inOut",
+        })
+        .to(menuItemRef.current, {
+          y: 0,
+          ease: "power3.out",
+          duration: 1.2,
+          stagger: { amount: 0.7 },
+        })
+        .to(
+          navSocialsRef.current,
+          {
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+            y: 0,
+            duration: 1.5,
+          },
+          "<0.5"
+        )
+        .to(
+          menuExtraRef.current,
+          {
+            opacity: 1,
+          },
+          "<0.5"
+        );
+    } else {
+      gsap
+        .timeline()
+        .to(menuItemRef.current, {
+          y: "100%",
+          duration: 0.5,
+        })
+        .set(navSocialsRef.current, {
+          y: "50px",
+          clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+        })
+        .to(menuExtraRef.current, {
+          opacity: 0,
+        })
+        .to(hamburgerRef.current, {
+          // clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+          left: "-100vw",
+          ease: "power3.out",
+          duration: 0.3,
+        });
+      // .set(hamburgerRef.current, {
+      //   display: "none",
+      // });
+    }
+  }, [hamburger]);
+
   return (
     <nav
       className={`${
@@ -28,36 +90,57 @@ const Navbar = () => {
       } bg-transparent w-full h-[3.5rem]`}
     >
       <div
-        className={`${
-          hamburger ? "top-0 right-0" : "right-[-100vw]"
-        } bg-black text-[#797979] w-full h-screen fixed flex flex-col justify-between z-[99] text-[15vw] font-ppEiko pt-[1rem] transition-all duration-[.8s] ease-out`}
+        className={`w-full bg-black text-[#797979] h-screen fixed left-[-100vw] top-0 flex flex-col justify-between z-[99] text-[15vw] font-ppEiko pt-[1rem] transition-all duration-[.8s] ease-out`}
+        ref={hamburgerRef}
+        // style={{
+        //   clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+        // }}
       >
-        <div className="flex w-full justify-between px-2 text-[1rem] text-white uppercase font-neueMachina font-extralight">
+        <div
+          className="flex w-full justify-between px-2 text-[1rem] text-white uppercase font-neueMachina font-extralight opacity-0"
+          ref={(el) => menuExtraRef.current.push(el)}
+        >
           <p>pheeqoh</p>
           <p className="cursor-pointer" onClick={() => setHamburger(false)}>
             close
           </p>
         </div>
         <ul className="ml-2 leading-[1.2em]">
-          <li onClick={() => setHamburger(false)}>
-            <Link className="uppercase font-extralight" href="/">
+          <li className="overflow-y-hidden" onClick={() => setHamburger(false)}>
+            <Link
+              className="uppercase block translate-y-[100%] font-extralight"
+              href="/"
+              ref={(el) => menuItemRef.current.push(el)}
+            >
               home
             </Link>
           </li>
-          <li onClick={() => setHamburger(false)}>
-            <Link className="uppercase font-extralight" href="/about">
+          <li className="overflow-y-hidden" onClick={() => setHamburger(false)}>
+            <Link
+              className="uppercase block translate-y-[100%] font-extralight"
+              href="/about"
+              ref={(el) => menuItemRef.current.push(el)}
+            >
               about
             </Link>
           </li>
 
-          <li onClick={() => setHamburger(false)}>
-            <Link className="uppercase font-extralight" href="/works">
+          <li className="overflow-y-hidden" onClick={() => setHamburger(false)}>
+            <Link
+              className="uppercase block translate-y-[100%] font-extralight"
+              href="/works"
+              ref={(el) => menuItemRef.current.push(el)}
+            >
               works
             </Link>
           </li>
         </ul>
 
-        <div className="text-[1rem] text-white uppercase font-neueMontreal font-extralight ml-2">
+        <div
+          className="text-[1rem] text-white uppercase font-neueMontreal font-extralight ml-2 translate-y-[100px]"
+          style={{ clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)" }}
+          ref={navSocialsRef}
+        >
           <a
             href="mailto:taofeeqahbello12@gmail.com"
             target="_blank"
@@ -88,7 +171,10 @@ const Navbar = () => {
           </a>
         </div>
 
-        <div className="w-full flex justify-between uppercase font-neueMontreal font-extralight text-[.7rem] text-white px-2 pb-2">
+        <div
+          className="w-full flex justify-between uppercase font-neueMontreal font-extralight text-[.7rem] text-white px-2 pb-2 opacity-0"
+          ref={(el) => menuExtraRef.current.push(el)}
+        >
           <a href="https://www.linkedin.com/in/qoreebullah/" target="_blank">
             designed by qoreeb
           </a>
