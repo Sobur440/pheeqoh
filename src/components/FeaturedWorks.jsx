@@ -21,6 +21,7 @@ const FeaturedWorks = ({ show }) => {
   const instaRef = useRef();
   const instaTitleRef = useRef([]);
   const instaParaRef = useRef();
+  const exploreRef = useRef([]);
 
   const viewAllWorksRef = useRef();
 
@@ -28,6 +29,15 @@ const FeaturedWorks = ({ show }) => {
   const [movementX, setMovementX] = useState(0);
   const [movementY, setMovementY] = useState(0);
   const [exploreBtn, setExploreBtn] = useState(false);
+  const [secExploreBtn, setSecExploreBtn] = useState(false);
+  const [thirdExploreBtn, setThirdExploreBtn] = useState(false);
+
+  useEffect(() => {
+    gsap.to(exploreRef.current, {
+      left: `${movementX}px`,
+      top: `${movementY}px`,
+    });
+  }, [movementX, movementY]);
 
   useEffect(() => {
     if (isLoadingComplete) {
@@ -170,6 +180,16 @@ const FeaturedWorks = ({ show }) => {
     setMovementY(e.clientY);
     setExploreBtn(true);
   };
+  const secExplore = (e) => {
+    setMovementX(e.clientX);
+    setMovementY(e.clientY);
+    setSecExploreBtn(true);
+  };
+  const thirdExplore = (e) => {
+    setMovementX(e.clientX);
+    setMovementY(e.clientY);
+    setThirdExploreBtn(true);
+  };
 
   return (
     <section className="mt-10 text-white w-full flex flex-col">
@@ -194,10 +214,7 @@ const FeaturedWorks = ({ show }) => {
               className={`${
                 exploreBtn ? "opacity-[1]" : "opacity-0"
               } absolute w-[7.5rem] font-extralight text-[1rem] h-[1.5rem] flex justify-center items-center transition-all duration-[.5s] ease-out bg-[gray]`}
-              style={{
-                left: `${movementX}px`,
-                top: `${movementY}px`,
-              }}
+              ref={(el) => exploreRef.current.push(el)}
             >
               Click to explore
             </div>
@@ -246,16 +263,13 @@ const FeaturedWorks = ({ show }) => {
             target="_blank"
             className={`h-full relative flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.eohs}`}
             ref={secWorkRef}
-            onMouseMove={explore}
+            onMouseMove={secExplore}
           >
             <div
               className={`${
-                exploreBtn ? "opacity-[1]" : "opacity-0"
+                secExploreBtn ? "opacity-[1]" : "opacity-0"
               } absolute w-[7.5rem] font-extralight text-[1rem] h-[1.5rem] flex justify-center items-center transition-all duration-[.5s] ease-out bg-[gray]`}
-              style={{
-                left: `${movementX}px`,
-                top: `${movementY}px`,
-              }}
+              ref={(el) => exploreRef.current.push(el)}
             >
               Click to explore
             </div>
@@ -305,16 +319,13 @@ const FeaturedWorks = ({ show }) => {
             target="_blank"
             className={`h-full relative flex items-end lg:items-center ${styles.insta}`}
             ref={thirdWorkRef}
-            onMouseMove={explore}
+            onMouseMove={thirdExplore}
           >
             <div
               className={`${
-                exploreBtn ? "opacity-[1]" : "opacity-0"
+                thirdExploreBtn ? "opacity-[1]" : "opacity-0"
               } absolute w-[7.5rem] font-extralight text-[1rem] h-[1.5rem] flex justify-center items-center transition-all duration-[.5s] ease-out bg-[gray]`}
-              style={{
-                left: `${movementX}px`,
-                top: `${movementY}px`,
-              }}
+              ref={(el) => exploreRef.current.push(el)}
             >
               Click to explore
             </div>
