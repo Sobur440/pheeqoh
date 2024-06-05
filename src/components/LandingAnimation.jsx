@@ -69,7 +69,10 @@ const LandingAnimation = () => {
   // nothing
 
   return (
-    <div className="w-full h-screen fixed z-[999]" ref={overlayRef}>
+    <div
+      className="w-full h-screen fixed z-[999] overflow-hidden"
+      ref={overlayRef}
+    >
       {[0, 1, 2, 3, 4, 5].map((_, i) => (
         <div
           key={i}

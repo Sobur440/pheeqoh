@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import styles from "../app/shared.module.css";
 import gsap from "gsap";
 import { NavColourContext } from "@/contexts/NavColourContext";
@@ -25,6 +25,8 @@ const FeaturedWorks = ({ show }) => {
   const viewAllWorksRef = useRef();
 
   const { isLoadingComplete } = useContext(NavColourContext);
+  const [movementX, setMovementX] = useState(0);
+  const [movementY, setMovementY] = useState(0);
 
   useEffect(() => {
     if (isLoadingComplete) {
@@ -157,6 +159,18 @@ const FeaturedWorks = ({ show }) => {
     }
   }, [isLoadingComplete]);
 
+  // const mouseMovement = {
+  //   x: null,
+  //   y: null,
+  // };
+
+  const explore = (e) => {
+    setMovementX(e.clientX);
+    setMovementY(e.clientY);
+    console.log(movementX);
+    console.log(movementY);
+  };
+
   return (
     <section className="mt-10 text-white w-full flex flex-col">
       <p
@@ -172,7 +186,17 @@ const FeaturedWorks = ({ show }) => {
           <div
             className={`h-full relative flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.pos}`}
             ref={firstWorkRef}
+            onMouseMove={explore}
           >
+            <div
+              className={`absolute w-[10rem] text-[0.8rem] h-[2.5rem] uppercase flex justify-center items-center transition-all duration-[.5s] ease-out bg-[gray]`}
+              style={{
+                left: `${movementX}px`,
+                top: `${movementY}px`,
+              }}
+            >
+              click to view project
+            </div>
             <div
               className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0"
               ref={posRef}
