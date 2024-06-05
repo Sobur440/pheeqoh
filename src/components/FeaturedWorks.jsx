@@ -213,7 +213,7 @@ const FeaturedWorks = ({ show }) => {
             <div
               className={`${
                 exploreBtn ? "opacity-[1]" : "opacity-0"
-              } absolute w-[7.5rem] font-extralight text-[1rem] h-[1.5rem] flex justify-center items-center transition-all duration-[.5s] ease-out bg-[gray]`}
+              } absolute w-[7.5rem] font-extralight text-[1rem] h-[1.5rem] hidden lg:flex justify-center items-center transition-all duration-[.5s] ease-out bg-[gray] `}
               ref={(el) => exploreRef.current.push(el)}
             >
               Click to explore
@@ -268,7 +268,7 @@ const FeaturedWorks = ({ show }) => {
             <div
               className={`${
                 secExploreBtn ? "opacity-[1]" : "opacity-0"
-              } absolute w-[7.5rem] font-extralight text-[1rem] h-[1.5rem] flex justify-center items-center transition-all duration-[.5s] ease-out bg-[gray]`}
+              } absolute w-[7.5rem] font-extralight text-[1rem] h-[1.5rem] hidden lg:flex justify-center items-center transition-all duration-[.5s] ease-out bg-[gray] `}
               ref={(el) => exploreRef.current.push(el)}
             >
               Click to explore
@@ -324,7 +324,7 @@ const FeaturedWorks = ({ show }) => {
             <div
               className={`${
                 thirdExploreBtn ? "opacity-[1]" : "opacity-0"
-              } absolute w-[7.5rem] font-extralight text-[1rem] h-[1.5rem] flex justify-center items-center transition-all duration-[.5s] ease-out bg-[gray]`}
+              } absolute w-[7.5rem] font-extralight text-[1rem] h-[1.5rem] hidden lg:flex justify-center items-center transition-all duration-[.5s] ease-out bg-[gray] `}
               ref={(el) => exploreRef.current.push(el)}
             >
               Click to explore
