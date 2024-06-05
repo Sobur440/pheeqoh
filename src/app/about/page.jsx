@@ -106,11 +106,16 @@ const About = () => {
               .to(taoAboutRef.current, {
                 clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
               })
-              .to(taoAboutParaRef.current, {
-                opacity: 1,
-                y: 0,
-                ease: "power3.out",
-              });
+              .to(
+                taoAboutParaRef.current,
+                {
+                  opacity: 1,
+                  y: 0,
+                  ease: "power3.out",
+                  duration: 1.3,
+                },
+                "+=0.5"
+              );
           }
         });
       },
