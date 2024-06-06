@@ -246,13 +246,10 @@ const Home = () => {
             </p>
             <div className={`${styles.aboutMobile}`}></div>
           </div>
-          <div
-            className="w-full text-[7.4vw] leading-[1.5em]"
-            style={{ textAlignLast: "justify" }}
-          >
+          <div className="w-full text-[7.4vw] leading-[1.5em]">
             <div className={`block w-full relative overflow-y-hidden`}>
               <p
-                className="translate-y-[100%]"
+                className={`${styles.aboutWordsMobile} translate-y-[100%]`}
                 ref={(el) => aboutRef.current.push(el)}
               >
                 extensive research, interface
@@ -261,7 +258,7 @@ const Home = () => {
             </div>
             <div className={`block w-full relative overflow-y-hidden`}>
               <p
-                className="translate-y-[100%]"
+                className={`${styles.aboutWordsMobile} translate-y-[100%]`}
                 ref={(el) => aboutRef.current.push(el)}
               >
                 design, and wireframing. I&apos;m
@@ -270,7 +267,7 @@ const Home = () => {
             </div>
             <div className={`block w-full relative overflow-y-hidden`}>
               <p
-                className="translate-y-[100%]"
+                className={`${styles.aboutWordsMobile} translate-y-[100%]`}
                 ref={(el) => aboutRef.current.push(el)}
               >
                 dedicated to continuous process
@@ -279,7 +276,7 @@ const Home = () => {
             </div>
             <div className={`block w-full relative overflow-y-hidden`}>
               <p
-                className="translate-y-[100%]"
+                className={`${styles.aboutWordsMobile} translate-y-[100%]`}
                 ref={(el) => aboutRef.current.push(el)}
               >
                 improvement, sharing UX
@@ -288,7 +285,7 @@ const Home = () => {
             </div>{" "}
             <div className={`block w-full relative overflow-y-hidden`}>
               <p
-                className="translate-y-[100%]"
+                className={`${styles.aboutWordsMobile} translate-y-[100%]`}
                 ref={(el) => aboutRef.current.push(el)}
               >
                 knowledge, and transforming
@@ -297,7 +294,7 @@ const Home = () => {
             </div>
             <div className={`block w-full relative overflow-y-hidden`}>
               <p
-                className="translate-y-[100%]"
+                className={`${styles.aboutWordsMobile} translate-y-[100%]`}
                 ref={(el) => aboutRef.current.push(el)}
               >
                 intricate business concepts into
@@ -306,7 +303,7 @@ const Home = () => {
             </div>
             <div className={`block w-full relative overflow-y-hidden`}>
               <p
-                className="translate-y-[100%]"
+                className={`${styles.aboutWordsMobile} translate-y-[100%]`}
                 ref={(el) => aboutRef.current.push(el)}
               >
                 visually captivating, user-
@@ -316,7 +313,7 @@ const Home = () => {
           </div>
           <div className={`w-fit relative`}>
             <p
-              className="translate-y-[100%]"
+              className={`${styles.aboutWordsMobile} translate-y-[100%]`}
               ref={(el) => aboutRef.current.push(el)}
             >
               centric designs.
