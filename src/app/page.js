@@ -351,10 +351,10 @@ const Home = () => {
               <div className={`${styles.aboutBlack}`}></div>
             </div>
 
-            <div style={{ textAlignLast: "justify" }}>
+            <div>
               <div className={`block w-full relative overflow-y-hidden`}>
                 <p
-                  className="translate-y-[100%]"
+                  className={`${styles.aboutWords} translate-y-[100%]`}
                   ref={(el) => aboutRef.current.push(el)}
                 >
                   interface design, and wireframing. I&apos;m dedicated to
@@ -364,7 +364,7 @@ const Home = () => {
               </div>
               <div className={`block w-full relative overflow-y-hidden`}>
                 <p
-                  className="translate-y-[100%]"
+                  className={`${styles.aboutWords} translate-y-[100%]`}
                   ref={(el) => aboutRef.current.push(el)}
                 >
                   process improvement, sharing UX knowledge, and transforming
@@ -373,7 +373,7 @@ const Home = () => {
               </div>
               <div className={`block w-full relative overflow-y-hidden`}>
                 <p
-                  className="translate-y-[100%]"
+                  className={`${styles.aboutWords} translate-y-[100%]`}
                   ref={(el) => aboutRef.current.push(el)}
                 >
                   intricate business concepts into visually captivating, user-
@@ -382,7 +382,7 @@ const Home = () => {
               </div>
               <div className={`block relative w-fit overflow-y-hidden`}>
                 <p
-                  className="translate-y-[100%]"
+                  className={`${styles.aboutWords} translate-y-[100%]`}
                   ref={(el) => aboutRef.current.push(el)}
                 >
                   centric designs.
