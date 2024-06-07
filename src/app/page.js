@@ -37,7 +37,7 @@ const Home = () => {
         .timeline()
         .to(heroRef.current, {
           y: 0,
-          stagger: { amount: 0.5 },
+          stagger: { each: 0.2 },
           duration: 1,
           ease: "power3.out",
         })
@@ -45,7 +45,7 @@ const Home = () => {
           nameContainerRef.current,
           {
             overflow: "visible",
-            duration: 0.5,
+            duration: 0.3,
           },
           "-=1.2"
         )
