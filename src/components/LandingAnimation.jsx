@@ -34,7 +34,7 @@ const LandingAnimation = () => {
             .to(progressBarRef.current, {
               width: "100%",
               duration: 5,
-              ease: "power2.out",
+              ease: "power2.inOut",
             })
             .to(titleRef.current, {
               y: -100,
@@ -71,9 +71,9 @@ const LandingAnimation = () => {
             gsap
               .timeline()
               .to(progressBarRef.current, {
-                width: "50%",
+                width: "100%",
                 duration: 5,
-                ease: "power2.out",
+                ease: "power2.inOut",
               })
               .to(titleRef.current, {
                 y: -100,
