@@ -1,7 +1,12 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { lenisContext } from "@/app/SmoothScroll";
 
 const Footer = () => {
+  const lenis = useContext(lenisContext);
+
   return (
     <footer className="mt-[5rem] bg-black h-[47rem] lg:h-[40rem] md:h-[50rem] w-full text-white flex justify-center items-center">
       <div className="w-[98%] h-[96%] flex flex-col justify-between">
@@ -62,7 +67,11 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-            <a href="#top" className="block uppercase text-[.8rem]">
+            <a
+              href="#top"
+              className="block uppercase text-[.8rem]"
+              onClick={() => lenis.scrollTo("#top")}
+            >
               back to top
             </a>
           </div>

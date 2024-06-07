@@ -24,7 +24,7 @@ const Navbar = () => {
     if (isLoadingComplete) {
       gsap.to(navRef.current, {
         y: 0,
-        stagger: { amount: 0.7, from: "center" },
+        stagger: { amount: 0.5, from: "center" },
         ease: "power3.out",
         duration: 1,
       });

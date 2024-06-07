@@ -1,8 +1,12 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { createContext, useEffect, useRef, useState } from "react";
 import Lenis from "@studio-freight/lenis";
 
+export const lenisContext = createContext();
+
 const SmoothScroll = ({ children }) => {
+  const [lenis, setLenis] = useState(null);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -20,9 +24,15 @@ const SmoothScroll = ({ children }) => {
     }
 
     requestAnimationFrame(raf);
+
+    setLenis(lenis);
   }, []);
 
-  return <div>{children}</div>;
+  return (
+    <lenisContext.Provider value={lenis}>
+      <div>{children}</div>
+    </lenisContext.Provider>
+  );
 };
 
 export default SmoothScroll;

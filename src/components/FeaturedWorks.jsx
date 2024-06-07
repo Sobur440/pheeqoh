@@ -95,57 +95,66 @@ const FeaturedWorks = ({ show }) => {
       // worksObserver2.observe(workCon2Ref.current);
       // worksObserver3.observe(workCon3Ref.current);
 
-      const posObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            gsap
-              .timeline()
-              .to(posTitleRef.current, {
-                y: 0,
-                clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
-                stagger: { amount: 0.5 },
-              })
-              .to(posParaRef.current, {
-                opacity: 1,
-                y: 0,
-              });
-          }
-        });
-      });
-      const eohsObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            gsap
-              .timeline()
-              .to(eohsTitleRef.current, {
-                y: 0,
-                clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
-                stagger: { amount: 0.5 },
-              })
-              .to(eohsParaRef.current, {
-                opacity: 1,
-                y: 0,
-              });
-          }
-        });
-      });
-      const instaObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            gsap
-              .timeline()
-              .to(instaTitleRef.current, {
-                y: 0,
-                clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
-                stagger: { amount: 0.5 },
-              })
-              .to(instaParaRef.current, {
-                opacity: 1,
-                y: 0,
-              });
-          }
-        });
-      });
+      const posObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              gsap
+                .timeline()
+                .to(posTitleRef.current, {
+                  y: 0,
+                  clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+                  stagger: { amount: 0.5 },
+                })
+                .to(posParaRef.current, {
+                  opacity: 1,
+                  y: 0,
+                });
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      const eohsObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              gsap
+                .timeline()
+                .to(eohsTitleRef.current, {
+                  y: 0,
+                  clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+                  stagger: { amount: 0.5 },
+                })
+                .to(eohsParaRef.current, {
+                  opacity: 1,
+                  y: 0,
+                });
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      const instaObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              gsap
+                .timeline()
+                .to(instaTitleRef.current, {
+                  y: 0,
+                  clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 0)",
+                  stagger: { amount: 0.5 },
+                })
+                .to(instaParaRef.current, {
+                  opacity: 1,
+                  y: 0,
+                });
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
 
       posObserver.observe(posRef.current);
       eohsObserver.observe(eohsRef.current);
@@ -240,7 +249,7 @@ const FeaturedWorks = ({ show }) => {
               Click to explore
             </div>
             <div
-              className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0"
+              className="w-[90%] h-full mx-auto flex justify-between items-center mb-4 lg:mb-0"
               ref={posRef}
             >
               <p
@@ -316,7 +325,7 @@ const FeaturedWorks = ({ show }) => {
               Click to explore
             </div>
             <div
-              className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0"
+              className="w-[90%] h-full mx-auto flex justify-between items-center mb-4 lg:mb-0"
               ref={eohsRef}
             >
               <p
@@ -393,7 +402,7 @@ const FeaturedWorks = ({ show }) => {
               Click to explore
             </div>
             <div
-              className="w-[90%] mx-auto flex justify-between mb-4 lg:mb-0"
+              className="w-[90%] h-full mx-auto flex justify-between items-center mb-4 lg:mb-0"
               ref={instaRef}
             >
               <p

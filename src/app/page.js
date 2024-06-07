@@ -117,25 +117,22 @@ const Home = () => {
     );
     aboutObserver.observe(aboutContainerRef.current);
 
-    const aboutImgObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            gsap
-              .timeline()
-              .to(aboutImgRef.current, {
-                ease: "power3.out",
-                duration: 1,
-                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-              })
-              .to(knowMoreRef.current, {
-                opacity: 1,
-              });
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
+    const aboutImgObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          gsap
+            .timeline()
+            .to(aboutImgRef.current, {
+              ease: "power3.out",
+              duration: 1,
+              clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+            })
+            .to(knowMoreRef.current, {
+              opacity: 1,
+            });
+        }
+      });
+    });
 
     aboutImgObserver.observe(imgConRef.current);
   }, []);
