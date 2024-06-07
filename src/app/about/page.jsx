@@ -263,13 +263,10 @@ const About = () => {
             <div className={`${styles.aboutMobile} `}></div>
           </div>
 
-          <div
-            className="w-full text-[7.4vw]"
-            style={{ textAlignLast: "justify" }}
-          >
+          <div className="w-full text-[7.4vw]">
             <div className={`block w-full relative overflow-y-hidden`}>
               <p
-                className="translate-y-[100%]"
+                className={`${styles.aboutWordsMobile} translate-y-[100%]`}
                 ref={(el) => aboutMeRef.current.push(el)}
               >
                 <span className="text-[7.7vw]">CHANGE MAKER </span> because I
@@ -278,7 +275,7 @@ const About = () => {
             </div>
             <div className={`block w-full relative overflow-y-hidden`}>
               <p
-                className="translate-y-[100%]"
+                className={`${styles.aboutWordsMobile} translate-y-[100%]`}
                 ref={(el) => aboutMeRef.current.push(el)}
               >
                 bring your ideas to life. With a
@@ -287,7 +284,7 @@ const About = () => {
             </div>
             <div className={`block w-full relative overflow-y-hidden`}>
               <p
-                className="translate-y-[100%]"
+                className={`${styles.aboutWordsMobile} translate-y-[100%]`}
                 ref={(el) => aboutMeRef.current.push(el)}
               >
                 deep passion for creating
@@ -296,7 +293,7 @@ const About = () => {
             </div>
             <div className={`block w-full relative overflow-y-hidden`}>
               <p
-                className="translate-y-[100%]"
+                className={`${styles.aboutWordsMobile} translate-y-[100%]`}
                 ref={(el) => aboutMeRef.current.push(el)}
               >
                 {" "}
@@ -306,7 +303,7 @@ const About = () => {
             </div>{" "}
             <div className={`block w-full relative overflow-y-hidden`}>
               <p
-                className="translate-y-[100%]"
+                className={`${styles.aboutWordsMobile} translate-y-[100%]`}
                 ref={(el) => aboutMeRef.current.push(el)}
               >
                 to design products that not
@@ -315,7 +312,7 @@ const About = () => {
             </div>
             <div className={`block w-full relative overflow-y-hidden`}>
               <p
-                className="translate-y-[100%]"
+                className={`${styles.aboutWordsMobile} translate-y-[100%]`}
                 ref={(el) => aboutMeRef.current.push(el)}
               >
                 only look good but also
@@ -324,7 +321,7 @@ const About = () => {
             </div>
             <div className={`w-fit relative overflow-y-hidden`}>
               <p
-                className="translate-y-[100%]"
+                className={`${styles.aboutWordsMobile} translate-y-[100%]`}
                 ref={(el) => aboutMeRef.current.push(el)}
               >
                 address real-world problems.
@@ -356,10 +353,10 @@ const About = () => {
             <div className={`${styles.about}`}></div>
           </div>
 
-          <div className="leading-[1.8em]" style={{ textAlignLast: "justify" }}>
+          <div className="leading-[1.8em]">
             <div className={`block overflow-y-hidden w-full relative`}>
               <p
-                className="translate-y-[100%]"
+                className={`${styles.aboutWords} translate-y-[100%]`}
                 ref={(el) => aboutMeRef.current.push(el)}
               >
                 your ideas to life. With a deep passion for creating meaningful
@@ -368,7 +365,7 @@ const About = () => {
             </div>
             <div className={`block overflow-y-hidden w-full relative`}>
               <p
-                className="translate-y-[100%]"
+                className={`${styles.aboutWords} translate-y-[100%]`}
                 ref={(el) => aboutMeRef.current.push(el)}
               >
                 experiences, I strive to design products that not only look
@@ -378,7 +375,7 @@ const About = () => {
 
             <div className={`block overflow-y-hidden relative w-fit`}>
               <p
-                className="translate-y-[100%]"
+                className={`${styles.aboutWords} translate-y-[100%]`}
                 ref={(el) => aboutMeRef.current.push(el)}
               >
                 good but also address real-world problems.
