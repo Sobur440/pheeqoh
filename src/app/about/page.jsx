@@ -356,7 +356,7 @@ const About = () => {
           <div className="leading-[1.8em]">
             <div className={`block overflow-y-hidden w-full relative`}>
               <p
-                className={`${styles.aboutWords} translate-y-[100%]`}
+                className={`${styles.aboutWordsAbout} translate-y-[100%]`}
                 ref={(el) => aboutMeRef.current.push(el)}
               >
                 your ideas to life. With a deep passion for creating meaningful
@@ -365,7 +365,7 @@ const About = () => {
             </div>
             <div className={`block overflow-y-hidden w-full relative`}>
               <p
-                className={`${styles.aboutWords} translate-y-[100%]`}
+                className={`${styles.aboutWordsAbout} translate-y-[100%]`}
                 ref={(el) => aboutMeRef.current.push(el)}
               >
                 experiences, I strive to design products that not only look
@@ -375,7 +375,7 @@ const About = () => {
 
             <div className={`block overflow-y-hidden relative w-fit`}>
               <p
-                className={`${styles.aboutWords} translate-y-[100%]`}
+                className={`${styles.aboutWordsAbout} translate-y-[100%]`}
                 ref={(el) => aboutMeRef.current.push(el)}
               >
                 good but also address real-world problems.
