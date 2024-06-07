@@ -229,6 +229,7 @@ const FeaturedWorks = ({ show }) => {
             className={`h-full relative hidden lg:flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.pos}`}
             ref={firstWorkRef}
             onMouseMove={explore}
+            onMouseOut={() => setExploreBtn(false)}
           >
             <div
               className={`${
@@ -304,6 +305,7 @@ const FeaturedWorks = ({ show }) => {
             className={`h-full relative hidden lg:flex items-end lg:items-center transition-all duration-[.5s] lg:duration-[.2s] ease-out ${styles.eohs}`}
             ref={secWorkRef}
             onMouseMove={secExplore}
+            onMouseOut={() => setSecExploreBtn(false)}
           >
             <div
               className={`${
@@ -380,6 +382,7 @@ const FeaturedWorks = ({ show }) => {
             className={`h-full relative hidden lg:flex items-end lg:items-center ${styles.insta}`}
             ref={thirdWorkRef}
             onMouseMove={thirdExplore}
+            onMouseOut={() => setThirdExploreBtn(false)}
           >
             <div
               className={`${
