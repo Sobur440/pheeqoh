@@ -23,40 +23,95 @@ const LandingAnimation = () => {
       stagger: { amount: 0.6 },
     })
       .to(progressBarRef.current, {
-        width: "100%",
+        width: "50%",
         duration: 5,
         ease: "power2.out",
       })
-      .to(titleRef.current, {
-        y: -100,
-        opacity: 0,
-      })
-      .to(progressBarRef.current, {
-        width: 0,
-        ease: "power2.out",
-        duration: 1.5,
-      })
-      .to(
-        progressBarBorder.current,
-        {
-          opacity: 0,
-        },
-        "<0.7"
-      )
-      .to(barsRef.current, {
-        scaleY: 0,
-        stagger: { amount: 1, from: "end" },
-        duration: 1.5,
-        ease: "power3.out",
-      })
-      .set(
-        overlayRef.current,
-        {
-          display: "none",
-          onComplete: () => setIsLoadingComplete(true),
-        },
-        "-=0.7"
-      );
+      .call(() => {
+        if (document.readyState === "complete") {
+          gsap
+            .timeline()
+            .to(progressBarRef.current, {
+              width: "100%",
+              duration: 5,
+              ease: "power2.out",
+            })
+            .to(titleRef.current, {
+              y: -100,
+              opacity: 0,
+            })
+            .to(progressBarRef.current, {
+              width: 0,
+              ease: "power2.out",
+              duration: 1.5,
+            })
+            .to(
+              progressBarBorder.current,
+              {
+                opacity: 0,
+              },
+              "<0.7"
+            )
+            .to(barsRef.current, {
+              scaleY: 0,
+              stagger: { amount: 1, from: "end" },
+              duration: 1.5,
+              ease: "power3.out",
+            })
+            .set(
+              overlayRef.current,
+              {
+                display: "none",
+                onComplete: () => setIsLoadingComplete(true),
+              },
+              "-=0.7"
+            );
+        } else {
+          window.addEventListener("load", () => {
+            gsap
+              .timeline()
+              .to(progressBarRef.current, {
+                width: "50%",
+                duration: 5,
+                ease: "power2.out",
+              })
+              .to(titleRef.current, {
+                y: -100,
+                opacity: 0,
+              })
+              .to(progressBarRef.current, {
+                width: 0,
+                ease: "power2.out",
+                duration: 1.5,
+              })
+              .to(
+                progressBarBorder.current,
+                {
+                  opacity: 0,
+                },
+                "<0.7"
+              )
+              .to(barsRef.current, {
+                scaleY: 0,
+                stagger: { amount: 1, from: "end" },
+                duration: 1.5,
+                ease: "power3.out",
+              })
+              .set(
+                overlayRef.current,
+                {
+                  display: "none",
+                  onComplete: () => setIsLoadingComplete(true),
+                },
+                "-=0.7"
+              );
+          });
+        }
+      });
+
+    return () => {
+      window.removeEventListener("load", () => {});
+    };
   }, []);
 
   // useEffect(() => {
