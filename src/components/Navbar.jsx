@@ -26,7 +26,7 @@ const Navbar = () => {
         y: 0,
         stagger: { amount: 0.7, from: "center" },
         ease: "power3.out",
-        duration: 1.5,
+        duration: 1,
       });
     }
   }, [isLoadingComplete]);
