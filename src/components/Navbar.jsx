@@ -16,8 +16,6 @@ const Navbar = () => {
   const { navColour, navRef, isLoadingComplete, route } =
     useContext(NavColourContext);
 
-  // }, [route]);
-
   useEffect(() => {
     if (isLoadingComplete) {
       gsap.to(navRef.current, {
