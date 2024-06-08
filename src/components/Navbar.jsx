@@ -33,7 +33,6 @@ const Navbar = () => {
         .timeline()
 
         .to(hamburgerRef.current, {
-          // clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
           left: "0",
           ease: "power3.inOut",
         })
