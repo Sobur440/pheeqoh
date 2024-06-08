@@ -17,7 +17,6 @@ const Navbar = () => {
     useContext(NavColourContext);
 
   // useEffect(() => {
-  //   console.log(route);
   // }, [route]);
 
   useEffect(() => {
