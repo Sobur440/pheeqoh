@@ -16,7 +16,6 @@ const Navbar = () => {
   const { navColour, navRef, isLoadingComplete, route } =
     useContext(NavColourContext);
 
-  // useEffect(() => {
   // }, [route]);
 
   useEffect(() => {
