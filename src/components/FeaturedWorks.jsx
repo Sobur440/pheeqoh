@@ -92,7 +92,6 @@ const FeaturedWorks = ({ show }) => {
       // );
 
       // worksObserver1.observe(workCon1Ref.current);
-      // worksObserver2.observe(workCon2Ref.current);
 
       const posObserver = new IntersectionObserver(
         (entries) => {
