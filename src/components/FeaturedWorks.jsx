@@ -89,7 +89,6 @@ const FeaturedWorks = ({ show }) => {
       //     });
       //   },
       //   { threshold: 0.2 }
-      // );
 
       const posObserver = new IntersectionObserver(
         (entries) => {
