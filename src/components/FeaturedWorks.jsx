@@ -91,8 +91,6 @@ const FeaturedWorks = ({ show }) => {
       //   { threshold: 0.2 }
       // );
 
-      // worksObserver1.observe(workCon1Ref.current);
-
       const posObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
