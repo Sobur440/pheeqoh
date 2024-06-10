@@ -121,7 +121,6 @@ const LandingAnimation = () => {
   //     });
   //   });
   //   heroObserver.observe(heroContext.current);
-  // nothing
 
   return (
     <div
