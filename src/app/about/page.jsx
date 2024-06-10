@@ -503,7 +503,7 @@ const About = () => {
         <div
           className={`${styles.idle} w-full h-screen flex flex-col justify-end gap-[8rem] pb-[1.2rem] sticky top-0 z-[-1] `}
         ></div>
-        <div className="w-full h-[50rem] opacity-0"></div>
+        <div className="w-full h-[30rem] opacity-0"></div>
         <div
           className={`w-full h-screen relative z-[2] flex flex-col justify-end gap-[8rem] pb-[1.2rem]`}
         >
