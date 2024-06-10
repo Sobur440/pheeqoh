@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import NavColourProvider from "@/contexts/NavColourContext";
 import LandingAnimation from "@/components/LandingAnimation";
-import SmoothScroll from "./SmoothScroll";
+import SmoothScroll from "../components/SmoothScroll";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {

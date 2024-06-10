@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useContext, useEffect } from "react";
-import { lenisContext } from "@/app/SmoothScroll";
+import { lenisContext } from "@/components/SmoothScroll";
 
 const Footer = () => {
   const lenis = useContext(lenisContext);
