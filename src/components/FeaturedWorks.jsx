@@ -83,8 +83,6 @@ const FeaturedWorks = ({ show }) => {
       //       if (entry.isIntersecting) {
       //         gsap.to(thirdWorkRef.current, {
       //           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-      //           ease: "power3.out",
-      //         });
       //       }
       //     });
       //   },
