@@ -81,9 +81,6 @@ const FeaturedWorks = ({ show }) => {
       //   (entries) => {
       //     entries.forEach((entry) => {
       //       if (entry.isIntersecting) {
-      //         gsap.to(thirdWorkRef.current, {
-      //           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-      //       }
       //     });
       //   },
 
