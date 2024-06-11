@@ -80,7 +80,6 @@ const FeaturedWorks = ({ show }) => {
       // const worksObserver3 = new IntersectionObserver(
       //   (entries) => {
       //     entries.forEach((entry) => {
-      //       if (entry.isIntersecting) {
       //     });
       //   },
 
