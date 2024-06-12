@@ -242,13 +242,14 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="overflow-y-hidden">
-            <Link
+            <a
+              href="/contact"
+              target="_blank"
               className="uppercase text-[.85rem] translate-y-[-100vh] block font-extralight"
               ref={(el) => navRef.current.push(el)}
-              href="/contact"
             >
               contact
-            </Link>
+            </a>
           </li>
         </ul>
         <div
