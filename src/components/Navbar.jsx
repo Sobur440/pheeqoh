@@ -243,7 +243,7 @@ const Navbar = () => {
           </li>
           <li className="overflow-y-hidden">
             <a
-              href="/contact"
+              href="mailto:taofeeqahbello12@gmail.comupdate"
               target="_blank"
               className="uppercase text-[.85rem] translate-y-[-100vh] block font-extralight"
               ref={(el) => navRef.current.push(el)}
