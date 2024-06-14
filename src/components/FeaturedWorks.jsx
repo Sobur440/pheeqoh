@@ -165,9 +165,6 @@ const FeaturedWorks = ({ show }) => {
     }
   }, [isLoadingComplete]);
 
-  //   y: null,
-  // };
-
   const explore = (e) => {
     setMovementX(e.clientX);
     setMovementY(e.clientY);
