@@ -165,7 +165,6 @@ const FeaturedWorks = ({ show }) => {
     }
   }, [isLoadingComplete]);
 
-  // const mouseMovement = {
   //   x: null,
   //   y: null,
   // };
