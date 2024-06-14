@@ -165,7 +165,6 @@ const FeaturedWorks = ({ show }) => {
     }
   }, [isLoadingComplete]);
 
-  //   x: null,
   //   y: null,
   // };
 
