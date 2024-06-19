@@ -191,7 +191,7 @@ const FeaturedWorks = ({ show }) => {
       >
         featured works
       </p>
-      <div className="h-[110vh]">
+      <div>
         <div className="h-screen sticky top-0 z-[1]" ref={workCon1Ref}>
           <div
             className={`${styles.pos} h-full flex items-center lg:hidden relative`}
