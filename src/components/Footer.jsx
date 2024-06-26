@@ -32,9 +32,13 @@ const Footer = () => {
                 <Link className="block" href="/works">
                   works
                 </Link>
-                <Link className="block" href="/contact">
+                <a
+                  target="_blank"
+                  href="mailto:taofeeqahbello12@gmail.com"
+                  className="block"
+                >
                   contact
-                </Link>
+                </a>
               </div>
               <div>
                 <a
